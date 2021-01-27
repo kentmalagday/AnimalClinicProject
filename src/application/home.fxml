@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Home">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="912.0" prefWidth="1293.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Home">
    <right>
       <AnchorPane prefHeight="692.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="800.0" prefWidth="922.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <AnchorPane layoutX="14.0" prefHeight="800.0" prefWidth="919.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0" />
          </children></AnchorPane>
    </right>
    <left>
@@ -29,17 +29,17 @@
             </AnchorPane>
             <AnchorPane prefHeight="397.0" prefWidth="230.0">
                <children>
-                  <Button layoutX="43.0" layoutY="70.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50;" text="Clients">
+                  <Button fx:id="clientBtn" layoutX="43.0" layoutY="70.0" mnemonicParsing="false" onAction="#clientButton" prefHeight="44.0" prefWidth="184.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50;" text="Clients">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button layoutX="47.0" layoutY="145.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="176.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50px;" text="Appointments">
+                  <Button fx:id="appointmentBtn" layoutX="47.0" layoutY="145.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="176.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50px;" text="Appointments">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Button>
-                  <Button layoutX="47.0" layoutY="218.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="177.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50px;" text="Payments">
+                  <Button fx:id="paymentBtn" layoutX="47.0" layoutY="218.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="177.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50px;" text="Payments">
                      <font>
                         <Font size="20.0" />
                      </font>
