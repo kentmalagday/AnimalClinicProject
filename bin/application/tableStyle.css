@@ -1,0 +1,26 @@
+
+.table-view{
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+.table-view .column-header-background{
+    -fx-background-color: rgba(244, 238, 204, 0.5);
+    background-color: rgba(244, 238, 204, 0.5);
+}
+
+.table-view .column-header{
+    -fx-background-color: transparent;
+    background-color: transparent;
+}
+
+.table-view .table-cell{
+    -fx-border-color: transparent;
+    border-color: transparent;
+}
+
+.table-row-cell{
+    -fx-background-color: rgba(244, 238, 204, 0.7);
+    background-color: rgba(244, 238, 204, 0.7);
+    -fx-cell-size: 50px;
+}

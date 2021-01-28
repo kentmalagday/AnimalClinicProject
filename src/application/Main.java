@@ -25,7 +25,7 @@ public class Main extends Application {
     
     public void changeScene(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
-        scene = new Scene(pane, 1200, 800);
+        scene = new Scene(pane, 1050, 650);
         stg.setTitle("Home");
         stg.setScene(scene);
         stg.setResizable(false);
