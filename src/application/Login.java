@@ -15,30 +15,37 @@ public class Login {
     }
 
     @FXML
-    private Button button;
+    private Button btn_login;
     @FXML
     private Label wrongLogIn;
     @FXML
-    private TextField username;
+    private TextField textField_username;
     @FXML
-    private PasswordField password;
+    private PasswordField passField_password;
+    @FXML
+    private Button btn_signup;
 
 
 
-    public void userLogIn(ActionEvent event) throws IOException {
+    public void btn_loginClicked(ActionEvent event) throws IOException {
         checkLogin();
 
     }
 
+    public void btn_signup_clicked() throws IOException {
+        Main m = new Main();
+        m.changeScene("signup.fxml", "Signup", 400, 400);
+    }
+
     private void checkLogin() throws IOException {
         Main m = new Main();
-        if(username.getText().toString().equals("admin") && password.getText().toString().equals("1234")) {
+        if(textField_username.getText().toString().equals("admin") && passField_password.getText().toString().equals("1234")) {
             wrongLogIn.setText("Success!");
 
             m.changeScene("home.fxml", "Home", 1074, 748);
         }
 
-        else if(username.getText().isEmpty() && password.getText().isEmpty()) {
+        else if(textField_username.getText().isEmpty() && passField_password.getText().isEmpty()) {
             wrongLogIn.setText("Please enter your data.");
         }
 

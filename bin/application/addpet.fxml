@@ -48,18 +48,18 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="203.0" layoutY="172.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField layoutX="203.0" layoutY="227.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField layoutX="203.0" layoutY="272.0" />
-      <TextField layoutX="203.0" layoutY="317.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField layoutX="203.0" layoutY="366.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField layoutX="203.0" layoutY="410.0" prefHeight="25.0" prefWidth="218.0" />
-      <Button layoutX="211.0" layoutY="613.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Edit">
+      <TextField fx:id="textField_petName" layoutX="203.0" layoutY="172.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="textField_species" layoutX="203.0" layoutY="227.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="textField_breed" layoutX="203.0" layoutY="272.0" />
+      <TextField fx:id="textField_weight" layoutX="203.0" layoutY="317.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="textField_age" layoutX="203.0" layoutY="366.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="textField_color" layoutX="203.0" layoutY="410.0" prefHeight="25.0" prefWidth="218.0" />
+      <Button fx:id="btn_editPet" layoutX="211.0" layoutY="613.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Edit">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="317.0" layoutY="613.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Save">
+      <Button fx:id="btn_savePet" layoutX="317.0" layoutY="613.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Save">
          <font>
             <Font size="14.0" />
          </font>
@@ -69,7 +69,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextArea layoutX="198.0" layoutY="460.0" prefHeight="113.0" prefWidth="228.0" />
+      <TextArea fx:id="textArea_purposeOfVisit" layoutX="198.0" layoutY="460.0" prefHeight="113.0" prefWidth="228.0" />
       <TableView layoutX="484.0" layoutY="26.0" prefHeight="689.0" prefWidth="576.0">
         <columns>
           <TableColumn prefWidth="97.0" text="Name" />
@@ -86,7 +86,7 @@
             <Image url="@../../resources/logo1.png" />
          </image>
       </ImageView>
-      <Button fx:id="backButton" layoutX="97.0" layoutY="613.0" mnemonicParsing="false" onAction="#backButton_Clicked" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Back">
+      <Button fx:id="btn_back" layoutX="97.0" layoutY="613.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Back">
          <font>
             <Font size="14.0" />
          </font>

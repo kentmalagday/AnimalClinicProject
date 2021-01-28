@@ -11,22 +11,22 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="668.0" prefWidth="1056.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Home">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2f73ad" height="86.0" opacity="0.91" stroke="#2f73ad" strokeType="INSIDE" width="1056.0" />
-      <Button fx:id="paymentBtn" layoutX="332.0" layoutY="24.0" mnemonicParsing="false" onAction="#paymentButton" onMouseClicked="#paymentButton" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50px;" text="Payments" textFill="#423e3e">
+      <Button fx:id="btn_payments" layoutX="332.0" layoutY="24.0" mnemonicParsing="false" onAction="#btn_paymentsClicked" prefHeight="39.0" prefWidth="116.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50px;" text="Payments" textFill="#423e3e">
          <font>
             <Font name="Yu Gothic UI Semibold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="appointmentBtn" layoutX="159.0" layoutY="24.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="159.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50px;" text="Appointments" textFill="#423e3e">
+      <Button fx:id="btn_appointments" layoutX="159.0" layoutY="24.0" mnemonicParsing="false" onAction="#btn_appointmentsClicked" prefHeight="39.0" prefWidth="159.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50px;" text="Appointments" textFill="#423e3e">
          <font>
             <Font name="Yu Gothic UI Semibold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="clientBtn" layoutX="48.0" layoutY="24.0" mnemonicParsing="false" onAction="#clientButton" onMouseClicked="#clientButton" prefHeight="39.0" prefWidth="96.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50;" text="Clients" textFill="#423e3e">
+      <Button fx:id="btn_clients" layoutX="48.0" layoutY="24.0" mnemonicParsing="false" onAction="#btn_clientsClicked" prefHeight="39.0" prefWidth="96.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50;" text="Clients" textFill="#423e3e">
          <font>
             <Font name="Yu Gothic UI Semibold" size="18.0" />
          </font>
       </Button>
-      <Button fx:id="logout" layoutX="1005.0" layoutY="28.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50;" text="x">
+      <Button fx:id="btn_logout" layoutX="1005.0" layoutY="28.0" mnemonicParsing="false" onAction="#btn_logoutClicked" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50;" text="x">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

@@ -41,13 +41,13 @@
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <TextField fx:id="username" layoutX="194.0" layoutY="186.0" promptText="Username" />
-            <PasswordField fx:id="password" layoutX="195.0" layoutY="246.0" promptText="Password" />
-            <Button fx:id="button" layoutX="81.0" layoutY="324.0" mnemonicParsing="false" onAction="#userLogIn" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: FFCD3F;" text="Login">
+            <TextField fx:id="textField_username" layoutX="194.0" layoutY="186.0" promptText="Username" />
+            <PasswordField fx:id="passField_password" layoutX="195.0" layoutY="246.0" promptText="Password" />
+            <Button fx:id="btn_login" layoutX="81.0" layoutY="324.0" mnemonicParsing="false" onAction="#btn_loginClicked" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: FFCD3F;" text="Login">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button layoutX="228.0" layoutY="324.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: FFCD3F;" text="Sign up">
+            <Button fx:id="btn_signup" layoutX="228.0" layoutY="324.0" mnemonicParsing="false" onAction="#btn_signup_clicked" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: FFCD3F;" text="Sign up">
                <font>
                   <Font size="15.0" />
                </font></Button>
