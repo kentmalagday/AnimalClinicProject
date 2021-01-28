@@ -11,6 +11,7 @@ import javafx.stage.Stage;
 public class Main extends Application {
 	
 	 private static Stage stg;
+	 public Scene scene;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -24,8 +25,9 @@ public class Main extends Application {
     
     public void changeScene(String fxml) throws IOException {
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
+        scene = new Scene(pane, 1200, 800);
         stg.setTitle("Home");
-        stg.setScene(new Scene(pane, 1200,800));
+        stg.setScene(scene);
         stg.setResizable(false);
       
     }

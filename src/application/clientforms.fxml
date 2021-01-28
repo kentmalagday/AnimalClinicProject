@@ -8,16 +8,17 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1065.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Client">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1065.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ClientForms">
    <children>
-      <TableView layoutX="511.0" layoutY="23.0" prefHeight="632.0" prefWidth="540.0">
+      <TableView fx:id="clientTable" layoutX="511.0" layoutY="23.0" prefHeight="632.0" prefWidth="540.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Lastname" />
-          <TableColumn prefWidth="75.0" text="Firstname" />
-            <TableColumn prefWidth="52.0" text="Age" />
-            <TableColumn prefWidth="92.0" text="Contact No." />
-            <TableColumn prefWidth="100.0" text="Email" />
-            <TableColumn prefWidth="145.0" text="Address" />
+          <TableColumn prefWidth="75.0" text="ID" fx:id="id"/>
+          <TableColumn prefWidth="75.0" text="Lastname" fx:id="lastName"/>
+          <TableColumn prefWidth="75.0" text="Firstname" fx:id="firstName"/>
+          <TableColumn prefWidth="52.0" text="Age" fx:id="age"/>
+          <TableColumn prefWidth="92.0" text="Contact No." fx:id="contact"/>
+          <TableColumn prefWidth="100.0" text="Email" fx:id="email"/>
+          <TableColumn prefWidth="145.0" text="Address" fx:id="address"/>
         </columns>
       </TableView>
       <Label layoutX="32.0" layoutY="48.0" text="Client Information" textFill="#316b9d">
@@ -71,7 +72,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="318.0" layoutY="409.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Save">
+      <Button fx:id="addClient" layoutX="318.0" layoutY="409.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Save" onAction="#addClient">
          <font>
             <Font size="14.0" />
          </font>
