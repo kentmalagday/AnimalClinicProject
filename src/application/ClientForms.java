@@ -59,7 +59,9 @@ public class ClientForms implements Initializable{
     @FXML
     TableColumn<Client, String> email;
     @FXML
-    TableColumn<Client, String> address;
+	TableColumn<Client, String> address;
+	@FXML
+	Button clearButton;
     
     @FXML
     Button addClient;
@@ -147,13 +149,18 @@ public class ClientForms implements Initializable{
     	System.out.println("Clicked!");
     }
     
-    void clearTextFields() {
+    public void clearTextFields() {
     	clientLastname.setText("");
    	 	clientFirstname.setText("");
    	 	clientAge.setText("");
    	 	clientContactNo.setText("");
    	 	clientEmail.setText("");
    	 	clientAddress.setText("");
-    }
+	}
+	
+	public void backButton_Clicked() throws IOException {
+		Main m = new Main();
+		m.changeScene("home.fxml", "home", 1074, 748);
+	}
   
 }

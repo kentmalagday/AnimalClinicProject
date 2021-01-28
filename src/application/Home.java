@@ -19,24 +19,30 @@ public class Home {
 
     @FXML
     private Button paymentBtn;
-    
+
+    @FXML
+    private Button logout;
+
     public Scene scene;
+
     
     public void clientButton() throws IOException {
-   	 Parent root = FXMLLoader.load(getClass().getResource("clientforms.fxml"));
-   	 scene = new Scene(root, 1074, 748 );
-   	 Stage window = (Stage) clientBtn.getScene().getWindow();
-   	 window.setTitle("Clients");
-   	 window.setScene(scene);
-   	
-   }
-   public void paymentButton() throws IOException {
-    Parent root = FXMLLoader.load(getClass().getResource("clientforms.fxml"));
-    scene = new Scene(root, 1074, 748 );
-    Stage window = (Stage) clientBtn.getScene().getWindow();
-    window.setTitle("Clients");
-    window.setScene(scene);
-   
-}
+        Parent root = FXMLLoader.load(getClass().getResource("clientforms.fxml"));
+        scene = new Scene(root, 1074, 748 );
+        Stage window = (Stage) clientBtn.getScene().getWindow();
+        window.setTitle("Clients");
+        window.setScene(scene);
+    }
+    public void paymentButton() throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("clientforms.fxml"));
+        scene = new Scene(root, 1074, 748 );
+        Stage window = (Stage) clientBtn.getScene().getWindow();
+        window.setTitle("Clients");
+        window.setScene(scene);
+    }
+    public void logoutButton() throws IOException {
+        Main m = new Main();
+        m.changeScene("sample.fxml", "Login", 600, 400);
+    }
 
 }

@@ -23,10 +23,10 @@ public class Main extends Application {
         primaryStage.show();
     }
     
-    public void changeScene(String fxml) throws IOException {
+    public void changeScene(String fxml, String title, int width, int height) throws IOException {
         Parent pane = FXMLLoader.load(getClass().getResource(fxml));
-        scene = new Scene(pane, 1050, 650);
-        stg.setTitle("Home");
+        scene = new Scene(pane, width,height);
+        stg.setTitle(title);
         stg.setScene(scene);
         stg.setResizable(false);
       

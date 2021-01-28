@@ -26,7 +26,7 @@
             <Font name="Yu Gothic UI Semibold" size="18.0" />
          </font>
       </Button>
-      <Button layoutX="1005.0" layoutY="28.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50;" text="x">
+      <Button fx:id="logout" layoutX="1005.0" layoutY="28.0" mnemonicParsing="false" onAction="#logoutButton" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 50;" text="x">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

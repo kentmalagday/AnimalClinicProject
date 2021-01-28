@@ -35,7 +35,7 @@ public class Login {
         if(username.getText().toString().equals("admin") && password.getText().toString().equals("1234")) {
             wrongLogIn.setText("Success!");
 
-            m.changeScene("home.fxml");
+            m.changeScene("home.fxml", "Home", 1074, 748);
         }
 
         else if(username.getText().isEmpty() && password.getText().isEmpty()) {
