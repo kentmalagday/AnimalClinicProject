@@ -13,6 +13,7 @@ public class Database {
             		"', '" + c.getAge() + "', '" + c.getContact() + "', '" + c.getEmail() + "', '" + c.getAddress() +"');";
             PreparedStatement add = con.prepareStatement(command);
             add.executeUpdate();
+            System.out.println(command);
         }
         catch(Exception e){
             System.out.println(e);
