@@ -18,6 +18,18 @@ public class Database {
             System.out.println(e);
         }
     }
+    
+    public static void updateClient(Client c, Client selected) throws Exception{
+    	try {
+    		Connection con = getConnection();
+    		String command = "UPDATE `mork_petclinic`.`client` SET `lastName` = '" +c.getLastName() + "', `firstName` = '" +c.getFirstName() + "', `age` = '" +c.getAge() + "', `contact` = '" +c.getContact() + "', `email` = '" +c.getEmail() + "', `address` = '" +c.getAddress()+ "' WHERE `mork_petclinic`.`client`.`ID` = " +selected.getID()+ "";
+    		PreparedStatement update = con.prepareStatement(command);
+    		update.executeUpdate();
+    		System.out.println(command);
+    	}catch(Exception error) {
+    		System.out.println(error);
+    	}
+    }
 
     public static Connection getConnection() throws Exception{
         try{
