@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -67,7 +68,7 @@ public class ClientForms implements Initializable{
     Button addClient;
     
     TableViewSelectionModel<Client> selectionModel;
-    
+    TextField[] emptyTextFields = new TextField[6];
     Client selectedClient;
  
     @Override
@@ -100,30 +101,42 @@ public class ClientForms implements Initializable{
     }
     
     public void addClient() throws Exception{
-    	Client client = new Client();
-    	client.setLastName(clientLastname.getText());
-    	client.setFirstName(clientFirstname.getText());
-    	client.setAge(Integer.parseInt(clientAge.getText()));
-    	client.setContact(clientContactNo.getText());
-    	client.setEmail(clientEmail.getText());
-    	client.setAddress(clientAddress.getText());
-    	if(clientTable.getSelectionModel().isEmpty()) {
-        	Database.addClient(client);
-        	try {
-        		clientTable.setItems(ClientList.getClientList());
-        		clearTextFields();
-        	}catch(Exception error) {
-        		System.out.println(error);
-        	}
+    	if(textFieldsEmpty()) {
+    		for(int i = 0; i < emptyTextFields.length; i++) {
+    			if(emptyTextFields[i] == null) {
+    				break;
+    			}
+    			emptyTextFields[i].setText("Please input something before saving!");
+    		}
     	}else {
-    		try {
-    			Database.updateClient(client, selectedClient);
-        		clientTable.setItems(ClientList.getClientList());
-        		clearTextFields();
+    		if(!checkIfValid()) {
+    			return;
     		}
-    		catch(Exception error) {
-    			System.out.println(error);
-    		}
+    		Client client = new Client();
+        	client.setLastName(clientLastname.getText());
+        	client.setFirstName(clientFirstname.getText());
+        	client.setAge(Integer.parseInt(clientAge.getText()));
+        	client.setContact(clientContactNo.getText());
+        	client.setEmail(clientEmail.getText());
+        	client.setAddress(clientAddress.getText());
+        	if(clientTable.getSelectionModel().isEmpty()) {
+            	Database.addClient(client);
+            	try {
+            		clientTable.setItems(ClientList.getClientList());
+            		clearTextFields();
+            	}catch(Exception error) {
+            		System.out.println(error);
+            	}
+        	}else {
+        		try {
+        			Database.updateClient(client, selectedClient);
+            		clientTable.setItems(ClientList.getClientList());
+            		clearTextFields();
+        		}
+        		catch(Exception error) {
+        			System.out.println(error);
+        		}
+        	}
     	}
     }
     
@@ -157,7 +170,65 @@ public class ClientForms implements Initializable{
    	 	clientEmail.setText("");
    	 	clientAddress.setText("");
 	}
-	
+    
+    public boolean textFieldsEmpty() {
+    	int i = 0;
+    	if(clientLastname.getText().isEmpty()) {
+    		System.out.println("EMPTY");
+    		emptyTextFields[i] = clientLastname;
+    		i++;
+    	}
+    	if(clientFirstname.getText().isEmpty()) {
+    		emptyTextFields[i] = clientFirstname;
+    		i++;
+    	}
+    	if(clientAge.getText().isEmpty()) {
+    		emptyTextFields[i] = clientAge;
+    		i++;
+    	}
+    	if(clientContactNo.getText().isEmpty()) {
+    		emptyTextFields[i] = clientContactNo;
+    		i++;
+    	}
+    	if(clientEmail.getText().isEmpty()) {
+    		emptyTextFields[i] = clientEmail;
+    		i++;
+    	}
+    	if(clientAddress.getText().isEmpty()) {
+    		emptyTextFields[i] = clientAddress;
+    		i++;
+    	}
+    	if(i > 0) {
+    		System.out.println("There are empty textfields");
+    		return true;
+    	}else {
+    		System.out.println("No Empty TextFields!");
+    		Arrays.fill(emptyTextFields, null);
+    	}
+    	return false;
+    }
+    public boolean checkIfValid() {
+    	try {
+    		Integer.parseInt(clientAge.getText());
+    		
+    	}catch(Exception e) {
+    		System.out.println("Age should be a number");
+    		clientAge.setText("Invalid!");
+    		return false;
+    	}
+    	try {
+    		Integer.parseInt(clientContactNo.getText());
+    		return true;
+    	}catch(Exception e) {
+    		System.out.println("Contact Number not valid!");
+    		clientContactNo.setText("Invalid!");
+    		return false;
+    	}
+    }
+    public void clearBtn() {
+    	clearTextFields();
+    	clientTable.getSelectionModel().clearSelection();
+    }
 	public void backButton_Clicked() throws IOException {
 		Main m = new Main();
 		m.changeScene("home.fxml", "home", 1074, 748);

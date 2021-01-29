@@ -82,7 +82,7 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="clearButton" layoutX="376.0" layoutY="409.0" mnemonicParsing="false" onAction="#clearTextFields" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Clear">
+      <Button fx:id="clearButton" layoutX="376.0" layoutY="409.0" mnemonicParsing="false" onAction="#clearBtn" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Clear">
          <font>
             <Font size="14.0" />
          </font>
