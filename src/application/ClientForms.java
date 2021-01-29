@@ -93,6 +93,12 @@ public class ClientForms implements Initializable{
     }
     
     public void addPetbtn() throws IOException {
+    		if(selectedClient != null) {
+    			AddPet.selectedClient = selectedClient;
+    		}else {
+    			System.out.println("Select A client first!");
+    			return;
+    		}
     	 Parent root = FXMLLoader.load(getClass().getResource("addpet.fxml"));
     	 Stage window = (Stage) petButton.getScene().getWindow();
     	 window.setTitle("Add Pet");
