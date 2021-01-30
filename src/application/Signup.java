@@ -1,7 +1,8 @@
 package application;
 
 import java.io.IOException;
-
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -30,6 +31,7 @@ public class Signup {
         if(textFieldsEmpty()){
             errorText.setText("There are empty textfields");
         }else{
+            Main m = new Main();
             if(checkIfValid()){
             return;
             }
@@ -37,6 +39,13 @@ public class Signup {
             user.setUsername(textField_username.getText());
             user.setPassword(passField_password.getText());
             Database.addUser(user);
+
+            Alert alert = new Alert(AlertType.INFORMATION);
+            alert.setTitle("Sign Up Success");
+            alert.setHeaderText("Account has been added succesfully!");
+            alert.showAndWait();
+
+            m.changeScene("sample.fxml", "Login", 600, 400);
         }
     }
     public boolean textFieldsEmpty(){

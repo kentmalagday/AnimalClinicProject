@@ -1,5 +1,7 @@
 package application;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -62,6 +64,10 @@ public class Login {
             try {
                 if (Database.verifyLogin(user)) {
                     System.out.println("Login success");
+                    Alert alert = new Alert(AlertType.INFORMATION);
+                    alert.setTitle("Login");
+                    alert.setHeaderText("Login succesfully!");
+                    alert.showAndWait();
                     m.changeScene("home.fxml", "Home", 1074, 748);
                 } else {
                     wrongLogIn.setText("Incorrect username or password");
