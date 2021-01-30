@@ -52,6 +52,7 @@
                </font>
             </Button>
             <PasswordField fx:id="passField_confirmPass" layoutX="209.0" layoutY="290.0" prefHeight="34.0" prefWidth="174.0" promptText="Confirm Password" />
+            <Label fx:id="errorText" layoutX="55.0" layoutY="328.0" prefHeight="17.0" prefWidth="285.0" textAlignment="CENTER" textFill="RED" />
          </children>
       </Pane>
    </children>

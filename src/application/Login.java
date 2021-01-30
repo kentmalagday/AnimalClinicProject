@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
+
 public class Login {
 
     public Login() {
@@ -25,8 +26,6 @@ public class Login {
     @FXML
     private Button btn_signup;
 
-
-
     public void btn_loginClicked(ActionEvent event) throws IOException {
         checkLogin();
 
@@ -39,20 +38,49 @@ public class Login {
 
     private void checkLogin() throws IOException {
         Main m = new Main();
-        if(textField_username.getText().toString().equals("admin") && passField_password.getText().toString().equals("1234")) {
-            wrongLogIn.setText("Success!");
-
-            m.changeScene("home.fxml", "Home", 1074, 748);
+        /*
+         * 
+         * if(textField_username.getText().toString().equals("admin") &&
+         * passField_password.getText().toString().equals("1234")) {
+         * wrongLogIn.setText("Success!");
+         * 
+         * m.changeScene("home.fxml", "Home", 1074, 748); }
+         * 
+         * else if(textField_username.getText().isEmpty() &&
+         * passField_password.getText().isEmpty()) {
+         * wrongLogIn.setText("Please enter your data."); }
+         * 
+         * 
+         * else { wrongLogIn.setText("Wrong username or password!"); }
+         */
+        if (textFieldsEmpty()) {
+            wrongLogIn.setText("Enter you data");
+        } else {
+            Users user = new Users();
+            user.setUsername(textField_username.getText());
+            user.setPassword(passField_password.getText());
+            try {
+                if (Database.verifyLogin(user)) {
+                    System.out.println("Login success");
+                    m.changeScene("home.fxml", "Home", 1074, 748);
+                } else {
+                    wrongLogIn.setText("Incorrect username or password");
+                }
+            } catch (Exception e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
         }
-
-        else if(textField_username.getText().isEmpty() && passField_password.getText().isEmpty()) {
-            wrongLogIn.setText("Please enter your data.");
+    }
+    public boolean textFieldsEmpty(){
+        int i = 0;
+        if(textField_username.getText().isEmpty() || passField_password.getText().isEmpty()){
+            i++;
         }
-
-
-        else {
-            wrongLogIn.setText("Wrong username or password!");
-        }
+        if(i>0)
+            return true;
+        else
+            return false;
     }
 
 

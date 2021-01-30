@@ -3,21 +3,58 @@ package application;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.mysql.cj.protocol.Resultset;
 
 public class Database {
 
-    public static void addClient(Client c) throws Exception{
-        try{
+    public static void addClient(Client c) throws Exception {
+        try {
             Connection con = getConnection();
-            String command = "INSERT INTO `mork_petclinic`.`client` (`lastName`, `firstName`, `age`, `contact`, `email`, `address`) VALUES ('" + c.getLastName() + "', '" + c.getFirstName() + 
-            		"', '" + c.getAge() + "', '" + c.getContact() + "', '" + c.getEmail() + "', '" + c.getAddress() +"');";
+            String command = "INSERT INTO `mork_petclinic`.`client` (`lastName`, `firstName`, `age`, `contact`, `email`, `address`) VALUES ('"
+                    + c.getLastName() + "', '" + c.getFirstName() + "', '" + c.getAge() + "', '" + c.getContact()
+                    + "', '" + c.getEmail() + "', '" + c.getAddress() + "');";
             PreparedStatement add = con.prepareStatement(command);
             add.executeUpdate();
             System.out.println(command);
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
+    }
+
+    public static void addUser(Users u) throws Exception {
+        try {
+            Connection con = getConnection();
+            String command = "INSERT INTO `mork_petclinic`.`users` (`username`, `password`) VALUES ('" + u.getUsername()
+                    + "', '" + u.getPassword() + "');";
+            PreparedStatement add = con.prepareStatement(command);
+            add.executeUpdate();
+            System.out.println(command);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+
+    public static boolean verifyLogin(Users u) throws Exception {
+        Connection con;
+        ResultSet rs;
+        try {
+            con = getConnection();
+            String command = "SELECT * FROM users WHERE username ='" + u.getUsername() + "'AND password ='" + u.getPassword() + "'";
+            PreparedStatement search = con.prepareStatement(command);
+            rs = search.executeQuery();
+            if(rs.next()){
+                return true;
+            }else{
+                return false;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+
     }
     
     public static void addPet(Pet p, Client selected) throws Exception{
