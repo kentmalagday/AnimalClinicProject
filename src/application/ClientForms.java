@@ -163,6 +163,7 @@ public class ClientForms implements Initializable{
     	
     	if(source == null || (source instanceof TableRow && ((TableRow) source).isEmpty())) {
     		clientTable.getSelectionModel().clearSelection();
+    		selectedClient = null;
     		clearTextFields();
     	}
     	System.out.println("Clicked!");
@@ -234,6 +235,7 @@ public class ClientForms implements Initializable{
     public void clearBtn() {
     	clearTextFields();
     	clientTable.getSelectionModel().clearSelection();
+    	selectedClient = null;
     }
 	public void backButton_Clicked() throws IOException {
 		Main m = new Main();
