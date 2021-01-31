@@ -5,6 +5,9 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
+
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -110,7 +113,12 @@ public class AddPet implements Initializable{
         	pet.setWeight(Float.parseFloat(textField_weight.getText()));
         	pet.setAge(Integer.parseInt(textField_age.getText()));
         	pet.setColor(textField_color.getText());
-        	pet.setPurpose(textArea_purposeOfVisit.getText());
+			pet.setPurpose(textArea_purposeOfVisit.getText());
+			
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Pet");
+			alert.setHeaderText("Pet record is added succesfully!");
+			alert.showAndWait();
         	if(petTable.getSelectionModel().isEmpty()) {
             	Database.addPet(pet, selectedClient);
             	try {

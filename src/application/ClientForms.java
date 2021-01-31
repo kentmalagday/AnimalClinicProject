@@ -5,6 +5,8 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -124,7 +126,12 @@ public class ClientForms implements Initializable{
         	client.setAge(Integer.parseInt(clientAge.getText()));
         	client.setContact(clientContactNo.getText());
         	client.setEmail(clientEmail.getText());
-        	client.setAddress(clientAddress.getText());
+			client.setAddress(clientAddress.getText());
+
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Client");
+			alert.setHeaderText("Client record is added succesfully!");
+			alert.showAndWait();
         	if(clientTable.getSelectionModel().isEmpty()) {
             	Database.addClient(client);
             	try {
@@ -239,7 +246,7 @@ public class ClientForms implements Initializable{
     }
 	public void backButton_Clicked() throws IOException {
 		Main m = new Main();
-		m.changeScene("home.fxml", "home", 1074, 748);
+		m.changeScene("home.fxml", "Home", 1074, 748);
 	}
   
 }
