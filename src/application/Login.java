@@ -68,7 +68,7 @@ public class Login {
                     alert.setTitle("Login");
                     alert.setHeaderText("Login succesfully!");
                     alert.showAndWait();
-                    m.changeScene("home.fxml", "Home", 1074, 748);
+                    m.changeScene("home.fxml", "Home", 1056, 668);
                 } else {
                     wrongLogIn.setText("Incorrect username or password");
                 }
