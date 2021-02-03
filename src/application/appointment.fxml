@@ -13,9 +13,10 @@
    <children>
       <TableView layoutX="140.0" layoutY="119.0" prefHeight="542.0" prefWidth="906.0">
         <columns>
-            <TableColumn prefWidth="220.0" text="Client Name" />
-          <TableColumn prefWidth="448.0" text="Appointment Date" />
-          <TableColumn prefWidth="237.0" text="Time" />
+            <TableColumn fx:id="id" prefWidth="90.0" text="ID" />
+            <TableColumn fx:id="client" prefWidth="278.0" text="Client Name" />
+          <TableColumn fx:id="appointmentdate" minWidth="0.0" prefWidth="370.0" text="Appointment Date" />
+            <TableColumn fx:id="time" minWidth="0.0" prefWidth="166.0" text="Time" />
         </columns>
       </TableView>
       <Button layoutX="48.0" layoutY="648.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Back to home" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="48.0">
