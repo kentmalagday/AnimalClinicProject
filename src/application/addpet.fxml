@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="1074.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddPet">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="748.0" prefWidth="1074.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddPet">
    <children>
-      <Label layoutX="54.0" layoutY="111.0" text="Pet Information" textFill="#316b9d">
+      <Label layoutX="54.0" layoutY="111.0" text="Pet Information" textFill="#5b2018">
          <font>
             <Font name="System Bold" size="23.0" />
          </font>
@@ -54,12 +54,12 @@
       <TextField fx:id="textField_weight" layoutX="203.0" layoutY="317.0" prefHeight="25.0" prefWidth="218.0" />
       <TextField fx:id="textField_age" layoutX="203.0" layoutY="366.0" prefHeight="25.0" prefWidth="218.0" />
       <TextField fx:id="textField_color" layoutX="203.0" layoutY="410.0" prefHeight="25.0" prefWidth="218.0" />
-      <Button fx:id="btn_editPet" layoutX="211.0" layoutY="613.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Edit">
+      <Button fx:id="btn_editPet" layoutX="211.0" layoutY="613.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffe782; -fx-background-radius: 25;" text="Edit">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btn_savePet" layoutX="317.0" layoutY="613.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Save" onAction="#addPet">
+      <Button fx:id="btn_savePet" layoutX="317.0" layoutY="613.0" mnemonicParsing="false" onAction="#addPet" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffb469; -fx-background-radius: 25;" text="Save">
          <font>
             <Font size="14.0" />
          </font>
@@ -70,24 +70,24 @@
          </font>
       </Label>
       <TextArea fx:id="textArea_purposeOfVisit" layoutX="198.0" layoutY="460.0" prefHeight="113.0" prefWidth="228.0" />
-      <TableView fx:id="petTable" layoutX="484.0" layoutY="26.0" prefHeight="689.0" prefWidth="576.0" onMouseClicked = "#getSelection">
+      <TableView fx:id="petTable" layoutX="484.0" layoutY="26.0" onMouseClicked="#getSelection" prefHeight="689.0" prefWidth="576.0">
         <columns>
-        <TableColumn fx:id = "animal_id" prefWidth="97.0" text="ID" />
-          <TableColumn fx:id = "name" prefWidth="97.0" text="Name" />
-          <TableColumn fx:id = "species" prefWidth="72.0" text="Species" />
-            <TableColumn fx:id = "breed" prefWidth="75.0" text="Breed" />
-            <TableColumn fx:id = "weight" prefWidth="82.0" text="Weight" />
-            <TableColumn fx:id = "age" prefWidth="57.0" text="Age" />
-            <TableColumn fx:id = "color" prefWidth="54.0" text="Color" />
-            <TableColumn fx:id = "purpose" prefWidth="163.0" text="Purpose of Visit" />
+        <TableColumn fx:id="animal_id" prefWidth="97.0" text="ID" />
+          <TableColumn fx:id="name" prefWidth="97.0" text="Name" />
+          <TableColumn fx:id="species" prefWidth="72.0" text="Species" />
+            <TableColumn fx:id="breed" prefWidth="75.0" text="Breed" />
+            <TableColumn fx:id="weight" prefWidth="82.0" text="Weight" />
+            <TableColumn fx:id="age" prefWidth="57.0" text="Age" />
+            <TableColumn fx:id="color" prefWidth="54.0" text="Color" />
+            <TableColumn fx:id="purpose" prefWidth="163.0" text="Purpose of Visit" />
         </columns>
       </TableView>
-      <ImageView fitHeight="172.0" fitWidth="228.0" layoutX="254.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="137.0" fitWidth="164.0" layoutX="272.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/logo1.png" />
+            <Image url="@../../resources/LOGO.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_back" layoutX="97.0" layoutY="613.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Back">
+      <Button fx:id="btn_back" layoutX="97.0" layoutY="613.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #acd2d0; -fx-background-radius: 25;" text="Back">
          <font>
             <Font size="14.0" />
          </font>

@@ -5,10 +5,12 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1065.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ClientForms">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1065.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ClientForms">
    <children>
       <TableView fx:id="clientTable" layoutX="511.0" layoutY="23.0" onMouseClicked="#getSelection" prefHeight="632.0" prefWidth="540.0">
         <columns>
@@ -21,71 +23,76 @@
           <TableColumn fx:id="address" prefWidth="145.0" text="Address" />
         </columns>
       </TableView>
-      <Label layoutX="32.0" layoutY="48.0" text="Client Information" textFill="#316b9d">
+      <Label layoutX="20.0" layoutY="80.0" text="Client Information" textFill="#592018">
          <font>
             <Font name="System Bold" size="21.0" />
          </font>
       </Label>
-      <Label layoutX="89.0" layoutY="109.0" text="Lastname:">
+      <Label layoutX="89.0" layoutY="165.0" text="Lastname:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="88.0" layoutY="163.0" text="Firstname:">
+      <Label layoutX="88.0" layoutY="219.0" text="Firstname:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="90.0" layoutY="209.0" text="Age:">
+      <Label layoutX="90.0" layoutY="265.0" text="Age:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="85.0" layoutY="254.0" text="Contact No.:">
+      <Label layoutX="85.0" layoutY="310.0" text="Contact No.:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="86.0" layoutY="303.0" text="Email:">
+      <Label layoutX="86.0" layoutY="359.0" text="Email:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="84.0" layoutY="347.0" text="Address:">
+      <Label layoutX="84.0" layoutY="403.0" text="Address:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="clientLastname" layoutX="201.0" layoutY="106.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField fx:id="clientFirstname" layoutX="201.0" layoutY="161.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField fx:id="clientAge" layoutX="201.0" layoutY="206.0" />
-      <TextField fx:id="clientContactNo" layoutX="201.0" layoutY="251.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField fx:id="clientEmail" layoutX="201.0" layoutY="300.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField fx:id="clientAddress" layoutX="201.0" layoutY="344.0" prefHeight="25.0" prefWidth="218.0" />
-      <Button fx:id="petButton" layoutX="47.0" layoutY="409.0" mnemonicParsing="false" onAction="#addPetbtn" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Add Pet">
+      <TextField fx:id="clientLastname" layoutX="201.0" layoutY="162.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="clientFirstname" layoutX="201.0" layoutY="217.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="clientAge" layoutX="201.0" layoutY="262.0" />
+      <TextField fx:id="clientContactNo" layoutX="201.0" layoutY="307.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="clientEmail" layoutX="201.0" layoutY="356.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField fx:id="clientAddress" layoutX="201.0" layoutY="400.0" prefHeight="25.0" prefWidth="218.0" />
+      <Button fx:id="petButton" layoutX="47.0" layoutY="465.0" mnemonicParsing="false" onAction="#addPetbtn" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #84b0aa; -fx-background-radius: 25;" text="Add Pet">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="151.0" layoutY="409.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Edit">
+      <Button layoutX="151.0" layoutY="465.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ACD2D0; -fx-background-radius: 25;" text="Edit">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="47.0" layoutY="617.0" mnemonicParsing="false" onAction="#backButton_Clicked" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Back to Home">
+      <Button layoutX="47.0" layoutY="575.0" mnemonicParsing="false" onAction="#backButton_Clicked" prefHeight="38.0" prefWidth="114.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Back to Home">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="addClient" layoutX="267.0" layoutY="409.0" mnemonicParsing="false" onAction="#addClient" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Save">
+      <Button fx:id="addClient" layoutX="267.0" layoutY="465.0" mnemonicParsing="false" onAction="#addClient" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffe782; -fx-background-radius: 25;" text="Save">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="clearButton" layoutX="376.0" layoutY="409.0" mnemonicParsing="false" onAction="#clearBtn" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Clear">
+      <Button fx:id="clearButton" layoutX="376.0" layoutY="465.0" mnemonicParsing="false" onAction="#clearBtn" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffb469; -fx-background-radius: 25;" text="Clear">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
+      <ImageView fitHeight="142.0" fitWidth="176.0" layoutX="293.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/LOGO.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
