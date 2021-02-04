@@ -81,8 +81,8 @@
             <TableColumn fx:id="age" prefWidth="57.0" text="Age" />
             <TableColumn fx:id="color" prefWidth="54.0" text="Color" />
             <TableColumn fx:id="purpose" prefWidth="163.0" text="Purpose of Visit" />
-            <TableColumn fx:id="purpose1" prefWidth="163.0" text="Appointment Date" />
-            <TableColumn fx:id="purpose11" prefWidth="163.0" text="Time" />
+            <TableColumn fx:id="appointmentDate" prefWidth="163.0" text="Appointment Date" />
+            <TableColumn fx:id="appointmentTime" prefWidth="163.0" text="Time" />
         </columns>
       </TableView>
       <ImageView fitHeight="137.0" fitWidth="164.0" layoutX="272.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
@@ -100,13 +100,13 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <DatePicker layoutX="219.0" layoutY="590.0" prefHeight="25.0" prefWidth="198.0" />
+      <DatePicker fx:id = "picker_appointmentDate" layoutX="219.0" layoutY="590.0" prefHeight="25.0" prefWidth="198.0" />
       <Label layoutX="88.0" layoutY="636.0" text="Time:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="-157.0" layoutY="151.0" />
-      <TextField layoutX="198.0" layoutY="634.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField  layoutX="-157.0" layoutY="151.0" />
+      <TextField fx:id = "textfield_time" layoutX="198.0" layoutY="634.0" prefHeight="25.0" prefWidth="218.0" />
    </children>
 </AnchorPane>

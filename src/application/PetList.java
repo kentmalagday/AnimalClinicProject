@@ -7,12 +7,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class PetList {
-    
     public static ObservableList<Pet> getPetList(Client selected) throws Exception{
         ObservableList<Pet> pets = FXCollections.observableArrayList();
+        
         try{
             Connection con = Database.getConnection();
-            String sql = "SELECT * FROM `mork_petclinic`.`animal` WHERE '"+selected.getID()+"' in (animal_owner_id) ORDER BY `animal`.`animal_id` ASC ";
+            String sql = "SELECT * FROM `mork_petclinic`.`animal` WHERE '"+selected.getID()+"' in (animal_owner_id)";
             ResultSet rs = con.createStatement().executeQuery(sql);
             while(rs.next()){
                 Pet pet = new Pet();
@@ -24,8 +24,11 @@ public class PetList {
                 pet.setAge(rs.getInt("age"));
                 pet.setColor(rs.getString("color"));
                 pet.setPurpose(rs.getString("purpose"));
+                pet.setAppointmentDate(rs.getDate("appointmentDate").toLocalDate());
+                pet.setAppointmentTime(rs.getString("appointmentTime").toString());
                 pets.add(pet);
             }
+            con.close();
         }
         catch(Exception e){
             System.out.println(e);
@@ -34,6 +37,8 @@ public class PetList {
         return pets;
     }
     
-
+    
+    
+    
     
 }

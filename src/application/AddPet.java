@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
@@ -12,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableRow;
@@ -43,6 +45,10 @@ public class AddPet implements Initializable{
     TextField textField_color;
     @FXML
     TextArea textArea_purposeOfVisit;
+    @FXML
+    DatePicker picker_appointmentDate;
+    @FXML
+    TextField textfield_time;
     
     @FXML
     TableView<Pet> petTable;
@@ -62,11 +68,15 @@ public class AddPet implements Initializable{
     TableColumn<Pet, String> color;
     @FXML
 	TableColumn<Pet, String> purpose;
+    @FXML
+	TableColumn<Pet, LocalDate> appointmentDate;
+    @FXML
+	TableColumn<Pet, String> appointmentTime;
     
     TableViewSelectionModel<Pet> selectionModel;
     Pet selectedPet;
     
-    TextField[] emptyTextFields = new TextField[8];
+    TextField[] emptyTextFields = new TextField[10];
     public static Client selectedClient;
     
     @Override
@@ -82,10 +92,13 @@ public class AddPet implements Initializable{
    	 	color.setCellValueFactory(new PropertyValueFactory<Pet, String>("color"));
    	 	purpose.setCellValueFactory(new PropertyValueFactory<Pet, String>("purpose"));
    	 	animal_id.setCellValueFactory(new PropertyValueFactory<Pet, Integer>("ID"));
+   	 	appointmentDate.setCellValueFactory(new PropertyValueFactory<Pet, LocalDate>("appointmentDate"));
+   	 	appointmentTime.setCellValueFactory(new PropertyValueFactory<Pet, String>("appointmentTime"));
    	 
    	 	
    	 	try {
 	 		petTable.setItems(PetList.getPetList(selectedClient));
+	 	
 	 	}catch(Exception e) {
 	 		System.out.println(e);
 	 	}
@@ -100,6 +113,7 @@ public class AddPet implements Initializable{
     			if(emptyTextFields[i] == null) {
     				break;
     			}
+    			System.out.println(emptyTextFields[i]);
     			emptyTextFields[i].setText("Please input something before saving!");
     		}
     	}else {
@@ -107,6 +121,7 @@ public class AddPet implements Initializable{
     			return;
     		}
     		Pet pet = new Pet();
+    		Appointment appointment = new Appointment();
         	pet.setAnimalName(textField_petName.getText());
         	pet.setSpecies(textField_species.getText());
         	pet.setBreed(textField_breed.getText());
@@ -115,12 +130,27 @@ public class AddPet implements Initializable{
         	pet.setColor(textField_color.getText());
 			pet.setPurpose(textArea_purposeOfVisit.getText());
 			
+			if(picker_appointmentDate.getValue() != null) {
+				pet.setAppointmentDate(picker_appointmentDate.getValue());
+				pet.setAppointmentTime(textfield_time.getText());
+				appointment.setDate(pet.getAppointmentDate());
+				appointment.setTime(pet.getAppointmentTime());
+			}else {
+				pet.setAppointmentDate(LocalDate.now());
+				pet.setAppointmentTime("00:00:00");
+				System.out.println("null date");
+				appointment = null;
+			}
+			
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("Pet");
 			alert.setHeaderText("Pet record is added succesfully!");
 			alert.showAndWait();
         	if(petTable.getSelectionModel().isEmpty()) {
             	Database.addPet(pet, selectedClient);
+            	if(appointment != null) {
+            		Database.addAppointment(pet, appointment);
+            	}
             	try {
             		petTable.setItems(PetList.getPetList(selectedClient));
             		clearTextFields();
@@ -171,6 +201,8 @@ public class AddPet implements Initializable{
     	textField_age.setText("");
     	textField_color.setText("");
     	textArea_purposeOfVisit.setText("");
+    	textfield_time.setText("");
+    	picker_appointmentDate.setValue(null);
 	}
     
     public boolean textFieldsEmpty() {
@@ -200,9 +232,11 @@ public class AddPet implements Initializable{
     		emptyTextFields[i] = textField_color;
     		i++;
     	}
+    
     	
     	if(i > 0) {
     		System.out.println("There are empty textfields");
+    	
     		return true;
     	}else {
     		System.out.println("No Empty TextFields!");
@@ -211,9 +245,10 @@ public class AddPet implements Initializable{
     	return false;
     }
     public boolean checkIfValid() {
+    	boolean yes = false;
     	try {
     		Float.parseFloat(textField_weight.getText());
-    		
+    		yes = true;
     	}catch(Exception e) {
     		System.out.println("Weight should be a number");
     		textField_weight.setText("Invalid!");
@@ -221,15 +256,25 @@ public class AddPet implements Initializable{
     	}
     	try {
     		Integer.parseInt(textField_age.getText());
-    		return true;
+    		yes = true;
     	}catch(Exception e) {
     		System.out.println("Age not valid!");
     		textField_age.setText("Invalid!");
     		return false;
     	}
+    	if(!textfield_time.getText().isEmpty()) {
+    		if(textfield_time.getText().matches("\\d{2}:\\d{2}$") || textfield_time.getText().matches("//d{2}://d{2}://d{2}")) {
+        		yes = true;
+        	}else {
+        		System.out.println("Time should be in the formant: [HH:mm] or [HH:mm:SS]");
+        		textfield_time.setText("HH:mm");
+        		return false;
+        	}
+    	}
+    	return yes;
     }
     public void btn_backClicked() throws IOException {
         Main m = new Main();
-        m.changeScene("clientforms.fxml", "Clients", 1074, 748);
+        m.changeScene("home.fxml", "Home", 1074, 748);
     }
 }

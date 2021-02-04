@@ -47,6 +47,8 @@ public class Home {
         window.setTitle("Clients");
         window.setScene(scene);
         */
+    	Main m = new Main();
+    	m.changeScene("appointment.fxml", "Appointments", 1074, 748);
         System.out.println("Appointments Page");
     }
     public void btn_paymentsClicked() throws IOException {
@@ -57,6 +59,8 @@ public class Home {
         window.setTitle("Clients");
         window.setScene(scene);
         */
+    	Main m = new Main();
+    	m.changeScene("payments.fxml", "Payments", 1074, 748);
         System.out.println("Payments Page");
     }
     public void btn_logoutClicked() throws IOException {

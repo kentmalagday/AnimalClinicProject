@@ -23,8 +23,9 @@ public class ClientList {
                 client.setContact(rs.getString("contact"));
                 client.setEmail(rs.getString("email"));
                 client.setAddress(rs.getString("address"));
-                clients.add(client);
+                clients.add(client); 
             }
+            con.close();
         }
         catch(Exception e){
             System.out.println(e);
