@@ -133,6 +133,24 @@ public class Database {
     	}
     }
     
+    public static void deletePet(Pet p, Pet selected){
+        
+        try {
+            Connection con = getConnection();
+            String command = "DELETE FROM `mork_petclinic`.`animal` WHERE `mork_petclinic`.`animal`.`animal_id` = " +selected.getID()+ "";
+            deleteAppointment(selected.getID());
+            PreparedStatement delete = con.prepareStatement(command);
+            delete.executeUpdate();
+            System.out.println(command);
+            con.close();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+        }
+        
+        
+    }
+
     public static void deleteClient(Client c, Client selected){
         try {
             Connection con = getConnection();

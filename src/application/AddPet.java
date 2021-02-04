@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.ResourceBundle;
-
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
@@ -142,16 +143,16 @@ public class AddPet implements Initializable{
 				appointment = null;
 			}
 			
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Pet");
-			alert.setHeaderText("Pet record is added succesfully!");
-			alert.showAndWait();
         	if(petTable.getSelectionModel().isEmpty()) {
             	Database.addPet(pet, selectedClient);
             	if(appointment != null) {
             		Database.addAppointment(pet, appointment);
             	}
             	try {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Pet");
+					alert.setHeaderText("Pet record is added succesfully!");
+					alert.showAndWait();
             		petTable.setItems(PetList.getPetList(selectedClient));
             		clearTextFields();
             	}catch(Exception error) {
@@ -159,7 +160,11 @@ public class AddPet implements Initializable{
             	}
         	}else {
         		try {
-        			Database.updatePet(pet, selectedPet);
+					Database.updatePet(pet, selectedPet);
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Pet");
+					alert.setHeaderText("Pet record has been updated!");
+					alert.showAndWait();
             		petTable.setItems(PetList.getPetList(selectedClient));
             		clearTextFields();
         		}
@@ -168,7 +173,60 @@ public class AddPet implements Initializable{
         		}
         	}
     	}
-    }
+	}
+	
+	public void deletePet(){
+		if(petTable.getSelectionModel().isEmpty()){
+			Alert alert = new Alert(AlertType.ERROR);
+			alert.setTitle("Error");
+			alert.setHeaderText(null);
+			alert.setContentText("No pet selected.");
+			alert.showAndWait();
+		} else {
+			Alert check = new Alert(AlertType.CONFIRMATION);
+			check.setTitle("Delete Client");
+			check.setHeaderText(null);
+			check.setContentText("Are you sure you want to delete this client data?");
+			Optional<ButtonType> result = check.showAndWait();
+			if(result.get() == ButtonType.OK){
+				Pet pet = new Pet();
+				Appointment appointment = new Appointment();
+				pet.setAnimalName(textField_petName.getText());
+				pet.setSpecies(textField_species.getText());
+				pet.setBreed(textField_breed.getText());
+				pet.setWeight(Float.parseFloat(textField_weight.getText()));
+				pet.setAge(Integer.parseInt(textField_age.getText()));
+				pet.setColor(textField_color.getText());
+				pet.setPurpose(textArea_purposeOfVisit.getText());
+
+				if(picker_appointmentDate.getValue() != null) {
+					pet.setAppointmentDate(picker_appointmentDate.getValue());
+					pet.setAppointmentTime(textfield_time.getText());
+					appointment.setDate(pet.getAppointmentDate());
+					appointment.setTime(pet.getAppointmentTime());
+				}else {
+					pet.setAppointmentDate(LocalDate.now());
+					pet.setAppointmentTime("00:00:00");
+					System.out.println("null date");
+					appointment = null;
+				}
+				Database.deletePet(pet, selectedPet);
+				try {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Pet");
+					alert.setHeaderText("Pet record has been deleted!");
+					alert.showAndWait();
+					petTable.setItems(PetList.getPetList(selectedClient));
+					clearTextFields();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            	
+			}
+		}
+	
+	}
     
     public void getSelection(MouseEvent e) {
     	Node source = e.getPickResult().getIntersectedNode();
@@ -275,6 +333,6 @@ public class AddPet implements Initializable{
     }
     public void btn_backClicked() throws IOException {
         Main m = new Main();
-        m.changeScene("home.fxml", "Home", 1074, 748);
+        m.changeScene("clientforms.fxml", "Clients", 1074, 748);
     }
 }

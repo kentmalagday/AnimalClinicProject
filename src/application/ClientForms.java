@@ -133,13 +133,13 @@ public class ClientForms implements Initializable {
 			client.setEmail(clientEmail.getText());
 			client.setAddress(clientAddress.getText());
 
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Client");
-			alert.setHeaderText("Client record is added succesfully!");
-			alert.showAndWait();
 			if (clientTable.getSelectionModel().isEmpty()) {
 				Database.addClient(client);
 				try {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Client");
+					alert.setHeaderText("Client record is added succesfully!");
+					alert.showAndWait();
 					clientTable.setItems(ClientList.getClientList());
 					clearTextFields();
 				} catch (Exception error) {
@@ -148,6 +148,10 @@ public class ClientForms implements Initializable {
 			} else {
 				try {
 					Database.updateClient(client, selectedClient);
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Client");
+					alert.setHeaderText("Client record has been updated!");
+					alert.showAndWait();
 					clientTable.setItems(ClientList.getClientList());
 					clearTextFields();
 				} catch (Exception error) {
@@ -277,10 +281,12 @@ public class ClientForms implements Initializable {
 				client.setContact(clientContactNo.getText());
 				client.setEmail(clientEmail.getText());
 				client.setAddress(clientAddress.getText());
-
-				System.out.println("delete client ok.");
 				Database.deleteClient(client, selectedClient);
 				try {
+					Alert alert = new Alert(AlertType.INFORMATION);
+					alert.setTitle("Client");
+					alert.setHeaderText("Client record has been deleted.");
+					alert.showAndWait();
 					clientTable.setItems(ClientList.getClientList());
 					clearTextFields();
 				} catch (Exception e) {
