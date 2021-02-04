@@ -11,15 +11,16 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="770.0" prefHeight="749.0" prefWidth="1096.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Appointments">
    <children>
-      <TableView fx:id = "appointmentTable" layoutX="140.0" layoutY="119.0" prefHeight="542.0" prefWidth="906.0">
+      <TableView fx:id="appointmentTable" layoutX="140.0" layoutY="119.0" prefHeight="542.0" prefWidth="906.0">
         <columns>
             <TableColumn fx:id="id" prefWidth="90.0" text="ID" />
-            <TableColumn fx:id="clientName" prefWidth="278.0" text="Client Name" />
-          <TableColumn fx:id="date" minWidth="0.0" prefWidth="370.0" text="Appointment Date" />
-            <TableColumn fx:id="time" minWidth="0.0" prefWidth="166.0" text="Time" />
+            <TableColumn fx:id="clientName" prefWidth="211.0" text="Client Name" />
+            <TableColumn fx:id="petName" prefWidth="256.0" text="Pet Name" />
+          <TableColumn fx:id="date" minWidth="0.0" prefWidth="174.0" text="Appointment Date" />
+            <TableColumn fx:id="time" minWidth="0.0" prefWidth="174.0" text="Time" />
         </columns>
       </TableView>
-      <Button layoutX="48.0" layoutY="648.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Back to home" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="48.0" onAction="#back">
+      <Button layoutX="48.0" layoutY="648.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Back to Home" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="48.0">
          <font>
             <Font size="14.0" />
          </font>

@@ -30,7 +30,7 @@ public class AddPet implements Initializable{
     @FXML
     Button btn_savePet;
     @FXML
-    Button btn_editPet;
+    Button btn_deletePet;
     @FXML
     TextField textField_petName;
     @FXML

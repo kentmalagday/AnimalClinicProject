@@ -55,7 +55,7 @@
       <TextField fx:id="textField_weight" layoutX="203.0" layoutY="317.0" prefHeight="25.0" prefWidth="218.0" />
       <TextField fx:id="textField_age" layoutX="203.0" layoutY="366.0" prefHeight="25.0" prefWidth="218.0" />
       <TextField fx:id="textField_color" layoutX="203.0" layoutY="410.0" prefHeight="25.0" prefWidth="218.0" />
-      <Button fx:id="btn_editPet" layoutX="216.0" layoutY="705.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffe782; -fx-background-radius: 25;" text="Edit">
+      <Button fx:id="btn_deletePet" layoutX="216.0" layoutY="705.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffe782; -fx-background-radius: 25;" text="Delete">
          <font>
             <Font size="14.0" />
          </font>
@@ -100,13 +100,13 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <DatePicker fx:id = "picker_appointmentDate" layoutX="219.0" layoutY="590.0" prefHeight="25.0" prefWidth="198.0" />
+      <DatePicker fx:id="picker_appointmentDate" layoutX="219.0" layoutY="590.0" prefHeight="25.0" prefWidth="198.0" />
       <Label layoutX="88.0" layoutY="636.0" text="Time:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField  layoutX="-157.0" layoutY="151.0" />
-      <TextField fx:id = "textfield_time" layoutX="198.0" layoutY="634.0" prefHeight="25.0" prefWidth="218.0" />
+      <TextField layoutX="-157.0" layoutY="151.0" />
+      <TextField fx:id="textfield_time" layoutX="198.0" layoutY="634.0" prefHeight="25.0" prefWidth="218.0" />
    </children>
 </AnchorPane>
