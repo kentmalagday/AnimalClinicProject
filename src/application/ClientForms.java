@@ -109,7 +109,7 @@ public class ClientForms implements Initializable {
 		Parent root = FXMLLoader.load(getClass().getResource("addpet.fxml"));
 		Stage window = (Stage) petButton.getScene().getWindow();
 		window.setTitle("Add Pet");
-		window.setScene(new Scene(root, 1074, 748));
+		window.setScene(new Scene(root, 1074, 793));
 
 	}
 
