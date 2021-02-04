@@ -52,11 +52,8 @@ public class Appointments implements Initializable{
     
     public void back() throws IOException{
     	Main m = new Main();
-<<<<<<< HEAD
         m.changeScene("Home.fxml", "Home", 1056, 668);
-=======
-        m.changeScene("home.fxml", "Home", 1074, 748);
->>>>>>> 6a4c71969a7d1ed9211be0a59cc22486b0810a61
+
     }
 }
 
