@@ -49,7 +49,7 @@ public class AddPet implements Initializable{
     @FXML
     DatePicker picker_appointmentDate;
     @FXML
-    TextField textfield_time;
+    TextField textField_time;
     
     @FXML
     TableView<Pet> petTable;
