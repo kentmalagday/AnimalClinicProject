@@ -1,7 +1,9 @@
 package application;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
+import java.sql.Time;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,8 +26,12 @@ public class PetList {
                 pet.setAge(rs.getInt("age"));
                 pet.setColor(rs.getString("color"));
                 pet.setPurpose(rs.getString("purpose"));
-                pet.setAppointmentDate(rs.getDate("appointmentDate").toLocalDate());
-                pet.setAppointmentTime(rs.getString("appointmentTime").toString());
+                Date date = rs.getDate("appointmentDate");
+                if(date != null)
+                	pet.setAppointmentDate(date.toLocalDate());
+                Time time = rs.getTime("appointmentTime");
+                if(time != null)
+                	pet.setAppointmentTime(time.toString());
                 pets.add(pet);
             }
             con.close();

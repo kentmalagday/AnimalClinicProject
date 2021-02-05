@@ -137,7 +137,7 @@ public class AddPet implements Initializable{
 				appointment.setDate(pet.getAppointmentDate());
 				appointment.setTime(pet.getAppointmentTime());
 			}else {
-				pet.setAppointmentDate(LocalDate.now());
+				
 				pet.setAppointmentTime("00:00:00");
 				System.out.println("null date");
 				appointment = null;
@@ -188,29 +188,9 @@ public class AddPet implements Initializable{
 			check.setHeaderText(null);
 			check.setContentText("Are you sure you want to delete this client data?");
 			Optional<ButtonType> result = check.showAndWait();
-			if(result.get() == ButtonType.OK){
-				Pet pet = new Pet();
-				Appointment appointment = new Appointment();
-				pet.setAnimalName(textField_petName.getText());
-				pet.setSpecies(textField_species.getText());
-				pet.setBreed(textField_breed.getText());
-				pet.setWeight(Float.parseFloat(textField_weight.getText()));
-				pet.setAge(Integer.parseInt(textField_age.getText()));
-				pet.setColor(textField_color.getText());
-				pet.setPurpose(textArea_purposeOfVisit.getText());
-
-				if(picker_appointmentDate.getValue() != null) {
-					pet.setAppointmentDate(picker_appointmentDate.getValue());
-					pet.setAppointmentTime(textfield_time.getText());
-					appointment.setDate(pet.getAppointmentDate());
-					appointment.setTime(pet.getAppointmentTime());
-				}else {
-					pet.setAppointmentDate(LocalDate.now());
-					pet.setAppointmentTime("00:00:00");
-					System.out.println("null date");
-					appointment = null;
-				}
-				Database.deletePet(pet, selectedPet);
+			if(result.get() == ButtonType.OK){ //Tinanggal ko yung pet na parameter sa deletePet kasi di naagamit sa function
+				
+				Database.deletePet(selectedPet);
 				try {
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Pet");

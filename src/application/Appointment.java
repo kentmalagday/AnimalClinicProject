@@ -8,6 +8,7 @@ public class Appointment {
 	private LocalDate date;
 	private String time;
 	private String clientName;
+	private String petName;
 	
 	public Appointment() {
 		this.ID = 0;
@@ -15,14 +16,16 @@ public class Appointment {
 		this.date = LocalDate.now();
 		this.time = "";
 		this.clientName = "";
+		this.petName = "";
 	}
 	
-	public Appointment(int ID, int petID, LocalDate date, String time, String name) {
+	public Appointment(int ID, int petID, LocalDate date, String time, String name, String petName) {
 		this.ID = ID;
 		this.petID = petID;
 		this.date = date;
 		this.time = time;
 		this.clientName = name;
+		this.petName = petName;
 	}
 	
 	public int getID() {
@@ -40,6 +43,9 @@ public class Appointment {
 	public String getClientName() {
 		return clientName;
 	}
+	public String getPetName() {
+		return petName;
+	}
 	
 	public void setID(int ID) {
 		this.ID = ID;
@@ -55,5 +61,8 @@ public class Appointment {
 	}
 	public void setClientName(String name) {
 		this.clientName = name;
+	}
+	public void setPetName(String petName) {
+		this.petName = petName;
 	}
 }

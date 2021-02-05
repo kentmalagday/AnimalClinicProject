@@ -25,8 +25,11 @@ public class AppointmentList {
 		            ResultSet resultPetSet = con.createStatement().executeQuery(getPet);
 		            Pet resultPet = new Pet();
 		            while(resultPetSet.next()) {
+		            	resultPet.setAnimalName(resultPetSet.getString("animal_name"));
 		            	resultPet.setOwnerID(resultPetSet.getInt("animal_owner_id"));
 		            }
+		            
+		            appointment.setPetName(resultPet.getAnimalName());
 		            
 		            String getClient = "SELECT * FROM `mork_petclinic`.`client` WHERE '"+resultPet.getOwnerID()+"' in (ID) ";
 		            ResultSet resultClientSet = con.createStatement().executeQuery(getClient);

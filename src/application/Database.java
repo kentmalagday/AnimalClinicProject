@@ -70,8 +70,12 @@ public class Database {
     public static void addPet(Pet p, Client selected) throws Exception{
         try{
             Connection con = getConnection();
-            String command = "INSERT INTO `mork_petclinic`.`animal` (`animal_name`, `species`, `breed`, `weight`, `age`, `color`, `purpose`, `animal_owner_id`, `appointmentDate`, `appointmentTime`) VALUES ('" + p.getAnimalName() + "', '" + p.getSpecies() + 
+            String command= "INSERT INTO `mork_petclinic`.`animal` (`animal_name`, `species`, `breed`, `weight`, `age`, `color`, `purpose`, `animal_owner_id`, `appointmentDate`, `appointmentTime`) VALUES ('" + p.getAnimalName() + "', '" + p.getSpecies() + 
             		"', '" +p.getBreed() + "', '" + p.getWeight() + "', '" + p.getAge() + "', '" + p.getColor() + "', '" + p.getPurpose()+ "', '" + selected.getID() +"', '"+p.getAppointmentDate()+"', '"+p.getAppointmentTime()+"');";
+            if(p.getAppointmentDate() == null || p.getAppointmentTime() == "00:00:00") {
+            	command = "INSERT INTO `mork_petclinic`.`animal` (`animal_name`, `species`, `breed`, `weight`, `age`, `color`, `purpose`, `animal_owner_id`, `appointmentDate`, `appointmentTime`) VALUES ('" + p.getAnimalName() + "', '" + p.getSpecies() + 
+                		"', '" +p.getBreed() + "', '" + p.getWeight() + "', '" + p.getAge() + "', '" + p.getColor() + "', '" + p.getPurpose()+ "', '" + selected.getID() +"', NULL, NULL);";
+            }
             PreparedStatement add = con.prepareStatement(command);
             add.executeUpdate();
             System.out.println(command);
@@ -99,17 +103,19 @@ public class Database {
     public static void updatePet(Pet p, Pet selected) throws Exception{
     	try {
     		Connection con = getConnection();
-    		String command = "UPDATE `mork_petclinic`.`animal` SET `animal_name` = '" +p.getAnimalName() + "', `species` = '" +p.getSpecies() + "', `breed` = '" +p.getBreed() + "', `weight` = '" +p.getWeight() + "', `age` = '" +p.getAge() + "', `color` = '" +p.getColor()+ "', `purpose` = '" +p.getPurpose() +"', `appointmentDate` = '" +p.getAppointmentDate() + "', `appointmentTime` = '" +p.getAppointmentTime() +"' WHERE `mork_petclinic`.`animal`.`animal_id` = " +selected.getID()+ "";
-    		if(selected.getAppointmentDate() != LocalDate.now() && selected.getAppointmentTime() != "00:00:00") {
-    			if(p.getAppointmentDate() == LocalDate.now() || p.getAppointmentTime() == "00:00:00") {
+    		String command = "";
+    		if(selected.getAppointmentDate() != null && selected.getAppointmentTime() != "00:00:00") {
+    			if(p.getAppointmentDate() == null || p.getAppointmentTime() == "00:00:00") {
         			System.out.println("Appoinment being deleted!");
+        			command = "UPDATE `mork_petclinic`.`animal` SET `animal_name` = '" +p.getAnimalName() + "', `species` = '" +p.getSpecies() + "', `breed` = '" +p.getBreed() + "', `weight` = '" +p.getWeight() + "', `age` = '" +p.getAge() + "', `color` = '" +p.getColor()+ "', `purpose` = '" +p.getPurpose() +"', `appointmentDate` = NULL, `appointmentTime` = NULL WHERE `mork_petclinic`.`animal`.`animal_id` = " +selected.getID()+ "";
         			deleteAppointment(selected.getID());
     			}else {
+    				command = "UPDATE `mork_petclinic`.`animal` SET `animal_name` = '" +p.getAnimalName() + "', `species` = '" +p.getSpecies() + "', `breed` = '" +p.getBreed() + "', `weight` = '" +p.getWeight() + "', `age` = '" +p.getAge() + "', `color` = '" +p.getColor()+ "', `purpose` = '" +p.getPurpose() +"', `appointmentDate` = '"+p.getAppointmentDate()+"', `appointmentTime` = '"+p.getAppointmentTime()+"' WHERE `mork_petclinic`.`animal`.`animal_id` = " +selected.getID()+ "";
     				updateAppointment(p, selected);
     			}
     		}else {
         		if(p.getAppointmentDate() != LocalDate.now() && p.getAppointmentTime() != "00:00:00") {
-        			addAppointment(selected, new Appointment(0, 0, p.getAppointmentDate(), p.getAppointmentTime(), ""));
+        			addAppointment(selected, new Appointment(0, 0, p.getAppointmentDate(), p.getAppointmentTime(), "", ""));
         		}
     		}
     		PreparedStatement update = con.prepareStatement(command);
@@ -120,6 +126,7 @@ public class Database {
     		System.out.println(error);
     	}
     }
+    
     public static void updateAppointment(Pet p, Pet selected) throws Exception{
     	try {
     		Connection con = getConnection();
@@ -133,7 +140,7 @@ public class Database {
     	}
     }
     
-    public static void deletePet(Pet p, Pet selected){
+    public static void deletePet(Pet selected){
         
         try {
             Connection con = getConnection();

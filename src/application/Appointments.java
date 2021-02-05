@@ -26,6 +26,8 @@ public class Appointments implements Initializable{
     
     @FXML
     private TableColumn<Appointment, String> clientName;
+    @FXML
+    private TableColumn<Appointment, String> petName;
     
     @FXML
     private TableView<Appointment> appointmentTable;
@@ -40,6 +42,7 @@ public class Appointments implements Initializable{
    	 	date.setCellValueFactory(new PropertyValueFactory<Appointment, LocalDate>("date"));
    	 	time.setCellValueFactory(new PropertyValueFactory<Appointment, String>("time"));
    	 	clientName.setCellValueFactory(new PropertyValueFactory<Appointment, String>("clientName"));
+   	 	petName.setCellValueFactory(new PropertyValueFactory<Appointment, String>("petName"));
    	 	try {
 	 		appointmentTable.setItems(AppointmentList.getAppointmentList());
 	 	}catch(Exception e) {
