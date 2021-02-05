@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="422.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Signup">
+   <children>
+      <Pane layoutX="-3.0" prefHeight="421.0" prefWidth="397.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fefbf4" height="422.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" width="404.0" />
+            <PasswordField fx:id="passField_password" layoutX="209.0" layoutY="251.0" prefHeight="34.0" prefWidth="174.0" promptText="Password" />
+            <ImageView fitHeight="158.0" fitWidth="186.0" layoutX="106.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../resources/LOGO.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="26.0" layoutY="214.0" text="Enter Username" textFill="#86b091">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="253.0" text="Enter Password" textFill="#84b0aa">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="26.0" layoutY="292.0" text="Confirm Password" textFill="#84b0aa">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textField_username" layoutX="209.0" layoutY="214.0" prefHeight="30.0" prefWidth="174.0" promptText="Username" />
+            <Button fx:id="btn_back" layoutX="84.0" layoutY="352.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #5b2018;" text="Back" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="123.0" layoutY="24.0" text="SignUp Here" textFill="#5b2018">
+               <font>
+                  <Font name="System Bold" size="29.0" />
+               </font>
+            </Label>
+            <Button fx:id="btn_saveUser" layoutX="216.0" layoutY="352.0" mnemonicParsing="false" onAction="#btn_saveUserClicked" prefHeight="34.0" prefWidth="91.0" style="-fx-background-color: #5b2018;" text="Save" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <PasswordField fx:id="passField_confirmPass" layoutX="209.0" layoutY="290.0" prefHeight="34.0" prefWidth="174.0" promptText="Confirm Password" />
+            <Label fx:id="errorText" layoutX="55.0" layoutY="328.0" prefHeight="17.0" prefWidth="285.0" textAlignment="CENTER" textFill="RED" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
