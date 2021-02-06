@@ -183,9 +183,9 @@ public class AddPet implements Initializable{
 			alert.showAndWait();
 		} else {
 			Alert check = new Alert(AlertType.CONFIRMATION);
-			check.setTitle("Delete Client");
+			check.setTitle("Delete Pet");
 			check.setHeaderText(null);
-			check.setContentText("Are you sure you want to delete this client data?");
+			check.setContentText("Are you sure you want to delete this Pet data?");
 			Optional<ButtonType> result = check.showAndWait();
 			if (result.get() == ButtonType.OK) { // Tinanggal ko yung pet na parameter sa deletePet kasi di naagamit sa
 													// function
