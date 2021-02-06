@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
@@ -12,107 +13,87 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="793.0" prefWidth="1074.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddPet">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1096.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddPet">
    <children>
-      <Label layoutX="54.0" layoutY="111.0" text="Pet Information" textFill="#5b2018">
+      <Label layoutX="2.0" layoutY="10.0" prefHeight="100.0" prefWidth="380.0" text="PET INFORMATION" textFill="#5b2018" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
          <font>
-            <Font name="System Bold" size="23.0" />
+            <Font name="System Bold" size="29.0" />
          </font>
       </Label>
-      <Label layoutX="91.0" layoutY="175.0" prefHeight="20.0" prefWidth="70.0" text="Pet Name:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="90.0" layoutY="229.0" text="Species:">
+      <Label layoutX="99.0" layoutY="124.0" prefHeight="20.0" prefWidth="70.0" text="Pet Name:" AnchorPane.leftAnchor="80.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="92.0" layoutY="275.0" text="Breed:">
+      <Label layoutX="108.0" layoutY="165.0" text="Species:" AnchorPane.leftAnchor="80.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="87.0" layoutY="320.0" text="Weight">
+      <Label layoutX="115.0" layoutY="203.0" text="Breed:" AnchorPane.leftAnchor="80.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="88.0" layoutY="369.0" text="Age:">
+      <Label layoutX="101.0" layoutY="247.0" text="Weight:" AnchorPane.leftAnchor="80.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="86.0" layoutY="413.0" text="Color:">
+      <Label layoutX="109.0" layoutY="289.0" text="Age:" AnchorPane.leftAnchor="80.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="textField_petName" layoutX="203.0" layoutY="172.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField fx:id="textField_species" layoutX="203.0" layoutY="227.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField fx:id="textField_breed" layoutX="203.0" layoutY="272.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField fx:id="textField_weight" layoutX="203.0" layoutY="317.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField fx:id="textField_age" layoutX="203.0" layoutY="366.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField fx:id="textField_color" layoutX="203.0" layoutY="410.0" prefHeight="25.0" prefWidth="218.0" />
-      <Button fx:id="btn_deletePet" layoutX="216.0" layoutY="705.0" mnemonicParsing="false" onAction="#deletePet" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffe782; -fx-background-radius: 25;" text="Delete">
+      <Label layoutX="101.0" layoutY="331.0" text="Color:" AnchorPane.leftAnchor="80.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textField_petName" layoutX="194.0" layoutY="123.0" prefHeight="25.0" prefWidth="218.0" AnchorPane.leftAnchor="194.0" AnchorPane.topAnchor="123.0" />
+      <TextField fx:id="textField_species" layoutX="195.0" layoutY="165.0" prefHeight="25.0" prefWidth="218.0" AnchorPane.leftAnchor="194.0" AnchorPane.topAnchor="163.0" />
+      <TextField fx:id="textField_breed" layoutX="203.0" layoutY="272.0" prefHeight="25.0" prefWidth="218.0" AnchorPane.leftAnchor="194.0" AnchorPane.topAnchor="203.0" />
+      <TextField fx:id="textField_weight" layoutX="203.0" layoutY="317.0" prefHeight="25.0" prefWidth="218.0" AnchorPane.leftAnchor="194.0" AnchorPane.topAnchor="243.0" />
+      <TextField fx:id="textField_age" layoutX="190.0" layoutY="286.0" prefHeight="25.0" prefWidth="218.0" AnchorPane.leftAnchor="194.0" AnchorPane.topAnchor="286.0" />
+      <TextField fx:id="textField_color" layoutX="207.0" layoutY="333.0" prefHeight="25.0" prefWidth="218.0" AnchorPane.leftAnchor="194.0" AnchorPane.topAnchor="328.0" />
+      <Button fx:id="btn_deletePet" layoutX="216.0" layoutY="705.0" mnemonicParsing="false" onAction="#deletePet" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffe782; -fx-background-radius: 25;" text="Delete" AnchorPane.bottomAnchor="40.0">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btn_savePet" layoutX="322.0" layoutY="705.0" mnemonicParsing="false" onAction="#addPet" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffb469; -fx-background-radius: 25;" text="Save">
+      <Button fx:id="btn_savePet" layoutX="322.0" layoutY="705.0" mnemonicParsing="false" onAction="#addPet" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffb469; -fx-background-radius: 25;" text="Save" AnchorPane.bottomAnchor="40.0">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="83.0" layoutY="460.0" text="Purpose of Visit:">
+      <Label layoutX="82.0" layoutY="433.0" text="Purpose of Visit:" AnchorPane.leftAnchor="80.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextArea fx:id="textArea_purposeOfVisit" layoutX="198.0" layoutY="460.0" prefHeight="113.0" prefWidth="228.0" />
-      <TableView fx:id="petTable" layoutX="484.0" layoutY="26.0" onMouseClicked="#getSelection" prefHeight="737.0" prefWidth="576.0">
-        <columns>
-        <TableColumn fx:id="animal_id" prefWidth="97.0" text="ID" />
-          <TableColumn fx:id="name" prefWidth="97.0" text="Name" />
-          <TableColumn fx:id="species" prefWidth="72.0" text="Species" />
-            <TableColumn fx:id="breed" prefWidth="75.0" text="Breed" />
-            <TableColumn fx:id="weight" prefWidth="82.0" text="Weight" />
-            <TableColumn fx:id="age" prefWidth="57.0" text="Age" />
-            <TableColumn fx:id="color" prefWidth="54.0" text="Color" />
-            <TableColumn fx:id="purpose" prefWidth="163.0" text="Purpose of Visit" />
-            <TableColumn fx:id="appointmentDate" prefWidth="163.0" text="Appointment Date" />
-            <TableColumn fx:id="appointmentTime" prefWidth="163.0" text="Time" />
-        </columns>
-      </TableView>
-      <ImageView fitHeight="137.0" fitWidth="164.0" layoutX="272.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <TextArea fx:id="textArea_purposeOfVisit" layoutX="191.0" layoutY="389.0" prefHeight="113.0" prefWidth="228.0" AnchorPane.leftAnchor="194.0" AnchorPane.topAnchor="388.0" />
+      <ImageView fitHeight="100.0" fitWidth="123.0" layoutX="933.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../../resources/LOGO.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_back" layoutX="102.0" layoutY="705.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #acd2d0; -fx-background-radius: 25;" text="Back">
+      <Button fx:id="btn_back" layoutX="102.0" layoutY="705.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #acd2d0; -fx-background-radius: 25;" text="Back" AnchorPane.bottomAnchor="40.0">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="81.0" layoutY="593.0" text="Appointment Date:">
+      <Label layoutX="83.0" layoutY="526.0" text="Appointment Date:" AnchorPane.leftAnchor="83.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-<<<<<<< HEAD
       <DatePicker fx:id="picker_appointmentDate" layoutX="225.0" layoutY="524.0" prefHeight="25.0" prefWidth="198.0" AnchorPane.topAnchor="524.0" />
       <Label layoutX="80.0" layoutY="583.0" text="Time:" AnchorPane.leftAnchor="80.0">
-=======
-      <DatePicker fx:id="picker_appointmentDate" layoutX="219.0" layoutY="590.0" prefHeight="25.0" prefWidth="198.0" />
-      <Label layoutX="88.0" layoutY="636.0" text="Time:">
->>>>>>> parent of 61096aa... appointment
          <font>
             <Font size="14.0" />
          </font>
       </Label>
       <TextField layoutX="-157.0" layoutY="151.0" />
-<<<<<<< HEAD
       <ScrollPane layoutX="478.0" layoutY="118.0" prefHeight="601.0" prefWidth="548.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="470.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="120.0">
          <content>
             <TableView fx:id="petTable" onMouseClicked="#getSelection" prefHeight="583.0" prefWidth="835.0">
@@ -132,8 +113,5 @@
          </content>
       </ScrollPane>
       <TextField fx:id="textField_time" layoutX="194.0" layoutY="581.0" prefHeight="25.0" prefWidth="218.0" />
-=======
-      <TextField fx:id="textfield_time" layoutX="198.0" layoutY="634.0" prefHeight="25.0" prefWidth="218.0" />
->>>>>>> parent of 61096aa... appointment
    </children>
 </AnchorPane>
