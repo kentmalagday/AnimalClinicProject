@@ -133,50 +133,49 @@ public class AddPet implements Initializable{
 			
 			if(picker_appointmentDate.getValue() != null) {
 				pet.setAppointmentDate(picker_appointmentDate.getValue());
-				pet.setAppointmentTime(textfield_time.getText());
+				pet.setAppointmentTime(textField_time.getText());
 				appointment.setDate(pet.getAppointmentDate());
 				appointment.setTime(pet.getAppointmentTime());
-			}else {
-				
+			} else {
+
 				pet.setAppointmentTime("00:00:00");
 				System.out.println("null date");
 				appointment = null;
 			}
-			
-        	if(petTable.getSelectionModel().isEmpty()) {
-            	Database.addPet(pet, selectedClient);
-            	if(appointment != null) {
-            		Database.addAppointment(pet, appointment);
-            	}
-            	try {
+
+			if (petTable.getSelectionModel().isEmpty()) {
+				Database.addPet(pet, selectedClient);
+				if (appointment != null) {
+					Database.addAppointment(pet, appointment);
+				}
+				try {
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Pet");
 					alert.setHeaderText("Pet record is added succesfully!");
 					alert.showAndWait();
-            		petTable.setItems(PetList.getPetList(selectedClient));
-            		clearTextFields();
-            	}catch(Exception error) {
-            		System.out.println(error);
-            	}
-        	}else {
-        		try {
+					petTable.setItems(PetList.getPetList(selectedClient));
+					clearTextFields();
+				} catch (Exception error) {
+					System.out.println(error);
+				}
+			} else {
+				try {
 					Database.updatePet(pet, selectedPet);
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Pet");
 					alert.setHeaderText("Pet record has been updated!");
 					alert.showAndWait();
-            		petTable.setItems(PetList.getPetList(selectedClient));
-            		clearTextFields();
-        		}
-        		catch(Exception error) {
-        			System.out.println(error);
-        		}
-        	}
-    	}
+					petTable.setItems(PetList.getPetList(selectedClient));
+					clearTextFields();
+				} catch (Exception error) {
+					System.out.println(error);
+				}
+			}
+		}
 	}
-	
-	public void deletePet(){
-		if(petTable.getSelectionModel().isEmpty()){
+
+	public void deletePet() {
+		if (petTable.getSelectionModel().isEmpty()) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Error");
 			alert.setHeaderText(null);
@@ -188,8 +187,9 @@ public class AddPet implements Initializable{
 			check.setHeaderText(null);
 			check.setContentText("Are you sure you want to delete this client data?");
 			Optional<ButtonType> result = check.showAndWait();
-			if(result.get() == ButtonType.OK){ //Tinanggal ko yung pet na parameter sa deletePet kasi di naagamit sa function
-				
+			if (result.get() == ButtonType.OK) { // Tinanggal ko yung pet na parameter sa deletePet kasi di naagamit sa
+													// function
+
 				Database.deletePet(selectedPet);
 				try {
 					Alert alert = new Alert(AlertType.INFORMATION);
@@ -202,110 +202,111 @@ public class AddPet implements Initializable{
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-            	
+
 			}
 		}
-	
+
 	}
-    
-    public void getSelection(MouseEvent e) {
-    	Node source = e.getPickResult().getIntersectedNode();
-    	if(selectionModel.getSelectedItem() != null) {
-    		selectedPet = selectionModel.getSelectedItem();
-    		textField_petName.setText(selectedPet.getAnimalName());
-    		textField_species.setText(selectedPet.getSpecies());
-    		textField_breed.setText(selectedPet.getBreed());
-    		textField_weight.setText(Float.toString(selectedPet.getWeight()));
-    		textField_age.setText(Integer.toString(selectedPet.getAge()));
-    		textField_color.setText(selectedPet.getColor());
-    		textArea_purposeOfVisit.setText(selectedPet.getPurpose());
-    	}
-    	while(source != null && !(source instanceof TableRow)) {
-    		source = source.getParent();
-    	}
-    	
-    	if(source == null || (source instanceof TableRow && ((TableRow) source).isEmpty())) {
-    		petTable.getSelectionModel().clearSelection();
-    		clearTextFields();
-    	}
-    	System.out.println("Clicked!");
-    }
-    
-    public void clearTextFields() {
-    	textField_petName.setText("");
-    	textField_species.setText("");
-    	textField_breed.setText("");
-    	textField_weight.setText("");
-    	textField_age.setText("");
-    	textField_color.setText("");
-    	textArea_purposeOfVisit.setText("");
-    	textfield_time.setText("");
-    	picker_appointmentDate.setValue(null);
+
+	public void getSelection(MouseEvent e) {
+		Node source = e.getPickResult().getIntersectedNode();
+		if (selectionModel.getSelectedItem() != null) {
+			selectedPet = selectionModel.getSelectedItem();
+			textField_petName.setText(selectedPet.getAnimalName());
+			textField_species.setText(selectedPet.getSpecies());
+			textField_breed.setText(selectedPet.getBreed());
+			textField_weight.setText(Float.toString(selectedPet.getWeight()));
+			textField_age.setText(Integer.toString(selectedPet.getAge()));
+			textField_color.setText(selectedPet.getColor());
+			textArea_purposeOfVisit.setText(selectedPet.getPurpose());
+		}
+		while (source != null && !(source instanceof TableRow)) {
+			source = source.getParent();
+		}
+
+		if (source == null || (source instanceof TableRow && ((TableRow) source).isEmpty())) {
+			petTable.getSelectionModel().clearSelection();
+			clearTextFields();
+		}
+		System.out.println("Clicked!");
 	}
-    
-    public boolean textFieldsEmpty() {
-    	int i = 0;
-    	if(textField_petName.getText().isEmpty()) {
-    		System.out.println("EMPTY");
-    		emptyTextFields[i] = textField_petName;
-    		i++;
-    	}
-    	if(textField_species.getText().isEmpty()) {
-    		emptyTextFields[i] = textField_species;
-    		i++;
-    	}
-    	if(textField_breed.getText().isEmpty()) {
-    		emptyTextFields[i] = textField_breed;
-    		i++;
-    	}
-    	if(textField_weight.getText().isEmpty()) {
-    		emptyTextFields[i] = textField_weight;
-    		i++;
-    	}
-    	if(textField_age.getText().isEmpty()) {
-    		emptyTextFields[i] = textField_age;
-    		i++;
-    	}
-    	if(textField_color.getText().isEmpty()) {
-    		emptyTextFields[i] = textField_color;
-    		i++;
-    	}
-    
-    	
-    	if(i > 0) {
-    		System.out.println("There are empty textfields");
-    	
-    		return true;
-    	}else {
-    		System.out.println("No Empty TextFields!");
-    		Arrays.fill(emptyTextFields, null);
-    	}
-    	return false;
-    }
-    public boolean checkIfValid() {
-    	boolean yes = false;
-    	try {
-    		Float.parseFloat(textField_weight.getText());
-    		yes = true;
-    	}catch(Exception e) {
-    		System.out.println("Weight should be a number");
-    		textField_weight.setText("Invalid!");
-    		return false;
-    	}
-    	try {
-    		Integer.parseInt(textField_age.getText());
-    		yes = true;
-    	}catch(Exception e) {
-    		System.out.println("Age not valid!");
-    		textField_age.setText("Invalid!");
-    		return false;
-    	}
-    	if(!textfield_time.getText().isEmpty()) {
-    		if(textfield_time.getText().matches("\\d{2}:\\d{2}$") || textfield_time.getText().matches("//d{2}://d{2}://d{2}")) {
-        		yes = true;
-        	}else {
-        		System.out.println("Time should be in the formant: [HH:mm] or [HH:mm:SS]");
-        		textfield_time.setText("HH:mm");
+
+	public void clearTextFields() {
+		textField_petName.setText("");
+		textField_species.setText("");
+		textField_breed.setText("");
+		textField_weight.setText("");
+		textField_age.setText("");
+		textField_color.setText("");
+		textArea_purposeOfVisit.setText("");
+		textField_time.setText("");
+		picker_appointmentDate.setValue(null);
+	}
+
+	public boolean textFieldsEmpty() {
+		int i = 0;
+		if (textField_petName.getText().isEmpty()) {
+			System.out.println("EMPTY");
+			emptyTextFields[i] = textField_petName;
+			i++;
+		}
+		if (textField_species.getText().isEmpty()) {
+			emptyTextFields[i] = textField_species;
+			i++;
+		}
+		if (textField_breed.getText().isEmpty()) {
+			emptyTextFields[i] = textField_breed;
+			i++;
+		}
+		if (textField_weight.getText().isEmpty()) {
+			emptyTextFields[i] = textField_weight;
+			i++;
+		}
+		if (textField_age.getText().isEmpty()) {
+			emptyTextFields[i] = textField_age;
+			i++;
+		}
+		if (textField_color.getText().isEmpty()) {
+			emptyTextFields[i] = textField_color;
+			i++;
+		}
+
+		if (i > 0) {
+			System.out.println("There are empty textfields");
+
+			return true;
+		} else {
+			System.out.println("No Empty TextFields!");
+			Arrays.fill(emptyTextFields, null);
+		}
+		return false;
+	}
+
+	public boolean checkIfValid() {
+		boolean yes = false;
+		try {
+			Float.parseFloat(textField_weight.getText());
+			yes = true;
+		} catch (Exception e) {
+			System.out.println("Weight should be a number");
+			textField_weight.setText("Invalid!");
+			return false;
+		}
+		try {
+			Integer.parseInt(textField_age.getText());
+			yes = true;
+		} catch (Exception e) {
+			System.out.println("Age not valid!");
+			textField_age.setText("Invalid!");
+			return false;
+		}
+		if (!textField_time.getText().isEmpty()) {
+			if (textField_time.getText().matches("\\d{2}:\\d{2}$")
+					|| textField_time.getText().matches("//d{2}://d{2}://d{2}")) {
+				yes = true;
+			} else {
+				System.out.println("Time should be in the formant: [HH:mm] or [HH:mm:SS]");
+				textField_time.setText("HH:mm");
         		return false;
         	}
     	}
