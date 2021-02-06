@@ -98,9 +98,9 @@
          <content>
             <TableView fx:id="petTable" onMouseClicked="#getSelection" prefHeight="583.0" prefWidth="835.0">
               <columns>
-              <TableColumn fx:id="animal_id" prefWidth="70.0" text="ID" />
-                <TableColumn fx:id="name" prefWidth="97.0" text="Name" />
-                <TableColumn fx:id="species" prefWidth="72.0" text="Species" />
+                  <TableColumn fx:id="animal_id" prefWidth="70.0" text="ID" />
+                  <TableColumn fx:id="name" prefWidth="97.0" text="Name" />
+                  <TableColumn fx:id="species" prefWidth="72.0" text="Species" />
                   <TableColumn fx:id="breed" prefWidth="75.0" text="Breed" />
                   <TableColumn fx:id="weight" prefWidth="82.0" text="Weight" />
                   <TableColumn fx:id="age" prefWidth="57.0" text="Age" />

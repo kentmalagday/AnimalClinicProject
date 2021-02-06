@@ -103,7 +103,10 @@ public class ClientForms implements Initializable {
 		if (selectedClient != null) {
 			AddPet.selectedClient = selectedClient;
 		} else {
-			System.out.println("Select A client first!");
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Pet");
+			alert.setHeaderText("Select a client first.");
+			alert.showAndWait();
 			return;
 		}
 		Parent root = FXMLLoader.load(getClass().getResource("addpet.fxml"));
