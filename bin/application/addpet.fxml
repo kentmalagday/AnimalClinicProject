@@ -114,10 +114,9 @@
             </TableView>
          </content>
       </ScrollPane>
-      <Label layoutX="146.0" layoutY="585.0" />
-      <ComboBox fx:id="hrsTime" layoutX="128.0" layoutY="581.0" prefHeight="25.0" prefWidth="81.0" promptText="Hours" style="-fx-background-radius: 50;" />
-      <ComboBox fx:id="minsTime" layoutX="219.0" layoutY="581.0" prefHeight="25.0" prefWidth="87.0" promptText="Minutes" style="-fx-background-radius: 50;" />
-      <RadioButton fx:id="radiobtn_AM" layoutX="316.0" layoutY="585.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="40.0" text="AM" />
-      <RadioButton fx:id="radiobtn_PM" layoutX="373.0" layoutY="585.0" mnemonicParsing="false" text="PM" />
+      <ComboBox fx:id="hrsTime" layoutX="126.0" layoutY="581.0" prefHeight="25.0" prefWidth="77.0" promptText="Hours" style="-fx-background-radius: 50;" />
+      <ComboBox fx:id="minsTime" layoutX="216.0" layoutY="581.0" prefHeight="25.0" prefWidth="87.0" promptText="Minutes" style="-fx-background-radius: 50;" />
+      <RadioButton fx:id="radiobtn_AM" layoutX="313.0" layoutY="585.0" mnemonicParsing="false" text="AM" />
+      <RadioButton fx:id="radiobtn_PM" layoutX="366.0" layoutY="585.0" mnemonicParsing="false" text="PM" />
    </children>
 </AnchorPane>
