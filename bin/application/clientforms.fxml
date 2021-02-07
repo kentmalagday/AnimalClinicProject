@@ -84,9 +84,9 @@
             <Image url="@../../resources/LOGO.png" />
          </image>
       </ImageView>
-      <ScrollPane layoutX="511.0" layoutY="49.0" prefHeight="572.0" prefWidth="524.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="511.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="49.0">
+      <ScrollPane layoutX="511.0" layoutY="49.0" prefHeight="590.0" prefWidth="524.0" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="511.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="49.0">
          <content>
-            <TableView fx:id="clientTable" onMouseClicked="#getSelection" prefHeight="622.0" prefWidth="840.0" stylesheets="@client_table.css">
+            <TableView fx:id="clientTable" onMouseClicked="#getSelection" prefHeight="682.0" prefWidth="840.0" stylesheets="@client_table.css">
               <columns>
                 <TableColumn fx:id="id" prefWidth="100.0" text="ID" />
                 <TableColumn fx:id="lastName" prefWidth="100.0" text="Lastname" />

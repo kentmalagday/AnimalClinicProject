@@ -28,7 +28,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="963.0" layoutY="28.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: #ffc58c; -fx-background-radius: 50;" text="-">
+      <Button layoutX="963.0" layoutY="28.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="31.0" style="-fx-background-color: #f8c99a; -fx-background-radius: 50;" text="-" textFill="#5a5151">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

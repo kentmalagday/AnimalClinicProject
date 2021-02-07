@@ -86,7 +86,7 @@
       </ImageView>
       <ScrollPane layoutX="511.0" layoutY="49.0" prefHeight="572.0" prefWidth="524.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="511.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="49.0">
          <content>
-            <TableView fx:id="clientTable" onMouseClicked="#getSelection" prefHeight="530.0" prefWidth="840.0" styleClass="..\..\src\application\client_pet_table.css">
+            <TableView fx:id="clientTable" onMouseClicked="#getSelection" prefHeight="603.0" prefWidth="840.0" stylesheets="@client_table.css">
               <columns>
                 <TableColumn fx:id="id" prefWidth="100.0" text="ID" />
                 <TableColumn fx:id="lastName" prefWidth="100.0" text="Lastname" />

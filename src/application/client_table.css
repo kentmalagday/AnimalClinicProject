@@ -30,9 +30,16 @@
      -fx-font-family: monospace;
      -fx-alignment: center;
  }
+
+ .table-row-cell{
+     -fx-background-color: -fx-table-cell-border-color, #FEFBF4 ;
+     -fx-background-radius: 2;
+     -fx-background-insets: 0, 0 0 1 0;
+     -fx-padding: 0.0em; 
+ }
  
  .table-row-cell:selected {
-     -fx-background-color: #ebe8d5;
+     -fx-background-color: #f7dbc0;
      -fx-background-insets: 0;
      -fx-background-radius: 1;
  }
