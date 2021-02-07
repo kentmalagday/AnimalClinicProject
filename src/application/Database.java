@@ -72,7 +72,7 @@ public class Database {
             Connection con = getConnection();
             String command= "INSERT INTO `mork_petclinic`.`animal` (`animal_name`, `species`, `breed`, `weight`, `age`, `color`, `purpose`, `animal_owner_id`, `appointmentDate`, `appointmentTime`) VALUES ('" + p.getAnimalName() + "', '" + p.getSpecies() + 
             		"', '" +p.getBreed() + "', '" + p.getWeight() + "', '" + p.getAge() + "', '" + p.getColor() + "', '" + p.getPurpose()+ "', '" + selected.getID() +"', '"+p.getAppointmentDate()+"', '"+p.getAppointmentTime()+"');";
-            if(p.getAppointmentDate() == null || p.getAppointmentTime() == "00:00:00") {
+            if(p.getAppointmentDate() == null || p.getAppointmentTime() == "") {
             	command = "INSERT INTO `mork_petclinic`.`animal` (`animal_name`, `species`, `breed`, `weight`, `age`, `color`, `purpose`, `animal_owner_id`, `appointmentDate`, `appointmentTime`) VALUES ('" + p.getAnimalName() + "', '" + p.getSpecies() + 
                 		"', '" +p.getBreed() + "', '" + p.getWeight() + "', '" + p.getAge() + "', '" + p.getColor() + "', '" + p.getPurpose()+ "', '" + selected.getID() +"', NULL, NULL);";
             }
@@ -100,12 +100,12 @@ public class Database {
     }
    
 
-    public static void updatePet(Pet p, Pet selected) throws Exception{
+    public static void updatePet(Client c, Pet p, Pet selected) throws Exception{
     	try {
     		Connection con = getConnection();
     		String command = "";
-    		if(selected.getAppointmentDate() != null && selected.getAppointmentTime() != "00:00:00") {
-    			if(p.getAppointmentDate() == null || p.getAppointmentTime() == "00:00:00") {
+    		if(selected.getAppointmentDate() != null && selected.getAppointmentTime() != "") {
+    			if(p.getAppointmentDate() == null || p.getAppointmentTime() == "") {
         			System.out.println("Appoinment being deleted!");
         			command = "UPDATE `mork_petclinic`.`animal` SET `animal_name` = '" +p.getAnimalName() + "', `species` = '" +p.getSpecies() + "', `breed` = '" +p.getBreed() + "', `weight` = '" +p.getWeight() + "', `age` = '" +p.getAge() + "', `color` = '" +p.getColor()+ "', `purpose` = '" +p.getPurpose() +"', `appointmentDate` = NULL, `appointmentTime` = NULL WHERE `mork_petclinic`.`animal`.`animal_id` = " +selected.getID()+ "";
         			deleteAppointment(selected.getID());
@@ -114,8 +114,8 @@ public class Database {
     				updateAppointment(p, selected);
     			}
     		}else {
-        		if(p.getAppointmentDate() != LocalDate.now() && p.getAppointmentTime() != "00:00:00") {
-        			addAppointment(selected, new Appointment(0, 0, p.getAppointmentDate(), p.getAppointmentTime(), "", ""));
+        		if(p.getAppointmentDate() != LocalDate.now() && p.getAppointmentTime() != "") {
+        			addAppointment(c, selected, new Appointment(0, 0, p.getAppointmentDate(), p.getAppointmentTime(), "", ""));
         		}
     		}
     		PreparedStatement update = con.prepareStatement(command);
@@ -185,28 +185,22 @@ public class Database {
     	}
     }
     
-    public static void addAppointment(Pet p, Appointment a) throws Exception{
+    public static void addAppointment(Client c, Pet p, Appointment a) throws Exception{
     	try {
     		Connection con = getConnection();
-    		String first = "SELECT * FROM `mork_petclinic`.`animal` WHERE '"+p.getAnimalName()+"' in (animal_name) AND '"+p.getSpecies()+"' in (species)";
+    		String first = "SELECT * FROM `mork_petclinic`.`animal` WHERE '"+p.getAnimalName()+"' in (animal_name) AND '"+p.getSpecies()+"' in (species) AND '"+p.getBreed()+"' in (breed) AND '"+p.getAge()+"' in (age) AND '"+p.getColor()+"' in (color) AND '"+p.getPurpose()+"' in (purpose) AND '"+p.getAppointmentDate()+"' in (appointmentDate) AND '"+p.getAppointmentTime()+"' in (appointmentTime) AND '"+c.getID()+"' in (animal_owner_id)";
+    		System.out.println(first);
     		ResultSet rs = con.createStatement().executeQuery(first);
     		Pet result = new Pet();
     		while(rs.next()) {
+    			System.out.println(rs.getString("animal_name"));
     			result.setID(rs.getInt("animal_id"));
-    			result.setAnimalName(rs.getString("animal_name"));
-    			result.setSpecies(rs.getString("species"));
-    			result.setBreed(rs.getString("breed"));
-    			result.setWeight(rs.getFloat("weight"));
-    			result.setAge(rs.getInt("age"));
-    			result.setColor(rs.getString("color"));
-    			result.setPurpose(rs.getString("purpose"));
-    			result.setAppointmentDate(rs.getDate("appointmentDate").toLocalDate());
-    			result.setAppointmentTime(rs.getString("appointmentTime").toString());
     		}
-    		String command = "INSERT INTO `mork_petclinic`.`appointment` (`date`, `time`, `pet_id`) VALUES ('"+sqlDateFormat(a.getDate()) +"', '"+sqlTimeFormat(a.getTime())+"', '"+result.getID()+"')";
+    		String command = "INSERT INTO `mork_petclinic`.`appointment` (`date`, `time`, `pet_id`) VALUES ('"+a.getDate() +"', '"+a.getTime()+"', '"+result.getID()+"')";
+    		System.out.println(command);
     		PreparedStatement update = con.prepareStatement(command);
     		update.executeUpdate();
-    		System.out.println(command);
+    		
     		con.close();
     	}
     	catch(Exception e) {

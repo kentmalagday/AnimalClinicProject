@@ -243,7 +243,7 @@ public class ClientForms implements Initializable {
 			return false;
 		}
 		try {
-			Integer.parseInt(clientContactNo.getText());
+			Double.parseDouble(clientContactNo.getText());
 			return true;
 		} catch (Exception e) {
 			System.out.println("Contact Number not valid!");

@@ -14,6 +14,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.control.ToggleGroup?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="1096.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddPet">
    <children>
@@ -116,7 +117,10 @@
       </ScrollPane>
       <ComboBox fx:id="hrsTime" layoutX="126.0" layoutY="581.0" prefHeight="25.0" prefWidth="77.0" promptText="Hours" style="-fx-background-radius: 50;" />
       <ComboBox fx:id="minsTime" layoutX="216.0" layoutY="581.0" prefHeight="25.0" prefWidth="87.0" promptText="Minutes" style="-fx-background-radius: 50;" />
-      <RadioButton fx:id="radiobtn_AM" layoutX="322.0" layoutY="585.0" mnemonicParsing="false" text="AM" />
-      <RadioButton fx:id="radiobtn_PM" layoutX="373.0" layoutY="585.0" mnemonicParsing="false" text="PM" />
+      <fx:define>
+      	<ToggleGroup fx:id = "amOrPm"/>
+      </fx:define>
+      <RadioButton fx:id="radiobtn_AM" layoutX="322.0" layoutY="585.0" mnemonicParsing="false" text="AM" toggleGroup = "$amOrPm"/>
+      <RadioButton fx:id="radiobtn_PM" layoutX="373.0" layoutY="585.0" mnemonicParsing="false" text="PM" toggleGroup = "$amOrPm"/>
    </children>
 </AnchorPane>

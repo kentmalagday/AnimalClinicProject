@@ -17,7 +17,7 @@ public class AppointmentList {
 	            while(rs.next()){
 	                Appointment appointment = new Appointment();
 	                appointment.setDate(rs.getDate("date").toLocalDate());
-	                appointment.setTime(rs.getTime("time").toString());
+	                appointment.setTime(rs.getString("time"));
 	                appointment.setID(rs.getInt("ID"));
 	                appointment.setPetID(rs.getInt("pet_id"));
 	                

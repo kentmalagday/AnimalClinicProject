@@ -29,9 +29,9 @@ public class PetList {
                 Date date = rs.getDate("appointmentDate");
                 if(date != null)
                 	pet.setAppointmentDate(date.toLocalDate());
-                Time time = rs.getTime("appointmentTime");
+                String time = rs.getString("appointmentTime");
                 if(time != null)
-                	pet.setAppointmentTime(time.toString());
+                	pet.setAppointmentTime(time);
                 pets.add(pet);
             }
             con.close();

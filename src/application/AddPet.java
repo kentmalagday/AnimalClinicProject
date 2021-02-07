@@ -24,6 +24,7 @@ import javafx.scene.control.TableRow;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.control.TableView.TableViewSelectionModel;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
@@ -55,13 +56,17 @@ public class AddPet implements Initializable{
     @FXML
     DatePicker picker_appointmentDate;
     @FXML
-   	ComboBox hrsTime; // lalagyan mo den to nung <Pet String> katulad na table
+   	ComboBox<String> hrsTime; // lalagyan mo den to nung <Pet String> katulad na table
     @FXML
-   	ComboBox minsTime; // lalagyan mo den to nung <Pet String> katulad na table
+   	ComboBox<String> minsTime; // lalagyan mo den to nung <Pet String> katulad na table
 	@FXML
 	RadioButton radiobtn_AM;
 	@FXML
 	RadioButton radiobtn_PM;
+	
+	@FXML
+	ToggleGroup amOrPm;
+	
     @FXML
     TableView<Pet> petTable;
     @FXML
@@ -101,6 +106,10 @@ public class AddPet implements Initializable{
 		"20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44"
 		,"45","46","47","48","49","50","51","52","53","54","55","56","57","58","59");
 		minsTime.setItems(list1);
+		
+		//radiobtn_AM.setToggleGroup(amOrPm);
+		//radiobtn_PM.setToggleGroup(amOrPm);
+		
    	 	petTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
    	 	
    	 	name.setCellValueFactory(new PropertyValueFactory<Pet, String>("animalName"));
@@ -151,12 +160,11 @@ public class AddPet implements Initializable{
 			
 			if(picker_appointmentDate.getValue() != null) {
 				pet.setAppointmentDate(picker_appointmentDate.getValue());
-				pet.setAppointmentTime(textField_time.getText());
+				RadioButton selected = (RadioButton) amOrPm.getSelectedToggle();
+				pet.setAppointmentTime(hrsTime.getValue() + ":" + minsTime.getValue() + " " + selected.getText());
 				appointment.setDate(pet.getAppointmentDate());
 				appointment.setTime(pet.getAppointmentTime());
 			} else {
-
-				pet.setAppointmentTime("00:00:00");
 				System.out.println("null date");
 				appointment = null;
 			}
@@ -164,7 +172,7 @@ public class AddPet implements Initializable{
 			if (petTable.getSelectionModel().isEmpty()) {
 				Database.addPet(pet, selectedClient);
 				if (appointment != null) {
-					Database.addAppointment(pet, appointment);
+					Database.addAppointment(selectedClient, pet, appointment);
 				}
 				try {
 					Alert alert = new Alert(AlertType.INFORMATION);
@@ -178,7 +186,7 @@ public class AddPet implements Initializable{
 				}
 			} else {
 				try {
-					Database.updatePet(pet, selectedPet);
+					Database.updatePet(selectedClient, pet, selectedPet);
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Pet");
 					alert.setHeaderText("Pet record has been updated!");
@@ -257,7 +265,10 @@ public class AddPet implements Initializable{
 		textField_age.setText("");
 		textField_color.setText("");
 		textArea_purposeOfVisit.setText("");
-		textField_time.setText("");
+		hrsTime.setValue(null);
+		minsTime.setValue(null);
+		radiobtn_AM.setSelected(false);
+		radiobtn_PM.setSelected(false);
 		picker_appointmentDate.setValue(null);
 	}
 
@@ -288,6 +299,10 @@ public class AddPet implements Initializable{
 			emptyTextFields[i] = textField_color;
 			i++;
 		}
+		if(picker_appointmentDate.getValue() != null && (hrsTime.getValue() == null || minsTime.getValue() == null || amOrPm.getSelectedToggle() == null)) {
+			System.out.println("Please set time properly.");
+			i++;
+		}
 
 		if (i > 0) {
 			System.out.println("There are empty textfields");
@@ -310,24 +325,6 @@ public class AddPet implements Initializable{
 			textField_weight.setText("Invalid!");
 			return false;
 		}
-		try {
-			Integer.parseInt(textField_age.getText());
-			yes = true;
-		} catch (Exception e) {
-			System.out.println("Age not valid!");
-			textField_age.setText("Invalid!");
-			return false;
-		}
-		if (!textField_time.getText().isEmpty()) {
-			if (textField_time.getText().matches("\\d{2}:\\d{2}$")
-					|| textField_time.getText().matches("//d{2}://d{2}://d{2}")) {
-				yes = true;
-			} else {
-				System.out.println("Time should be in the formant: [HH:mm] or [HH:mm:SS]");
-				textField_time.setText("HH:mm");
-        		return false;
-        	}
-    	}
     	return yes;
     }
     public void btn_backClicked() throws IOException {
