@@ -6,9 +6,12 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Optional;
 import java.util.ResourceBundle;
-
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -26,6 +29,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 
 public class AddPet implements Initializable{
+
+
+
     @FXML
     Button btn_back;
     @FXML
@@ -49,8 +55,13 @@ public class AddPet implements Initializable{
     @FXML
     DatePicker picker_appointmentDate;
     @FXML
-    TextField textField_time;
-    
+   	ComboBox hrsTime; // lalagyan mo den to nung <Pet String> katulad na table
+    @FXML
+   	ComboBox minsTime; // lalagyan mo den to nung <Pet String> katulad na table
+	@FXML
+	RadioButton radiobtn_AM;
+	@FXML
+	RadioButton radiobtn_PM;
     @FXML
     TableView<Pet> petTable;
     @FXML
@@ -79,10 +90,17 @@ public class AddPet implements Initializable{
     
     TextField[] emptyTextFields = new TextField[10];
     public static Client selectedClient;
-    
+
     @Override
     public void initialize(URL location, ResourceBundle resources){
    	 	
+		ObservableList<String> list = FXCollections.observableArrayList("0","1","2","3","4","5","6","7","8","9","10","11","12"); 
+		hrsTime.setItems(list);
+
+		ObservableList<String> list1 = FXCollections.observableArrayList("00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20",
+		"20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44"
+		,"45","46","47","48","49","50","51","52","53","54","55","56","57","58","59");
+		minsTime.setItems(list1);
    	 	petTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
    	 	
    	 	name.setCellValueFactory(new PropertyValueFactory<Pet, String>("animalName"));
