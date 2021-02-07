@@ -11,11 +11,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1065.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ClientForms">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="678.0" prefWidth="1065.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ClientForms">
    <children>
-      <Label layoutX="20.0" layoutY="80.0" prefHeight="100.0" prefWidth="380.0" text="CLIENT INFORMATION" textFill="#592018" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+      <Label layoutX="30.0" layoutY="33.0" prefHeight="100.0" prefWidth="316.0" text="CLIENT INFORMATION" textFill="#592018" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="33.0">
          <font>
-            <Font name="System Bold" size="29.0" />
+            <Font name="Monospaced Bold" size="29.0" />
          </font>
       </Label>
       <Label layoutX="89.0" layoutY="165.0" text="Lastname:">
@@ -50,7 +50,7 @@
       </Label>
       <TextField fx:id="clientLastname" layoutX="201.0" layoutY="162.0" prefHeight="25.0" prefWidth="218.0" />
       <TextField fx:id="clientFirstname" layoutX="201.0" layoutY="217.0" prefHeight="25.0" prefWidth="218.0" />
-      <TextField fx:id="clientAge" layoutX="201.0" layoutY="262.0" />
+      <TextField fx:id="clientAge" layoutX="201.0" layoutY="262.0" prefHeight="25.0" prefWidth="218.0" />
       <TextField fx:id="clientContactNo" layoutX="201.0" layoutY="307.0" prefHeight="25.0" prefWidth="218.0" />
       <TextField fx:id="clientEmail" layoutX="201.0" layoutY="356.0" prefHeight="25.0" prefWidth="218.0" />
       <TextField fx:id="clientAddress" layoutX="201.0" layoutY="400.0" prefHeight="25.0" prefWidth="218.0" />
@@ -59,12 +59,12 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="deleteClientBtn" layoutX="151.0" layoutY="465.0" mnemonicParsing="false" onAction="#deleteClientBtn" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: FFCD3F; -fx-background-radius: 25;" text="Delete" AnchorPane.bottomAnchor="175.0">
+      <Button fx:id="deleteClientBtn" layoutX="158.0" layoutY="465.0" mnemonicParsing="false" onAction="#deleteClientBtn" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ff9f82; -fx-background-radius: 25;" text="Delete" AnchorPane.bottomAnchor="175.0">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="47.0" layoutY="575.0" mnemonicParsing="false" onAction="#backButton_Clicked" prefHeight="38.0" prefWidth="115.0" style="-fx-background-color: ACD2D0; -fx-background-radius: 25;" text="Back" AnchorPane.bottomAnchor="65.0">
+      <Button layoutX="47.0" layoutY="569.0" mnemonicParsing="false" onAction="#backButton_Clicked" prefHeight="38.0" prefWidth="115.0" style="-fx-background-color: ACD2D0; -fx-background-radius: 25;" text="Back" AnchorPane.bottomAnchor="71.0">
          <font>
             <Font size="14.0" />
          </font>
@@ -79,14 +79,14 @@
             <Font size="14.0" />
          </font>
       </Button>
-      <ImageView fitHeight="100.0" fitWidth="123.0" layoutX="898.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="100.0" fitWidth="123.0" layoutX="346.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="602.0083541870117" AnchorPane.topAnchor="41.0">
          <image>
             <Image url="@../../resources/LOGO.png" />
          </image>
       </ImageView>
-      <ScrollPane layoutX="480.0" layoutY="100.0" prefHeight="520.0" prefWidth="540.0" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="480.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="100.0">
+      <ScrollPane layoutX="511.0" layoutY="49.0" prefHeight="572.0" prefWidth="524.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="511.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="49.0">
          <content>
-            <TableView fx:id="clientTable" onMouseClicked="#getSelection" prefHeight="530.0" prefWidth="840.0">
+            <TableView fx:id="clientTable" onMouseClicked="#getSelection" prefHeight="530.0" prefWidth="840.0" styleClass="..\..\src\application\client_pet_table.css">
               <columns>
                 <TableColumn fx:id="id" prefWidth="100.0" text="ID" />
                 <TableColumn fx:id="lastName" prefWidth="100.0" text="Lastname" />
