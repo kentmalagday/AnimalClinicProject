@@ -329,6 +329,6 @@ public class AddPet implements Initializable{
     }
     public void btn_backClicked() throws IOException {
         Main m = new Main();
-        m.changeScene("clientforms.fxml", "Clients", 1074, 748);
+        m.changeScene("clientforms.fxml", "Clients", 1392, 784);
     }
 }

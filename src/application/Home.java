@@ -36,7 +36,7 @@ public class Home {
         */
         //lance -- alternative code -- still dont see what happens if .getWindow() is there or not
         Main m = new Main();
-        m.changeScene("clientforms.fxml", "Clients", 1074, 748);
+        m.changeScene("clientforms.fxml", "Clients", 1392, 784);
 
     }
     public void btn_appointmentsClicked() throws IOException {
