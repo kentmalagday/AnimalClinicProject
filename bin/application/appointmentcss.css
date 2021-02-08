@@ -1,7 +1,7 @@
 .table-view{
      -fx-background-coloR: #84b0aa;
      -fx-background-radius: 30;
-     -fx-fill: white;
+     -fx-fill: WHITE;
 }
 
 .table-view .column-header-background{

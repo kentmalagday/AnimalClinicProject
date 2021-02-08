@@ -154,7 +154,7 @@ public class AddPet implements Initializable{
         	pet.setSpecies(textField_species.getText());
         	pet.setBreed(textField_breed.getText());
         	pet.setWeight(Float.parseFloat(textField_weight.getText()));
-        	pet.setAge(Integer.parseInt(textField_age.getText()));
+        	pet.setAge(textField_age.getText());
         	pet.setColor(textField_color.getText());
 			pet.setPurpose(textArea_purposeOfVisit.getText());
 			
@@ -242,7 +242,7 @@ public class AddPet implements Initializable{
 			textField_species.setText(selectedPet.getSpecies());
 			textField_breed.setText(selectedPet.getBreed());
 			textField_weight.setText(Float.toString(selectedPet.getWeight()));
-			textField_age.setText(Integer.toString(selectedPet.getAge()));
+			textField_age.setText((selectedPet.getAge()));
 			textField_color.setText(selectedPet.getColor());
 			textArea_purposeOfVisit.setText(selectedPet.getPurpose());
 		}

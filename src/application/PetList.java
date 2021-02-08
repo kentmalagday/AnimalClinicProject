@@ -23,7 +23,7 @@ public class PetList {
                 pet.setSpecies(rs.getString("species"));
                 pet.setBreed(rs.getString("breed"));
                 pet.setWeight(rs.getFloat("weight"));
-                pet.setAge(rs.getInt("age"));
+                pet.setAge(rs.getString("age"));
                 pet.setColor(rs.getString("color"));
                 pet.setPurpose(rs.getString("purpose"));
                 Date date = rs.getDate("appointmentDate");
