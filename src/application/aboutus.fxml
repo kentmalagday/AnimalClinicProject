@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1234.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane layoutX="7.0" prefHeight="700.0" prefWidth="1234.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="2300.0" prefWidth="1234.0">
+               <children>
+                  <HBox alignment="CENTER" layoutX="710.0" layoutY="66.0" prefHeight="40.0" prefWidth="483.0" spacing="25.0">
+                     <children>
+                        <Button mnemonicParsing="false" text="About Us" />
+                        <Button mnemonicParsing="false" text="Testimonials" />
+                        <Button mnemonicParsing="false" text="Services" />
+                        <Button mnemonicParsing="false" text="Contact Us" />
+                        <Button mnemonicParsing="false" text="Appointments" />
+                     </children>
+                  </HBox>
+                  <AnchorPane layoutY="195.0" prefHeight="489.0" prefWidth="1220.0">
+                     <children>
+                        <Text layoutX="538.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="About Us">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="35.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="497.0" layoutY="264.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We’re one big family!">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="513.0" layoutY="332.0" mnemonicParsing="false" text="CONTACT" />
+                        <Button layoutX="619.0" layoutY="332.0" mnemonicParsing="false" text="APPOINTMENT" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="663.0" prefHeight="533.0" prefWidth="1234.0">
+                     <children>
+                        <Text layoutX="617.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Get To Know Us!">
+                           <font>
+                              <Font size="30.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="617.0" layoutY="207.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copake Veterinary Hospital is a full-service veterinary medical facility, located in Copake Falls, NY. The professional, compassionate and courteous staff at Copake Veterinary Hospital seek to provide the best possible medical, surgical and dental care for their highly-valued patients. We are committed to promoting responsible pet ownership, preventative health care and health-related educational opportunities for our clients. Copake Veterinary Hospital strives to offer excellence in veterinary care to the Copake Falls, NY and surrounding tri-state area." textAlignment="JUSTIFY" wrappingWidth="549.921875">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <Line endX="143.0" layoutX="718.0" layoutY="123.0" startX="-100.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="1196.0" prefHeight="411.0" prefWidth="1234.0">
+                     <children>
+                        <Text layoutX="440.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Need an appointment?">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="35.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="224.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Request an appointment online in just minutes through our Pet Portal. If you need immediate assistance, please call us directly at 518-329-6161." textAlignment="JUSTIFY" wrappingWidth="786.8125">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Button layoutX="582.0" layoutY="280.0" mnemonicParsing="false" text="Book Now" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="1607.0" prefHeight="611.0" prefWidth="1234.0">
+                     <children>
+                        <Text layoutX="360.0" layoutY="208.0" strokeType="OUTSIDE" strokeWidth="0.0" text="We'll be there when you need us.">
+                           <font>
+                              <Font name="Microsoft Sans Serif" size="35.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="288.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The professional, compassionate, and courteous staff at Copake Veterinary Hospital is here to answer all of your questions." wrappingWidth="658.80859375">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Text>
+                        <AnchorPane layoutX="288.0" layoutY="347.0" prefHeight="256.0" prefWidth="267.0">
+                           <children>
+                              <Text layoutX="82.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact Us">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="23.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="65.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Call: 518-329-6161">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="66.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fax: 518-329-1393">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="28.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="copakevethospital@yahoo.com">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="607.0" layoutY="365.0" prefHeight="256.0" prefWidth="267.0">
+                           <children>
+                              <Text layoutX="91.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+                                 <font>
+                                    <Font name="Microsoft Sans Serif" size="23.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="70.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7915 State Rte. 22">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text layoutX="51.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copake Falls, NY 12517">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
