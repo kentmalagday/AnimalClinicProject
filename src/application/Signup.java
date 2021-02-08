@@ -32,8 +32,11 @@ public class Signup {
             errorText.setText("There are empty textfields");
         }else{
             Main m = new Main();
+            if(checkPassLength()) {
+            	return;
+            }
             if(checkIfValid()){
-            return;
+            	return;
             }
             Users user = new Users();
             user.setUsername(textField_username.getText());
@@ -66,5 +69,17 @@ public class Signup {
             errorText.setText("Password and Confirm Password does not match");
             return true;
         }
+    }
+    public boolean checkPassLength() {
+    	if(passField_password.getText().length() < 8){
+        	Alert alert = new Alert(AlertType.INFORMATION);
+    		alert.setTitle("Sign Up Failed");
+    		alert.setHeaderText("Password must be atleast 8 characters.");
+    		alert.showAndWait();
+    		errorText.setText("Password must be atleast 8 characters.");
+    		return true;
+    	}else {
+    		return false;
+    	}
     }
 }

@@ -217,7 +217,7 @@ public class Database {
             Class.forName(driver);
             
             Connection conn = DriverManager.getConnection(url, username, password);
-            System.out.println("Conencted!");
+            System.out.println("Connected!");
             return conn;
         }
         catch(Exception e){
