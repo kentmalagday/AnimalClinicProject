@@ -7,7 +7,7 @@ public class Pet {
     private String species;
     private String breed;
     private float weight;
-    private int age;
+    private String age;
     private String color;
     private String purpose;
     private int ID;
@@ -20,7 +20,7 @@ public class Pet {
         this.species = "";
         this.breed = "";
         this.weight = 0;
-        this.age = 0;
+        this.age = "";
         this.color = "";
         this.purpose = "";
         this.ID = 0;
@@ -30,7 +30,7 @@ public class Pet {
  
     }
 
-    public Pet(String name, String species, String breed, float weight, int age, String color, String purpose, int ID, int owner_id, LocalDate appointmentDate, String time){
+    public Pet(String name, String species, String breed, float weight, String age, String color, String purpose, int ID, int owner_id, LocalDate appointmentDate, String time){
     	this.animalName = name;
         this.species = species;
         this.breed = breed;
@@ -61,7 +61,7 @@ public class Pet {
     	return weight;
     }
     
-    public int getAge() {
+    public String getAge() {
     	return age;
     }
     
@@ -99,7 +99,7 @@ public class Pet {
     public void setWeight(float weight) {
     	this.weight = weight;
     }
-    public void setAge(int age) {
+    public void setAge(String age) {
     	this.age = age;
     }
     public void setColor(String color) {
