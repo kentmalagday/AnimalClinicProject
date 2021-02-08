@@ -12,7 +12,7 @@ public class AppointmentList {
 	        
 	        try{
 	            Connection con = Database.getConnection();
-	            String sql = "SELECT * FROM `mork_petclinic`.`appointment`";
+	            String sql = "SELECT * FROM `mork_petclinic`.`appointment` ORDER BY date, SUBSTRING_INDEX(time, \" \", -1), SUBSTRING_INDEX(time, \" \", 1)";
 	            ResultSet rs = con.createStatement().executeQuery(sql);
 	            while(rs.next()){
 	                Appointment appointment = new Appointment();
