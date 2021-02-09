@@ -12,6 +12,8 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
 import com.mysql.cj.protocol.Resultset;
+import com.mysql.cj.x.protobuf.MysqlxPrepare.Prepare;
+import com.mysql.cj.xdevapi.Result;
 
 public class Database {
 
@@ -161,6 +163,17 @@ public class Database {
     public static void deleteClient(Client c, Client selected){
         try {
             Connection con = getConnection();
+            String find = "SELECT `animal_id` FROM `animal` WHERE `animal`.`animal_owner_id` = "+selected.getID()+";";
+            PreparedStatement search = con.prepareStatement(find);
+            ResultSet rs = search.executeQuery();
+            while(rs.next()){
+                int pet_id = rs.getInt("animal_id");
+                deleteAppointment(pet_id);
+                String command_animal = "DELETE FROM `animal` WHERE `animal`.`animal_owner_id` = "+selected.getID()+";";
+                PreparedStatement delete_animal = con.prepareStatement(command_animal);
+                delete_animal.executeUpdate();
+                System.out.println(command_animal);
+            }
             String command = "DELETE FROM `mork_petclinic`.`client` WHERE `mork_petclinic`.`client`.`ID` = " +selected.getID()+ "";
             PreparedStatement delete = con.prepareStatement(command);
             delete.executeUpdate();
@@ -171,6 +184,8 @@ public class Database {
 			e.printStackTrace();
 		}
     }
+
+
 
     public static void deleteAppointment(int petID) {
     	try {
