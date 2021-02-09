@@ -1,6 +1,7 @@
 package application;
 
 import java.io.IOException;
+import java.sql.Connection;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,9 +13,10 @@ public class Main extends Application {
 	
 	 private static Stage stg;
 	 public Scene scene;
-
+	 
     @Override
     public void start(Stage primaryStage) throws Exception{
+    	Database.con = Database.getConnection();
     	stg = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Login");

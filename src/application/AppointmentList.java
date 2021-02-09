@@ -11,7 +11,7 @@ public class AppointmentList {
 		 ObservableList<Appointment> appointments = FXCollections.observableArrayList();
 	        
 	        try{
-	            Connection con = Database.getConnection();
+	            Connection con = Database.con;
 	            String sql = "SELECT * FROM `mork_petclinic`.`appointment` ORDER BY date, SUBSTRING_INDEX(time, \" \", -1), SUBSTRING_INDEX(time, \" \", 1)";
 	            ResultSet rs = con.createStatement().executeQuery(sql);
 	            while(rs.next()){
@@ -42,7 +42,7 @@ public class AppointmentList {
 	                appointment.setClientName(resultClient.getLastName() + ", " + resultClient.getFirstName());
 	                appointments.add(appointment);
 	            }
-	            con.close();
+	            
 	        }
 	        catch(Exception e){
 	            System.out.println(e);

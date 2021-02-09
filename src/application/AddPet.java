@@ -56,9 +56,9 @@ public class AddPet implements Initializable{
     @FXML
     DatePicker picker_appointmentDate;
     @FXML
-   	ComboBox<String> hrsTime; // lalagyan mo den to nung <Pet String> katulad na table
+   	ComboBox<String> hrsTime; 
     @FXML
-   	ComboBox<String> minsTime; // lalagyan mo den to nung <Pet String> katulad na table
+   	ComboBox<String> minsTime; 
 	@FXML
 	RadioButton radiobtn_AM;
 	@FXML
@@ -106,9 +106,6 @@ public class AddPet implements Initializable{
 		"20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44"
 		,"45","46","47","48","49","50","51","52","53","54","55","56","57","58","59");
 		minsTime.setItems(list1);
-		
-		//radiobtn_AM.setToggleGroup(amOrPm);
-		//radiobtn_PM.setToggleGroup(amOrPm);
 		
    	 	petTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
    	 	
@@ -213,8 +210,7 @@ public class AddPet implements Initializable{
 			check.setHeaderText(null);
 			check.setContentText("Are you sure you want to delete this Pet data?");
 			Optional<ButtonType> result = check.showAndWait();
-			if (result.get() == ButtonType.OK) { // Tinanggal ko yung pet na parameter sa deletePet kasi di naagamit sa
-													// function
+			if (result.get() == ButtonType.OK) { 
 
 				Database.deletePet(selectedPet);
 				try {
@@ -225,7 +221,7 @@ public class AddPet implements Initializable{
 					petTable.setItems(PetList.getPetList(selectedClient));
 					clearTextFields();
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
+
 					e.printStackTrace();
 				}
 

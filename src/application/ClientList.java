@@ -11,7 +11,7 @@ public class ClientList {
     public static ObservableList<Client> getClientList() throws Exception{
         ObservableList<Client> clients = FXCollections.observableArrayList();
         try{
-            Connection con = Database.getConnection();
+            Connection con = Database.con;
             String sql = "SELECT * FROM mork_petclinic.client Order By ID";
             ResultSet rs = con.createStatement().executeQuery(sql);
             while(rs.next()){
@@ -25,7 +25,7 @@ public class ClientList {
                 client.setAddress(rs.getString("address"));
                 clients.add(client); 
             }
-            con.close();
+         
         }
         catch(Exception e){
             System.out.println(e);

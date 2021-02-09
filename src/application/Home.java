@@ -23,42 +23,17 @@ public class Home {
     @FXML
     private Button btn_logout;
 
-    //public Scene scene;
-
     
     public void btn_clientsClicked() throws IOException {
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("clientforms.fxml"));
-        scene = new Scene(root, 1074, 748 );
-        Stage window = (Stage) btn_clients.getScene().getWindow();
-        window.setTitle("Clients");
-        window.setScene(scene);
-        */
-        //lance -- alternative code -- still dont see what happens if .getWindow() is there or not
         Main m = new Main();
         m.changeScene("clientforms.fxml", "Clients", 1392, 784);
-
     }
     public void btn_appointmentsClicked() throws IOException {
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("clientforms.fxml"));
-        scene = new Scene(root, 1074, 748 );
-        Stage window = (Stage) btn_clients.getScene().getWindow();
-        window.setTitle("Clients");
-        window.setScene(scene);
-        */
     	Main m = new Main();
     	m.changeScene("appointment.fxml", "Appointments", 1074, 748);
         System.out.println("Appointments Page");
     }
     public void btn_paymentsClicked() throws IOException {
-        /*
-        Parent root = FXMLLoader.load(getClass().getResource("clientforms.fxml"));
-        scene = new Scene(root, 1074, 748 );
-        Stage window = (Stage) btn_clients.getScene().getWindow();
-        window.setTitle("Clients");
-        window.setScene(scene);
-        */
     	Main m = new Main();
     	m.changeScene("payments.fxml", "Payments", 1074, 748);
         System.out.println("Payments Page");

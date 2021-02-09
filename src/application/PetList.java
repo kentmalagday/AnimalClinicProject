@@ -13,7 +13,7 @@ public class PetList {
         ObservableList<Pet> pets = FXCollections.observableArrayList();
         
         try{
-            Connection con = Database.getConnection();
+            Connection con = Database.con;
             String sql = "SELECT * FROM `mork_petclinic`.`animal` WHERE '"+selected.getID()+"' in (animal_owner_id)";
             ResultSet rs = con.createStatement().executeQuery(sql);
             while(rs.next()){
@@ -34,7 +34,7 @@ public class PetList {
                 	pet.setAppointmentTime(time);
                 pets.add(pet);
             }
-            con.close();
+           
         }
         catch(Exception e){
             System.out.println(e);
