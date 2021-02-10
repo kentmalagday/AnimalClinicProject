@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1352.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddPet">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1522.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddPet">
    <children>
       <Label layoutX="26.0" layoutY="17.0" prefHeight="100.0" prefWidth="380.0" text="PET INFORMATION" textFill="#5b2018" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="17.0">
          <font>
@@ -58,45 +58,45 @@
       <TextField fx:id="textField_weight" layoutX="203.0" layoutY="317.0" prefHeight="25.0" prefWidth="218.0" AnchorPane.leftAnchor="194.0" AnchorPane.topAnchor="243.0" />
       <TextField fx:id="textField_age" layoutX="190.0" layoutY="286.0" prefHeight="25.0" prefWidth="218.0" AnchorPane.leftAnchor="194.0" AnchorPane.topAnchor="286.0" />
       <TextField fx:id="textField_color" layoutX="207.0" layoutY="333.0" prefHeight="25.0" prefWidth="218.0" AnchorPane.leftAnchor="194.0" AnchorPane.topAnchor="328.0" />
-      <Button fx:id="btn_deletePet" layoutX="188.0" layoutY="683.0" mnemonicParsing="false" onAction="#deletePet" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffe782; -fx-background-radius: 25;" text="Delete" AnchorPane.bottomAnchor="118.0">
+      <Button fx:id="btn_deletePet" layoutX="198.0" layoutY="709.0" mnemonicParsing="false" onAction="#deletePet" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffe782; -fx-background-radius: 25;" text="Delete" AnchorPane.bottomAnchor="92.0">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="btn_savePet" layoutX="307.0" layoutY="683.0" mnemonicParsing="false" onAction="#addPet" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffb469; -fx-background-radius: 25;" text="Save" AnchorPane.bottomAnchor="118.0">
+      <Button fx:id="btn_savePet" layoutX="317.0" layoutY="709.0" mnemonicParsing="false" onAction="#addPet" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffb469; -fx-background-radius: 25;" text="Save" AnchorPane.bottomAnchor="92.0">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="76.0" layoutY="400.0" text="Purpose of Visit:" AnchorPane.leftAnchor="76.0">
+      <Label layoutX="70.0" layoutY="432.0" text="Purpose of Visit:" AnchorPane.leftAnchor="70.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextArea fx:id="textArea_purposeOfVisit" layoutX="191.0" layoutY="389.0" prefHeight="113.0" prefWidth="218.0" AnchorPane.leftAnchor="194.0" AnchorPane.topAnchor="388.0" />
+      <TextArea fx:id="textArea_purposeOfVisit" layoutX="188.0" layoutY="420.0" prefHeight="113.0" prefWidth="218.0" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="420.0" />
       <ImageView fitHeight="100.0" fitWidth="112.0" layoutX="1197.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../../resources/LOGO.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_back" layoutX="70.0" layoutY="683.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #acd2d0; -fx-background-radius: 25;" text="Back" AnchorPane.bottomAnchor="118.0">
+      <Button fx:id="btn_back" layoutX="80.0" layoutY="709.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #acd2d0; -fx-background-radius: 25;" text="Back" AnchorPane.bottomAnchor="92.0">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Label layoutX="71.0" layoutY="527.0" text="Appointment Date:" AnchorPane.leftAnchor="71.0">
+      <Label layoutX="65.0" layoutY="559.0" text="Appointment Date:" AnchorPane.leftAnchor="65.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <DatePicker fx:id="picker_appointmentDate" layoutX="194.0" layoutY="525.0" prefHeight="25.0" prefWidth="218.0" AnchorPane.topAnchor="525.0" />
-      <Label layoutX="70.0" layoutY="584.0" text="Time:" AnchorPane.leftAnchor="70.0">
+      <DatePicker fx:id="picker_appointmentDate" layoutX="188.0" layoutY="557.0" prefHeight="25.0" prefWidth="218.0" AnchorPane.topAnchor="557.0" />
+      <Label layoutX="64.0" layoutY="616.0" text="Time:" AnchorPane.leftAnchor="64.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
       <TextField layoutX="-157.0" layoutY="151.0" />
-      <TableView fx:id="petTable" layoutX="474.0" layoutY="95.0" onMouseClicked="#getSelection" prefHeight="699.0" prefWidth="835.0" stylesheets="@pet_table.css">
+      <TableView fx:id="petTable" layoutX="474.0" layoutY="95.0" onMouseClicked="#getSelection" prefHeight="699.0" prefWidth="1031.0" stylesheets="@pet_table.css">
         <columns>
             <TableColumn fx:id="animal_id" prefWidth="70.0" text="ID" />
             <TableColumn fx:id="name" prefWidth="97.0" text="Name" />
@@ -104,21 +104,30 @@
             <TableColumn fx:id="breed" prefWidth="75.0" text="Breed" />
             <TableColumn fx:id="weight" prefWidth="82.0" text="Weight" />
             <TableColumn fx:id="age" prefWidth="57.0" text="Age" />
-            <TableColumn fx:id="color" prefWidth="54.0" text="Color" />
-            <TableColumn fx:id="purpose" prefWidth="163.0" text="Purpose of Visit" />
-            <TableColumn fx:id="appointmentDate" prefWidth="163.0" text="Appointment Date" />
-            <TableColumn fx:id="appointmentTime" prefWidth="163.0" text="Time" />
+            <TableColumn fx:id="color" prefWidth="78.0" text="Color" />
+            <TableColumn fx:id="color1" prefWidth="68.0" text="Sex" />
+            <TableColumn fx:id="purpose" prefWidth="148.0" text="Purpose of Visit" />
+            <TableColumn fx:id="appointmentDate" prefWidth="148.0" text="Appointment Date" />
+            <TableColumn fx:id="appointmentTime" prefWidth="155.0" text="Time" />
         </columns>
       </TableView>
-      <ComboBox fx:id="hrsTime" layoutX="126.0" layoutY="581.0" prefHeight="25.0" prefWidth="77.0" promptText="Hours" style="-fx-background-radius: 50;" />
-      <ComboBox fx:id="minsTime" layoutX="216.0" layoutY="581.0" prefHeight="25.0" prefWidth="87.0" promptText="Minutes" style="-fx-background-radius: 50;" />
+      <ComboBox fx:id="hrsTime" layoutX="120.0" layoutY="613.0" prefHeight="25.0" prefWidth="77.0" promptText="Hours" style="-fx-background-radius: 50;" />
+      <ComboBox fx:id="minsTime" layoutX="210.0" layoutY="613.0" prefHeight="25.0" prefWidth="87.0" promptText="Minutes" style="-fx-background-radius: 50;" />
       <fx:define>
       	<ToggleGroup fx:id="amOrPm" />
       </fx:define>
-      <RadioButton fx:id="radiobtn_AM" layoutX="322.0" layoutY="585.0" mnemonicParsing="false" text="AM">
+      <RadioButton fx:id="radiobtn_AM" layoutX="316.0" layoutY="617.0" mnemonicParsing="false" text="AM">
          <toggleGroup>
             <ToggleGroup fx:id="amOrPm" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="radiobtn_PM" layoutX="373.0" layoutY="585.0" mnemonicParsing="false" text="PM" toggleGroup="$amOrPm" />
+      <RadioButton fx:id="radiobtn_PM" layoutX="367.0" layoutY="617.0" mnemonicParsing="false" text="PM" toggleGroup="$amOrPm" />
+      <Label layoutX="80.0" layoutY="371.0" prefHeight="20.0" prefWidth="37.0" text="Sex:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="81.0" layoutY="664.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="346.0" text="Pet Health Log" />
+      <RadioButton layoutX="194.0" layoutY="373.0" mnemonicParsing="false" text="Male" />
+      <RadioButton layoutX="302.0" layoutY="373.0" mnemonicParsing="false" text="Femal" />
    </children>
 </AnchorPane>
