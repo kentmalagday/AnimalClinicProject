@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1522.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddPet">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1522.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddPet">
    <children>
       <Label layoutX="26.0" layoutY="17.0" prefHeight="100.0" prefWidth="267.0" text="PET INFORMATION" textFill="#5b2018" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="17.0">
          <font>
@@ -127,21 +127,11 @@
             <Font size="14.0" />
          </font>
       </Label>
-<<<<<<< HEAD
-=======
-      <Button layoutX="86.0" layoutY="665.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="313.0" style="-fx-background-color: #FEFBF4; -fx-border-color: #5B2018; -fx-border-radius: 10; -fx-border-width: 2;" text="Pet Health Log ">
-         <font>
-            <Font name="Monospaced Regular" size="23.0" />
-         </font></Button>
->>>>>>> 5f61a8ace8ab4b1978060c45e5023015bf9d9e69
       <RadioButton fx:id="male" layoutX="194.0" layoutY="373.0" mnemonicParsing="false" text="Male">
          <toggleGroup>
             <ToggleGroup fx:id="mf" />
          </toggleGroup></RadioButton>
       <RadioButton fx:id="female" layoutX="302.0" layoutY="373.0" mnemonicParsing="false" text="Female" toggleGroup="$mf" />
-<<<<<<< HEAD
       <Button fx:id="btn_petHealth" layoutX="74.0" layoutY="660.0" mnemonicParsing="false" onAction="#petHealth" prefHeight="25.0" prefWidth="326.0" text="Pet Health Log" />
-=======
->>>>>>> 5f61a8ace8ab4b1978060c45e5023015bf9d9e69
    </children>
 </AnchorPane>
