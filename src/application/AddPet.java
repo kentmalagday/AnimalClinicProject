@@ -63,9 +63,15 @@ public class AddPet implements Initializable{
 	RadioButton radiobtn_AM;
 	@FXML
 	RadioButton radiobtn_PM;
+	@FXML
+	RadioButton male;
+	@FXML
+	RadioButton female;
 	
 	@FXML
 	ToggleGroup amOrPm;
+	@FXML
+	ToggleGroup mf;
 	
     @FXML
     TableView<Pet> petTable;
@@ -83,6 +89,8 @@ public class AddPet implements Initializable{
     TableColumn<Pet, Integer> age;
     @FXML
     TableColumn<Pet, String> color;
+    @FXML
+    TableColumn<Pet, String> sex;
     @FXML
 	TableColumn<Pet, String> purpose;
     @FXML
@@ -115,6 +123,7 @@ public class AddPet implements Initializable{
    	 	weight.setCellValueFactory(new PropertyValueFactory<Pet, Float>("weight"));
    	 	age.setCellValueFactory(new PropertyValueFactory<Pet, Integer>("age"));
    	 	color.setCellValueFactory(new PropertyValueFactory<Pet, String>("color"));
+   	 	sex.setCellValueFactory(new PropertyValueFactory<Pet, String>("sex"));
    	 	purpose.setCellValueFactory(new PropertyValueFactory<Pet, String>("purpose"));
    	 	animal_id.setCellValueFactory(new PropertyValueFactory<Pet, Integer>("ID"));
    	 	appointmentDate.setCellValueFactory(new PropertyValueFactory<Pet, LocalDate>("appointmentDate"));
@@ -153,6 +162,8 @@ public class AddPet implements Initializable{
         	pet.setWeight(Float.parseFloat(textField_weight.getText()));
         	pet.setAge(textField_age.getText());
         	pet.setColor(textField_color.getText());
+        	RadioButton selectedSex = (RadioButton) mf.getSelectedToggle();
+        	pet.setSex(selectedSex.getText());
 			pet.setPurpose(textArea_purposeOfVisit.getText());
 			
 			if(picker_appointmentDate.getValue() != null) {

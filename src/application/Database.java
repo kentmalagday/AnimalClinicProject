@@ -15,6 +15,8 @@ import com.mysql.cj.protocol.Resultset;
 import com.mysql.cj.x.protobuf.MysqlxPrepare.Prepare;
 import com.mysql.cj.xdevapi.Result;
 
+import javafx.application.Platform;
+
 public class Database {
 	public static Connection con;
 	
@@ -27,6 +29,7 @@ public class Database {
             add.executeUpdate();
             System.out.println(command);
         } catch (Exception e) {
+        	
         }
     }
 
@@ -55,6 +58,7 @@ public class Database {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+            con = getConnection();
         }
         return false;
 
@@ -63,10 +67,10 @@ public class Database {
     public static void addPet(Pet p, Client selected) throws Exception{
         try{
             String command= "INSERT INTO `mork_petclinic`.`animal` (`animal_name`, `species`, `breed`, `weight`, `age`, `color`, `purpose`, `animal_owner_id`, `appointmentDate`, `appointmentTime`) VALUES ('" + p.getAnimalName() + "', '" + p.getSpecies() + 
-            		"', '" +p.getBreed() + "', '" + p.getWeight() + "', '" + p.getAge() + "', '" + p.getColor() + "', '" + p.getPurpose()+ "', '" + selected.getID() +"', '"+p.getAppointmentDate()+"', '"+p.getAppointmentTime()+"');";
+            		"', '" +p.getBreed() + "', '" + p.getWeight() + "', '" + p.getAge() + "', '" + p.getColor() + "', '" + p.getSex() + "', '" + p.getPurpose()+ "', '" + selected.getID() +"', '"+p.getAppointmentDate()+"', '"+p.getAppointmentTime()+"');";
             if(p.getAppointmentDate() == null || p.getAppointmentTime() == "") {
-            	command = "INSERT INTO `mork_petclinic`.`animal` (`animal_name`, `species`, `breed`, `weight`, `age`, `color`, `purpose`, `animal_owner_id`, `appointmentDate`, `appointmentTime`) VALUES ('" + p.getAnimalName() + "', '" + p.getSpecies() + 
-                		"', '" +p.getBreed() + "', '" + p.getWeight() + "', '" + p.getAge() + "', '" + p.getColor() + "', '" + p.getPurpose()+ "', '" + selected.getID() +"', NULL, NULL);";
+            	command = "INSERT INTO `mork_petclinic`.`animal` (`animal_name`, `species`, `breed`, `weight`, `age`, `color`, `sex`, `purpose`, `animal_owner_id`, `appointmentDate`, `appointmentTime`) VALUES ('" + p.getAnimalName() + "', '" + p.getSpecies() + 
+                		"', '" +p.getBreed() + "', '" + p.getWeight() + "', '" + p.getAge() + "', '" + p.getColor() + "', '" + p.getSex() + "', '" + p.getPurpose()+ "', '" + selected.getID() +"', NULL, NULL);";
             }
             PreparedStatement add = con.prepareStatement(command);
             add.executeUpdate();
@@ -95,10 +99,10 @@ public class Database {
     		if(selected.getAppointmentDate() != null && selected.getAppointmentTime() != "") {
     			if(p.getAppointmentDate() == null || p.getAppointmentTime() == "") {
         			System.out.println("Appoinment being deleted!");
-        			command = "UPDATE `mork_petclinic`.`animal` SET `animal_name` = '" +p.getAnimalName() + "', `species` = '" +p.getSpecies() + "', `breed` = '" +p.getBreed() + "', `weight` = '" +p.getWeight() + "', `age` = '" +p.getAge() + "', `color` = '" +p.getColor()+ "', `purpose` = '" +p.getPurpose() +"', `appointmentDate` = NULL, `appointmentTime` = NULL WHERE `mork_petclinic`.`animal`.`animal_id` = " +selected.getID()+ "";
+        			command = "UPDATE `mork_petclinic`.`animal` SET `animal_name` = '" +p.getAnimalName() + "', `species` = '" +p.getSpecies() + "', `breed` = '" +p.getBreed() + "', `weight` = '" +p.getWeight() + "', `age` = '" +p.getAge() + "', `color` = '" +p.getColor()+ "', `sex` = '" +p.getSex() +"', `purpose` = '" +p.getPurpose() +"', `appointmentDate` = NULL, `appointmentTime` = NULL WHERE `mork_petclinic`.`animal`.`animal_id` = " +selected.getID()+ "";
         			deleteAppointment(selected.getID());
     			}else {
-    				command = "UPDATE `mork_petclinic`.`animal` SET `animal_name` = '" +p.getAnimalName() + "', `species` = '" +p.getSpecies() + "', `breed` = '" +p.getBreed() + "', `weight` = '" +p.getWeight() + "', `age` = '" +p.getAge() + "', `color` = '" +p.getColor()+ "', `purpose` = '" +p.getPurpose() +"', `appointmentDate` = '"+p.getAppointmentDate()+"', `appointmentTime` = '"+p.getAppointmentTime()+"' WHERE `mork_petclinic`.`animal`.`animal_id` = " +selected.getID()+ "";
+    				command = "UPDATE `mork_petclinic`.`animal` SET `animal_name` = '" +p.getAnimalName() + "', `species` = '" +p.getSpecies() + "', `breed` = '" +p.getBreed() + "', `weight` = '" +p.getWeight() + "', `age` = '" +p.getAge() + "', `color` = '" +p.getColor()+ "', `sex` = '" +p.getSex() +"', `purpose` = '" +p.getPurpose() +"', `appointmentDate` = '"+p.getAppointmentDate()+"', `appointmentTime` = '"+p.getAppointmentTime()+"' WHERE `mork_petclinic`.`animal`.`animal_id` = " +selected.getID()+ "";
     				updateAppointment(p, selected);
     			}
     		}else {
@@ -201,13 +205,20 @@ public class Database {
             String username = "mork_remote";
             String password = "remote";
             Class.forName(driver);
+            System.out.println("Connecting! Please Wait.");
             
             Connection conn = DriverManager.getConnection(url, username, password);
+            while(conn == null) {
+        		System.out.println(".");
+        	}
             System.out.println("Connected!");
             return conn;
         }
         catch(Exception e){
-            System.out.println(e);
+        	System.out.println(e);
+            System.out.println("Please try opening the program again. Check your Internet Connection.");
+            Platform.exit();
+            System.exit(0);
         }
         return null;
     }

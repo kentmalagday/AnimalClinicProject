@@ -9,6 +9,7 @@ public class Pet {
     private float weight;
     private String age;
     private String color;
+    private String sex;
     private String purpose;
     private int ID;
     private int owner_id;
@@ -22,6 +23,7 @@ public class Pet {
         this.weight = 0;
         this.age = "";
         this.color = "";
+        this.sex = "";
         this.purpose = "";
         this.ID = 0;
         this.owner_id = 0;
@@ -30,13 +32,14 @@ public class Pet {
  
     }
 
-    public Pet(String name, String species, String breed, float weight, String age, String color, String purpose, int ID, int owner_id, LocalDate appointmentDate, String time){
+    public Pet(String name, String species, String breed, float weight, String age, String color, String sex, String purpose, int ID, int owner_id, LocalDate appointmentDate, String time){
     	this.animalName = name;
         this.species = species;
         this.breed = breed;
         this.weight = weight;
         this.age = age;
         this.color = color;
+        this.sex = sex;
         this.purpose = purpose;
         this.ID = ID;
         this.owner_id = owner_id;
@@ -67,6 +70,9 @@ public class Pet {
     
     public String getColor() {
     	return color;
+    }
+    public String getSex() {
+    	return sex;
     }
     
     public String getPurpose() {
@@ -104,6 +110,9 @@ public class Pet {
     }
     public void setColor(String color) {
     	this.color = color;
+    }
+    public void setSex(String sex) {
+    	this.sex = sex;
     }
     public void setPurpose(String purpose) {
     	this.purpose = purpose;

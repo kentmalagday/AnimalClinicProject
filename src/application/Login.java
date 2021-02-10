@@ -40,21 +40,6 @@ public class Login {
 
     private void checkLogin() throws IOException {
         Main m = new Main();
-        /*
-         * 
-         * if(textField_username.getText().toString().equals("admin") &&
-         * passField_password.getText().toString().equals("1234")) {
-         * wrongLogIn.setText("Success!");
-         * 
-         * m.changeScene("home.fxml", "Home", 1074, 748); }
-         * 
-         * else if(textField_username.getText().isEmpty() &&
-         * passField_password.getText().isEmpty()) {
-         * wrongLogIn.setText("Please enter your data."); }
-         * 
-         * 
-         * else { wrongLogIn.setText("Wrong username or password!"); }
-         */
         if (textFieldsEmpty()) {
             wrongLogIn.setText("Enter you data");
         } else {
@@ -73,7 +58,6 @@ public class Login {
                     wrongLogIn.setText("Incorrect username or password");
                 }
             } catch (Exception e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }

@@ -25,6 +25,7 @@ public class PetList {
                 pet.setWeight(rs.getFloat("weight"));
                 pet.setAge(rs.getString("age"));
                 pet.setColor(rs.getString("color"));
+                pet.setSex(rs.getString("sex"));
                 pet.setPurpose(rs.getString("purpose"));
                 Date date = rs.getDate("appointmentDate");
                 if(date != null)

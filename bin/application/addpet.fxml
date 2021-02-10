@@ -105,7 +105,7 @@
             <TableColumn fx:id="weight" prefWidth="82.0" text="Weight" />
             <TableColumn fx:id="age" prefWidth="57.0" text="Age" />
             <TableColumn fx:id="color" prefWidth="78.0" text="Color" />
-            <TableColumn fx:id="color1" prefWidth="68.0" text="Sex" />
+            <TableColumn fx:id="sex" prefWidth="68.0" text="Sex" />
             <TableColumn fx:id="purpose" prefWidth="148.0" text="Purpose of Visit" />
             <TableColumn fx:id="appointmentDate" prefWidth="148.0" text="Appointment Date" />
             <TableColumn fx:id="appointmentTime" prefWidth="155.0" text="Time" />
@@ -115,6 +115,7 @@
       <ComboBox fx:id="minsTime" layoutX="210.0" layoutY="613.0" prefHeight="25.0" prefWidth="87.0" promptText="Minutes" style="-fx-background-radius: 50;" />
       <fx:define>
       	<ToggleGroup fx:id="amOrPm" />
+      	<ToggleGroup fx:id = "mf"/>
       </fx:define>
       <RadioButton fx:id="radiobtn_AM" layoutX="316.0" layoutY="617.0" mnemonicParsing="false" text="AM">
          <toggleGroup>
@@ -127,7 +128,7 @@
          </font>
       </Label>
       <Button layoutX="81.0" layoutY="664.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="346.0" text="Pet Health Log" />
-      <RadioButton layoutX="194.0" layoutY="373.0" mnemonicParsing="false" text="Male" />
-      <RadioButton layoutX="302.0" layoutY="373.0" mnemonicParsing="false" text="Femal" />
+      <RadioButton fx:id="male" layoutX="194.0" layoutY="373.0" mnemonicParsing="false" text="Male" toggleGroup="$mf"/>
+      <RadioButton fx:id="female" layoutX="302.0" layoutY="373.0" mnemonicParsing="false" text="Female" toggleGroup="$mf"/>
    </children>
 </AnchorPane>
