@@ -115,7 +115,7 @@
       <ComboBox fx:id="minsTime" layoutX="210.0" layoutY="613.0" prefHeight="25.0" prefWidth="87.0" promptText="Minutes" style="-fx-background-radius: 50;" />
       <fx:define>
       	<ToggleGroup fx:id="amOrPm" />
-      	<ToggleGroup fx:id = "mf"/>
+      	<ToggleGroup fx:id="mf" />
       </fx:define>
       <RadioButton fx:id="radiobtn_AM" layoutX="316.0" layoutY="617.0" mnemonicParsing="false" text="AM">
          <toggleGroup>
@@ -127,8 +127,11 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="81.0" layoutY="664.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="346.0" text="Pet Health Log" />
-      <RadioButton fx:id="male" layoutX="194.0" layoutY="373.0" mnemonicParsing="false" text="Male" toggleGroup="$mf"/>
-      <RadioButton fx:id="female" layoutX="302.0" layoutY="373.0" mnemonicParsing="false" text="Female" toggleGroup="$mf"/>
+      <RadioButton fx:id="male" layoutX="194.0" layoutY="373.0" mnemonicParsing="false" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="mf" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="female" layoutX="302.0" layoutY="373.0" mnemonicParsing="false" text="Female" toggleGroup="$mf" />
+      <Button fx:id="btn_petHealth" layoutX="74.0" layoutY="660.0" mnemonicParsing="false" onAction="#petHealth" prefHeight="25.0" prefWidth="326.0" text="Pet Health Log" />
    </children>
 </AnchorPane>

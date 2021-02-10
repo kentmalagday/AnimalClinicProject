@@ -67,7 +67,8 @@ public class AddPet implements Initializable{
 	RadioButton male;
 	@FXML
 	RadioButton female;
-	
+	@FXML
+    Button btn_petHealth;
 	@FXML
 	ToggleGroup amOrPm;
 	@FXML
@@ -338,4 +339,13 @@ public class AddPet implements Initializable{
         Main m = new Main();
         m.changeScene("home.fxml", "Home", 1056, 668);
     }
+
+	public void petHealth() throws IOException {
+        Main m = new Main();
+        m.changeScene("pethealthlogmain.fxml", "Pet Health Log", 1522, 839);
+
+		
+    }
+
+
 }
