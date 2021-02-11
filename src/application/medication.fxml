@@ -58,10 +58,11 @@
             <TableColumn fx:id="status" prefWidth="139.0" text="Status" />
         </columns>
       </TableView>
-      <TextArea fx:id="textArea_description" layoutX="189.0" layoutY="192.0" prefHeight="96.0" prefWidth="175.0" />
+      <TextArea fx:id="textArea_Description" layoutX="189.0" layoutY="192.0" prefHeight="96.0" prefWidth="175.0" />
       <TextField fx:id="textField_dosage" layoutX="189.0" layoutY="311.0" prefHeight="25.0" prefWidth="175.0" />
       <Button fx:id="btn_back" layoutX="208.0" layoutY="414.0" mnemonicParsing="false" onAction="#btn_backClicked" text="Back" />
       <Button layoutX="286.0" layoutY="414.0" mnemonicParsing="false" text="Save" />
       <ComboBox fx:id="comboBox_status" layoutX="189.0" layoutY="355.0" prefHeight="25.0" prefWidth="175.0" />
+      <Button layoutX="243.0" layoutY="488.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>

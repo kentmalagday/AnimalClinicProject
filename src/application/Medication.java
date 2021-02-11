@@ -26,7 +26,7 @@ public class Medication implements Initializable{
     TableColumn<?, ?> status;
 
     @FXML
-    TextArea textArea_description;
+    TextArea textArea_Description;
 
     @FXML
     TextField textField_dosage;
