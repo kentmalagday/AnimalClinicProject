@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
@@ -19,7 +20,10 @@ public class Immunization implements Initializable{
     Text text_Petname;
 
     @FXML
-    TextField textField_date;
+    DatePicker picker_Date;
+
+    @FXML
+    DatePicker picker_nextDue;
 
     @FXML
     TextField textField_weight;
