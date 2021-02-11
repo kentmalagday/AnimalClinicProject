@@ -92,7 +92,7 @@
             <Font size="14.0" />
          </font>
       </CheckBox>
-      <Text fx:id="petname" layoutX="198.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="185.95703125">
+      <Text fx:id="text_Petname" layoutX="198.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="185.95703125">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

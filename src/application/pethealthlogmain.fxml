@@ -61,7 +61,7 @@
             <Image url="@../../resources/allergies%20nb.png" />
          </image>
       </ImageView>
-      <Button fx:id="btn_medical" layoutX="494.0" layoutY="367.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #FF9F82;" text="View" textFill="#5b2018">
+      <Button fx:id="btn_medical" layoutX="494.0" layoutY="367.0" mnemonicParsing="false" onAction="#medicalhistory" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #FF9F82;" text="View" textFill="#5b2018">
          <font>
             <Font size="18.0" />
          </font>
@@ -71,7 +71,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btn_vetvisit" layoutX="1220.0" layoutY="367.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #ACD2D0;" text="View" textFill="#5b2018">
+      <Button fx:id="btn_vetvisit" layoutX="1220.0" layoutY="367.0" mnemonicParsing="false" onAction="#vetvisit" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #ACD2D0;" text="View" textFill="#5b2018">
          <font>
             <Font size="18.0" />
          </font>
@@ -86,7 +86,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btn_allergies" layoutX="1220.0" layoutY="742.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #FF9F82;" text="View" textFill="#5b2018">
+      <Button fx:id="btn_allergies" layoutX="1220.0" layoutY="742.0" mnemonicParsing="false" onAction="#allergies" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #FF9F82;" text="View" textFill="#5b2018">
          <font>
             <Font size="18.0" />
          </font>

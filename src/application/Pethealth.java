@@ -65,16 +65,21 @@ public class Pethealth implements Initializable{
         m.changeScene("grooming.fxml", "Grooming", 1072, 735);
     }
 
-   /* public void vetvisit() throws IOException {
-        Main m = new Main();
-        m.changeScene("vetvisit.fxml", "Vet Visit", 1072, 735);
-    }
-
     public void allergies() throws IOException {
         Main m = new Main();
         m.changeScene("allergies.fxml", "Allergies", 1072, 735);
-    }*/ // for switching scenes kapag may mga fxml na iba na
+    }
+
+    public void vetvisit() throws IOException {
+        Main m = new Main();
+        m.changeScene("vetvisit.fxml", "Vet Visit", 1072, 735);
+    }
    
+    public void medicalhistory() throws IOException {
+        Main m = new Main();
+        m.changeScene("medicalhistory.fxml", "Medical History", 1295, 608);
+    }
+
     public void btn_backClicked() throws IOException {
     	selectedPet = null;
         Main m = new Main();

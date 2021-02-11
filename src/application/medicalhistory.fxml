@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="1295.0" style="-fx-background-color: #FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Medicalhistory"> 
+   <children>
+      <Text fill="#5b2018" layoutX="34.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pet's History">
+         <font>
+            <Font name="Monospaced Bold" size="29.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="114.0" fitWidth="139.0" layoutX="270.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/LOGO.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="60.0" layoutY="206.0" prefHeight="20.0" prefWidth="122.0" text="Former Vet Clinic:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="889.0" layoutY="121.0" prefHeight="27.0" prefWidth="202.0" text="Past Surgical Procedure">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textfield_formerVetclinic" layoutX="211.0" layoutY="203.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
+      <Button fx:id="btn_back" layoutX="97.0" layoutY="476.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #FF9F82; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Back" />
+      <Button layoutX="228.0" layoutY="476.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="95.0" style="-fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3; -fx-background-color: #FF9F82;" text="Save" />
+      <Label layoutX="60.0" layoutY="244.0" prefHeight="20.0" prefWidth="133.0" text="Former Veterinarian:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textfield_formerVeterinarian" layoutX="211.0" layoutY="240.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
+      <Label layoutX="60.0" layoutY="172.0" prefHeight="20.0" prefWidth="122.0" text="Breeder Name:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="307.0" prefHeight="27.0" prefWidth="220.0" text="Spay or neutered surgery">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textFiled_breedersName" layoutX="211.0" layoutY="169.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
+      <Label layoutX="60.0" layoutY="358.0" prefHeight="20.0" prefWidth="149.0" text="Spay or Neuter Date:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="radiobutton_snYes" layoutX="252.0" layoutY="391.0" mnemonicParsing="false" text="Yes">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="radiobutton_snNo" layoutX="337.0" layoutY="391.0" mnemonicParsing="false" text="No">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="60.0" layoutY="391.0" prefHeight="20.0" prefWidth="192.0" text="Where Spayed or Neutered?">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="474.0" layoutY="70.0" prefHeight="27.0" prefWidth="220.0" text="Medical History">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textArea_pastSurgical" layoutX="1072.0" layoutY="238.0" prefHeight="66.0" prefWidth="174.0" style="-fx-border-color: #FF9F82;" />
+      <Label layoutX="909.0" layoutY="167.0" prefHeight="20.0" prefWidth="104.0" text="Date:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <DatePicker layoutX="1070.0" layoutY="164.0" style="-fx-border-color: #FF9F82;" />
+      <Label layoutX="909.0" layoutY="200.0" prefHeight="20.0" prefWidth="133.0" text="Surgical Procedure:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textfield_surgicalProcedure" layoutX="1070.0" layoutY="197.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
+      <Label layoutX="904.0" layoutY="240.0" prefHeight="20.0" prefWidth="149.0" text="Additional Information:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="478.0" layoutY="122.0" prefHeight="27.0" prefWidth="202.0" text="Illness or Abnormalities">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="492.0" layoutY="161.0" prefHeight="20.0" prefWidth="133.0" text="Diagnosis:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="492.0" layoutY="199.0" prefHeight="20.0" prefWidth="133.0" text="Treatment:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="492.0" layoutY="245.0" prefHeight="20.0" prefWidth="149.0" text="Additional Information:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textfield_diagnosis" layoutX="643.0" layoutY="157.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
+      <TextField fx:id="textfield_treatment" layoutX="643.0" layoutY="196.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
+      <TextField fx:id="textArea_illness" layoutX="651.0" layoutY="245.0" prefHeight="66.0" prefWidth="174.0" style="-fx-border-color: #FF9F82;" />
+      <TableView layoutX="904.0" layoutY="334.0" prefHeight="233.0" prefWidth="359.0" stylesheets="@../../../../../Desktop/pethealthcontentfinal/medicalhistory.css">
+         <columns>
+            <TableColumn fx:id="psDAte" prefWidth="98.0" text="Date" />
+            <TableColumn fx:id="psSurgicalprocedure" prefWidth="155.0" text="Surgical Procedure" />
+            <TableColumn fx:id="psAddinfo" minWidth="8.0" prefWidth="98.0" text="Add. Info." />
+         </columns>
+      </TableView>
+      <TableView layoutX="472.0" layoutY="339.0" prefHeight="233.0" prefWidth="359.0" stylesheets="@../../../../../Desktop/pethealthcontentfinal/medicalhistory.css">
+         <columns>
+            <TableColumn fx:id="iaDiagnosis" prefWidth="98.0" text="Diagnosis" />
+            <TableColumn fx:id="iaTreatment" prefWidth="144.0" text="Treatment" />
+            <TableColumn fx:id="iaAddinfo" minWidth="8.0" prefWidth="109.0" text="Add. Info." />
+         </columns>
+      </TableView>
+      <Line endX="-100.0" endY="489.0" layoutX="968.0" layoutY="69.0" startX="-100.0" stroke="#ff9f82" />
+      <Line endX="-100.0" endY="489.0" layoutX="528.0" layoutY="69.0" startX="-100.0" stroke="#ff9f82" />
+      <DatePicker fx:id="picker_spayOrneuter" layoutX="209.0" layoutY="356.0" style="-fx-background-color: #FF9F82;" />
+      <Label layoutX="60.0" layoutY="139.0" prefHeight="20.0" prefWidth="80.0" text="Pet Name:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Text layoutX="154.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

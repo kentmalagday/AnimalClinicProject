@@ -37,7 +37,7 @@ public class Grooming implements Initializable {
     CheckBox checkbox_pawPadCleaning;
 
     @FXML
-    Text petname;
+    Text text_Petname;
 
     @FXML
     DatePicker picker_date;
