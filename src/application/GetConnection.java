@@ -10,8 +10,8 @@ public class GetConnection {
         try{
             String driver = "com.mysql.cj.jdbc.Driver";
             String url = "jdbc:mysql://mork.heliohost.us:3306/mork_petclinic";
-            String username = "mork_remote";
-            String password = "remote";
+            String username = "mork_lance";
+            String password = "lance";
             Class.forName(driver);
             System.out.println("Connecting! Please Wait.");
             
