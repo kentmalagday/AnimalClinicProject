@@ -8,6 +8,7 @@
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
+            "vmArgs": "--module-path C:/JavaFX/javafx-sdk-15/lib --add-modules javafx.controls,javafx.fxml",
             "mainClass": "${file}"
         },
         {
