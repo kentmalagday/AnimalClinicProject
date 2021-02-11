@@ -46,12 +46,12 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Text layoutX="195.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text fx:id="petname" layoutX="195.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
          <font>
             <Font size="14.0" />
          </font>
       </Text>
-      <TableView layoutX="429.0" layoutY="110.0" prefHeight="608.0" prefWidth="624.0">
+      <TableView fx:id="medicationTable" layoutX="429.0" layoutY="110.0" prefHeight="608.0" prefWidth="624.0">
         <columns>
           <TableColumn fx:id="description" prefWidth="282.0" text="Description" />
           <TableColumn fx:id="dosage" prefWidth="202.0" text="Dosage" />
@@ -61,7 +61,7 @@
       <TextArea fx:id="textArea_Description" layoutX="189.0" layoutY="192.0" prefHeight="96.0" prefWidth="175.0" />
       <TextField fx:id="textField_dosage" layoutX="189.0" layoutY="311.0" prefHeight="25.0" prefWidth="175.0" />
       <Button fx:id="btn_back" layoutX="208.0" layoutY="414.0" mnemonicParsing="false" onAction="#btn_backClicked" text="Back" />
-      <Button layoutX="286.0" layoutY="414.0" mnemonicParsing="false" text="Save" />
+      <Button layoutX="286.0" layoutY="414.0" mnemonicParsing="false" text="Save" onAction="#save"/>
       <ComboBox fx:id="comboBox_status" layoutX="189.0" layoutY="355.0" prefHeight="25.0" prefWidth="175.0" />
       <Button layoutX="243.0" layoutY="488.0" mnemonicParsing="false" text="Button" />
    </children>

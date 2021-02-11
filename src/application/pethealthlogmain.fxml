@@ -20,13 +20,13 @@
             <Font name="Monospaced Bold" size="40.0" />
          </font>
       </Label>
-      <TextArea layoutX="60.0" layoutY="386.0" prefHeight="318.0" prefWidth="273.0" />
+      <TextArea fx:id="purpose" layoutX="60.0" layoutY="386.0" prefHeight="318.0" prefWidth="273.0" />
       <Label layoutX="78.0" layoutY="334.0" prefHeight="52.0" prefWidth="238.0" text="Purpose of Visit:" textFill="#5b2018">
          <font>
             <Font name="Monospaced Bold" size="23.0" />
          </font>
       </Label>
-      <Button layoutX="212.0" layoutY="745.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #5B2018;" text="Save" textFill="WHITE">
+      <Button layoutX="212.0" layoutY="745.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #5B2018;" text="Save" textFill="WHITE" onAction="#save">
          <font>
             <Font size="17.0" />
          </font>
@@ -91,7 +91,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="78.0" layoutY="745.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #5B2018;" text="Back" textFill="WHITE">
+      <Button layoutX="78.0" layoutY="745.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #5B2018;" text="Back" textFill="WHITE" onAction="#btn_backClicked">
          <font>
             <Font size="17.0" />
          </font>

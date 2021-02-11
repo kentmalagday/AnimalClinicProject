@@ -260,6 +260,7 @@ public class AddPet implements Initializable{
 
 		if (source == null || (source instanceof TableRow && ((TableRow) source).isEmpty())) {
 			petTable.getSelectionModel().clearSelection();
+			selectedPet = null;
 			clearTextFields();
 		}
 		System.out.println("Clicked!");
@@ -347,10 +348,17 @@ public class AddPet implements Initializable{
     }
 
 	public void petHealth() throws IOException {
+		if (selectedPet != null) {
+			Pethealth.selectedPet = selectedPet;
+		} else {
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("Pet");
+			alert.setHeaderText("Select a Pet first.");
+			alert.showAndWait();
+			return;
+		}
         Main m = new Main();
         m.changeScene("pethealthlogmain.fxml", "Pet Health Log", 1522, 839);
-
-		
     }
 
 
