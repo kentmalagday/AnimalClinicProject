@@ -76,7 +76,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btn_medication" layoutX="494.0" layoutY="738.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #84B0AA;" text="View" textFill="#5b2018">
+      <Button fx:id="btn_medication" layoutX="494.0" layoutY="738.0" mnemonicParsing="false" onAction="#medication" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #84B0AA;" text="View" textFill="#5b2018">
          <font>
             <Font size="18.0" />
          </font>
