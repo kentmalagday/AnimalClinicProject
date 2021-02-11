@@ -19,7 +19,7 @@ public class Main extends Application {
 	 
     @Override
     public void start(Stage primaryStage) throws Exception{
-    	Database.con = Database.getConnection();
+    	
     	stg = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Login");

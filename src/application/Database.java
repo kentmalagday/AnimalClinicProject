@@ -51,7 +51,7 @@ public class Database {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            con = getConnection();
+//            con = getConnection();
         }
         return false;
 
@@ -191,12 +191,12 @@ public class Database {
     	}
     }
     
-    public static Connection getConnection() throws Exception{
+    public static Connection getConnection(String user, String pass) throws Exception{
         try{
             String driver = "com.mysql.cj.jdbc.Driver";
             String url = "jdbc:mysql://mork.heliohost.us:3306/mork_petclinic";
-            String username = "mork_remote";
-            String password = "remote";
+            String username = "mork_"+user;
+            String password = pass;
             Class.forName(driver);
             System.out.println("Connecting! Please Wait.");
             

@@ -28,9 +28,8 @@ public class Login {
     @FXML
     private Button btn_signup;
 
-    public void btn_loginClicked(ActionEvent event) throws IOException {
+    public void btn_loginClicked(ActionEvent event) throws Exception {
         checkLogin();
-
     }
 
     public void btn_signup_clicked() throws IOException {
@@ -38,28 +37,35 @@ public class Login {
         m.changeScene("signup.fxml", "Signup", 400, 400);
     }
 
-    private void checkLogin() throws IOException {
+    private void checkLogin() throws Exception {
         Main m = new Main();
         if (textFieldsEmpty()) {
             wrongLogIn.setText("Enter you data");
         } else {
-            Users user = new Users();
-            user.setUsername(textField_username.getText());
-            user.setPassword(passField_password.getText());
-            try {
-                if (Database.verifyLogin(user)) {
-                    System.out.println("Login success");
-                    Alert alert = new Alert(AlertType.INFORMATION);
-                    alert.setTitle("Login");
-                    alert.setHeaderText("Login succesfully!");
-                    alert.showAndWait();
-                    m.changeScene("home.fxml", "Home", 1056, 668);
-                } else {
-                    wrongLogIn.setText("Incorrect username or password");
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+//            Users user = new Users();
+//            user.setUsername(textField_username.getText());
+//            user.setPassword(passField_password.getText());
+//            try {
+//                if (Database.verifyLogin(user)) {
+//                    System.out.println("Login success");
+//                    Alert alert = new Alert(AlertType.INFORMATION);
+//                    alert.setTitle("Login");
+//                    alert.setHeaderText("Login succesfully!");
+//                    alert.showAndWait();
+//                    m.changeScene("home.fxml", "Home", 1056, 668);
+//                } else {
+//                    wrongLogIn.setText("Incorrect username or password");
+//                }
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//            }
+        	Database.con = Database.getConnection(textField_username.getText(), passField_password.getText());
+        	System.out.println("Login success");
+        	Alert alert = new Alert(AlertType.INFORMATION);
+        	alert.setTitle("Login");
+        	alert.setHeaderText("Login succesfully!");
+        	alert.showAndWait();
+        	m.changeScene("home.fxml", "Home", 1056, 668);
         }
     }
     public boolean textFieldsEmpty(){
