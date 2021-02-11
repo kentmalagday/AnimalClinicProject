@@ -68,7 +68,7 @@
             <TableColumn fx:id="nextdue" minWidth="0.0" prefWidth="131.0" text="Next Due" />
         </columns>
       </TableView>
-      <Button layoutX="257.0" layoutY="464.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="68.0" style="-fx-background-color: #ffe782; -fx-background-radius: 50;" text="Save" />
+      <Button layoutX="257.0" layoutY="464.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="68.0" style="-fx-background-color: #ffe783; -fx-background-radius: 50;" text="Save" />
       <Button fx:id="btn_back" layoutX="175.0" layoutY="464.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="33.0" prefWidth="68.0" style="-fx-background-color: #ffe782; -fx-background-radius: 50;" text="Back" />
       <TextField fx:id="textField_date" layoutX="176.0" layoutY="206.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-radius: 50;" />
       <TextField fx:id="textField_weight" layoutX="175.0" layoutY="246.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-radius: 50;" />
