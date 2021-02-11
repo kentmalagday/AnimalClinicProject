@@ -55,10 +55,13 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Text fx:id="text_Petname" layoutX="219.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text fx:id="text_Petname" layoutX="180.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="139.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
       <ComboBox fx:id="combobox_Against" layoutX="175.0" layoutY="291.0" prefWidth="150.0" style="-fx-background-color: #FEFBF4; -fx-border-radius: 50; -fx-border-color: #ffe782;" />
       <ComboBox fx:id="combobox_Vet" layoutX="175.0" layoutY="340.0" prefWidth="150.0" style="-fx-border-radius: 50; -fx-border-color: #ffe782; -fx-background-color: #FEFBF4;" />
-      <TableView fx:id = "immunizationTable" layoutX="432.0" layoutY="47.0" prefHeight="641.0" prefWidth="590.0" stylesheets="@immunization.css">
+      <TableView fx:id="immunizationTable" layoutX="432.0" layoutY="47.0" prefHeight="641.0" prefWidth="590.0" stylesheets="@immunization.css">
         <columns>
             <TableColumn fx:id="date" prefWidth="112.0" text="Date" />
             <TableColumn fx:id="weight" prefWidth="85.0" text="Weight" />
@@ -67,11 +70,11 @@
             <TableColumn fx:id="nextDue" minWidth="0.0" prefWidth="131.0" text="Next Due" />
         </columns>
       </TableView>
-      <Button layoutX="257.0" layoutY="464.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="68.0" style="-fx-background-color: #ffe782; -fx-background-radius: 50;" text="Save" onAction="#save"/>
-      <Button fx:id="btn_back" layoutX="175.0" layoutY="464.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="33.0" prefWidth="68.0" style="-fx-background-color: #ffe782; -fx-background-radius: 50;" text="Back" />
-      <TextField fx:id="textField_weight" layoutX="175.0" layoutY="246.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-radius: 50;" />
+      <TextField fx:id="textField_weight" layoutX="175.0" layoutY="246.0" prefHeight="25.0" prefWidth="150.0" style="-fx-border-radius: 50; -fx-border-color: #ffe782; -fx-background-color: #FEFBF4;" />
       <DatePicker fx:id="picker_Date" layoutX="181.0" layoutY="206.0" prefHeight="25.0" prefWidth="139.0" />
       <DatePicker fx:id="picker_nextDue" layoutX="181.0" layoutY="398.0" prefHeight="25.0" prefWidth="139.0" />
+      <Button fx:id="btn_back" layoutX="146.0" layoutY="465.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #ffe782; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Back" />
+      <Button layoutX="257.0" layoutY="465.0" mnemonicParsing="false" onAction="#save" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #ffe782; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Save" />
       
    </children>
 </AnchorPane>

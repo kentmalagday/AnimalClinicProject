@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1522.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Pethealth">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1522.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Pethealth">
    <children>
       <ImageView fitHeight="299.0" fitWidth="283.0" layoutX="56.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -26,7 +26,7 @@
             <Font name="Monospaced Bold" size="23.0" />
          </font>
       </Label>
-      <Button layoutX="212.0" layoutY="745.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #5B2018;" text="Save" textFill="WHITE" onAction="#save">
+      <Button layoutX="212.0" layoutY="745.0" mnemonicParsing="false" onAction="#save" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #5B2018;" text="Save" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
@@ -81,7 +81,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btn_grooming" layoutX="872.0" layoutY="738.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #ffb469;" text="View" textFill="#5b2018">
+      <Button fx:id="btn_grooming" layoutX="872.0" layoutY="738.0" mnemonicParsing="false" onAction="#grooming" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #ffb469;" text="View" textFill="#5b2018">
          <font>
             <Font size="18.0" />
          </font>
@@ -91,7 +91,7 @@
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="78.0" layoutY="745.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #5B2018;" text="Back" textFill="WHITE" onAction="#btn_backClicked">
+      <Button layoutX="78.0" layoutY="745.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #5B2018;" text="Back" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>

@@ -90,8 +90,8 @@ public class Medication implements Initializable{
 			petMedication.setStatus(comboBox_status.getValue());
 			Database.saveMedication(petMedication, Pethealth.selectedPet);
 			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Immunization");
-			alert.setHeaderText("Pet Immunization Record is added succesfully!");
+			alert.setTitle("Medication");
+			alert.setHeaderText("Pet Medication Record is added succesfully!");
 			alert.showAndWait();
 			medicationTable.setItems(PetMedicationList.getPetMedicationList(Pethealth.selectedPet));
 			clearFields();

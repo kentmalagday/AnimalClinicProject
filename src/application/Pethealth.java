@@ -60,16 +60,14 @@ public class Pethealth implements Initializable{
         m.changeScene("medication.fxml", "Medication", 1072, 735);
     }
 
-	
+	public void grooming() throws IOException {
+        Main m = new Main();
+        m.changeScene("grooming.fxml", "Grooming", 1072, 735);
+    }
 
    /* public void vetvisit() throws IOException {
         Main m = new Main();
         m.changeScene("vetvisit.fxml", "Vet Visit", 1072, 735);
-    }
-
-    public void grooming() throws IOException {
-        Main m = new Main();
-        m.changeScene("grooming.fxml", "Grooming", 1072, 735);
     }
 
     public void allergies() throws IOException {
