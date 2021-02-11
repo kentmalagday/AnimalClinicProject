@@ -58,10 +58,6 @@
       <Text fx:id="text_Petname" layoutX="219.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <ComboBox fx:id="combobox_Against" layoutX="175.0" layoutY="291.0" prefWidth="150.0" style="-fx-background-color: #FEFBF4; -fx-border-radius: 50; -fx-border-color: #ffe782;" />
       <ComboBox fx:id="combobox_Vet" layoutX="175.0" layoutY="340.0" prefWidth="150.0" style="-fx-border-radius: 50; -fx-border-color: #ffe782; -fx-background-color: #FEFBF4;" />
-<<<<<<< HEAD
-      <TextField fx:id="textField_nextdue" layoutX="176.0" layoutY="398.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #ffe782;" />
-=======
->>>>>>> ecb895468e5c112746960877814500d61f9e5397
       <TableView layoutX="432.0" layoutY="47.0" prefHeight="641.0" prefWidth="590.0" stylesheets="@immunization.css">
         <columns>
             <TableColumn fx:id="date" prefWidth="112.0" text="Date" />
@@ -71,17 +67,10 @@
             <TableColumn fx:id="nextdue" minWidth="0.0" prefWidth="131.0" text="Next Due" />
         </columns>
       </TableView>
-<<<<<<< HEAD
-      <Button layoutX="231.0" layoutY="486.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #ffe782; -fx-background-radius: 50; -fx-border-color: #ffffff; -fx-border-radius: 50; -fx-border-insets: 3;" text="Save" />
-      <Button fx:id="btn_back" layoutX="112.0" layoutY="486.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="33.0" prefWidth="95.0" style="-fx-background-color: #ffe782; -fx-background-radius: 50; -fx-border-color: #ffffff; -fx-border-radius: 50; -fx-border-insets: 3;" text="Back" />
-      <TextField fx:id="textField_date" layoutX="176.0" layoutY="206.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #ffe782;" />
-      <TextField fx:id="textField_weight" layoutX="175.0" layoutY="246.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-border-color: #ffe782;" />
-=======
       <Button layoutX="257.0" layoutY="464.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="68.0" style="-fx-background-color: #ffe782; -fx-background-radius: 50;" text="Save" />
       <Button fx:id="btn_back" layoutX="175.0" layoutY="464.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="33.0" prefWidth="68.0" style="-fx-background-color: #ffe782; -fx-background-radius: 50;" text="Back" />
       <TextField fx:id="textField_weight" layoutX="175.0" layoutY="246.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-radius: 50;" />
       <DatePicker fx:id="picker_Date" layoutX="181.0" layoutY="206.0" prefHeight="25.0" prefWidth="139.0" />
       <DatePicker fx:id="picker_nextDue" layoutX="181.0" layoutY="398.0" prefHeight="25.0" prefWidth="139.0" />
->>>>>>> ecb895468e5c112746960877814500d61f9e5397
    </children>
 </AnchorPane>
