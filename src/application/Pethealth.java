@@ -78,6 +78,7 @@ public class Pethealth implements Initializable{
     }*/ // for switching scenes kapag may mga fxml na iba na
    
     public void btn_backClicked() throws IOException {
+    	selectedPet = null;
         Main m = new Main();
         m.changeScene("addpet.fxml", "Pet", 1522, 839);
     }

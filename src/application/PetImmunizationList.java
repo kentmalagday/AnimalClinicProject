@@ -7,11 +7,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class PetImmunizationList {
-	 public static ObservableList<PetImmunization> getPetImmunizationList() throws Exception{
+	 public static ObservableList<PetImmunization> getPetImmunizationList(Pet p) throws Exception{
 	        ObservableList<PetImmunization> petImmunizations = FXCollections.observableArrayList();
 	        try{
 	            Connection con = Database.con;
-	            String sql = "SELECT * FROM mork_petclinic.immunization Order By ID";
+	            String sql = "SELECT * FROM mork_petclinic.immunization WHERE '"+p.getID()+"' in (pet_id) Order By ID";
 	            ResultSet rs = con.createStatement().executeQuery(sql);
 	            while(rs.next()){
 	                PetImmunization petImmunization = new PetImmunization();

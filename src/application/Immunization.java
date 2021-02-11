@@ -78,7 +78,7 @@ public class Immunization implements Initializable{
 		nextDue.setCellValueFactory(new PropertyValueFactory<PetImmunization, LocalDate>("nextDue"));
 		
 		try {
-			immunizationTable.setItems(PetImmunizationList.getPetImmunizationList());
+			immunizationTable.setItems(PetImmunizationList.getPetImmunizationList(Pethealth.selectedPet));
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -105,7 +105,7 @@ public class Immunization implements Initializable{
 			alert.setTitle("Immunization");
 			alert.setHeaderText("Pet Immunization Record is added succesfully!");
 			alert.showAndWait();
-			immunizationTable.setItems(PetImmunizationList.getPetImmunizationList());
+			immunizationTable.setItems(PetImmunizationList.getPetImmunizationList(Pethealth.selectedPet));
 			clearFields();
 		}
 			

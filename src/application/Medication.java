@@ -67,7 +67,7 @@ public class Medication implements Initializable{
 		status.setCellValueFactory(new PropertyValueFactory<PetMedication, String>("status"));
 		
 		try {
-			medicationTable.setItems(PetMedicationList.getPetMedicationList());
+			medicationTable.setItems(PetMedicationList.getPetMedicationList(Pethealth.selectedPet));
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -93,7 +93,7 @@ public class Medication implements Initializable{
 			alert.setTitle("Immunization");
 			alert.setHeaderText("Pet Immunization Record is added succesfully!");
 			alert.showAndWait();
-			medicationTable.setItems(PetMedicationList.getPetMedicationList());
+			medicationTable.setItems(PetMedicationList.getPetMedicationList(Pethealth.selectedPet));
 			clearFields();
 		}
     }
