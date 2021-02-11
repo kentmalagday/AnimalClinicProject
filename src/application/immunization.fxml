@@ -58,10 +58,7 @@
       <Text fx:id="text_Petname" layoutX="219.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <ComboBox fx:id="combobox_Against" layoutX="175.0" layoutY="291.0" prefWidth="150.0" style="-fx-background-color: #FEFBF4; -fx-border-radius: 50; -fx-border-color: #ffe782;" />
       <ComboBox fx:id="combobox_Vet" layoutX="175.0" layoutY="340.0" prefWidth="150.0" style="-fx-border-radius: 50; -fx-border-color: #ffe782; -fx-background-color: #FEFBF4;" />
-      <TableView layoutX="432.0" layoutY="47.0" prefHeight="641.0" prefWidth="590.0" stylesheets="@immunization.css">
-=======
       <TableView fx:id = "immunizationTable" layoutX="432.0" layoutY="47.0" prefHeight="641.0" prefWidth="590.0" stylesheets="@immunization.css">
->>>>>>> 69b01c511e90f329029fcc157c32fe8a0fb6a498
         <columns>
             <TableColumn fx:id="date" prefWidth="112.0" text="Date" />
             <TableColumn fx:id="weight" prefWidth="85.0" text="Weight" />
@@ -75,5 +72,6 @@
       <TextField fx:id="textField_weight" layoutX="175.0" layoutY="246.0" prefHeight="25.0" prefWidth="150.0" style="-fx-background-radius: 50;" />
       <DatePicker fx:id="picker_Date" layoutX="181.0" layoutY="206.0" prefHeight="25.0" prefWidth="139.0" />
       <DatePicker fx:id="picker_nextDue" layoutX="181.0" layoutY="398.0" prefHeight="25.0" prefWidth="139.0" />
+      
    </children>
 </AnchorPane>
