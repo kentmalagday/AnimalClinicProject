@@ -44,7 +44,16 @@
             <Font size="14.0" />
          </font>
       </Label>
+<<<<<<< HEAD
       <TableView layoutX="418.0" layoutY="37.0" prefHeight="655.0" prefWidth="624.0" stylesheets="@medication.css">
+=======
+      <Text fx:id="petname" layoutX="195.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TableView fx:id="medicationTable" layoutX="429.0" layoutY="110.0" prefHeight="608.0" prefWidth="624.0">
+>>>>>>> 69b01c511e90f329029fcc157c32fe8a0fb6a498
         <columns>
             <TableColumn fx:id="description1" prefWidth="183.0" text="Drug Name" />
           <TableColumn fx:id="description" prefWidth="184.0" text="Description" />
@@ -52,11 +61,20 @@
             <TableColumn fx:id="status" prefWidth="129.0" text="Status" />
         </columns>
       </TableView>
+<<<<<<< HEAD
       <TextArea fx:id="textArea_Description" layoutX="155.0" layoutY="227.0" prefHeight="96.0" prefWidth="175.0" style="-fx-border-color: #84B0AA; -fx-background-color: #FEFBF4;" />
       <TextField fx:id="textField_dosage" layoutX="155.0" layoutY="346.0" prefHeight="25.0" prefWidth="175.0" style="-fx-border-radius: 50; -fx-border-color: #84B0AA; -fx-background-radius: 50;" />
       <Button fx:id="btn_back" layoutX="131.0" layoutY="459.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #ACD2D0; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Back" />
       <Button layoutX="236.0" layoutY="459.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #ACD2D0; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Save" />
       <ComboBox fx:id="comboBox_status" layoutX="155.0" layoutY="390.0" prefHeight="25.0" prefWidth="175.0" style="-fx-background-color: #FEFBF4; -fx-border-color: #84B0AA; -fx-border-radius: 50;" />
       <TextField fx:id="textField_dosage1" layoutX="155.0" layoutY="169.0" prefHeight="25.0" prefWidth="175.0" style="-fx-border-color: #84B0AA; -fx-border-radius: 50; -fx-background-radius: 50;" />
+=======
+      <TextArea fx:id="textArea_Description" layoutX="189.0" layoutY="192.0" prefHeight="96.0" prefWidth="175.0" />
+      <TextField fx:id="textField_dosage" layoutX="189.0" layoutY="311.0" prefHeight="25.0" prefWidth="175.0" />
+      <Button fx:id="btn_back" layoutX="208.0" layoutY="414.0" mnemonicParsing="false" onAction="#btn_backClicked" text="Back" />
+      <Button layoutX="286.0" layoutY="414.0" mnemonicParsing="false" text="Save" onAction="#save"/>
+      <ComboBox fx:id="comboBox_status" layoutX="189.0" layoutY="355.0" prefHeight="25.0" prefWidth="175.0" />
+      <Button layoutX="243.0" layoutY="488.0" mnemonicParsing="false" text="Button" />
+>>>>>>> 69b01c511e90f329029fcc157c32fe8a0fb6a498
    </children>
 </AnchorPane>

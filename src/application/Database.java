@@ -85,7 +85,6 @@ public class Database {
     	}
     }
    
-
     public static void updatePet(Client c, Pet p, Pet selected) throws Exception{
     	try {
     		String command = "";
@@ -161,8 +160,6 @@ public class Database {
 		}
     }
 
-
-
     public static void deleteAppointment(int petID) {
     	try {
     		String command = "DELETE FROM `appointment` WHERE `appointment`.`pet_id` = "+petID+";";
@@ -219,6 +216,18 @@ public class Database {
         return null;
     }
     
-
+    //Immunization Stuff
+    public static void saveImmunization(PetImmunization i, Pet p) throws Exception{
+    	String command = "INSERT INTO `mork_petclinic`.`immunization` (`date`, `weight`, `against`, `veterinarian`, `nextDue`, `pet_id`) VALUES ('"+i.getDate()+"', '"+i.getWeight()+"', '"+i.getAgainst()+"', '"+i.getVeterinarian()+"', '"+i.getNextDue()+"', '"+p.getID()+"');";
+    	PreparedStatement add = con.prepareStatement(command);
+    	add.executeUpdate();
+    	System.out.println(command);
+    }
+    public static void saveMedication(PetMedication m, Pet p) throws Exception{
+    	String command = "INSERT INTO `mork_petclinic`.`medication` (`description`, `dosage`, `status`, `pet_id`) VALUES ('"+m.getDescription()+"', '"+m.getDosage()+"', '"+m.getStatus()+"', '"+p.getID()+"');";
+    	PreparedStatement add = con.prepareStatement(command);
+    	add.executeUpdate();
+    	System.out.println(command);
+    }
 }
     
