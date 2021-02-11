@@ -29,6 +29,26 @@ public class Pethealth {
         m.changeScene("immunization.fxml", "Immunization", 1072, 735);
 
     }
+
+    public void medication() throws IOException {
+        Main m = new Main();
+        m.changeScene("medication.fxml", "Medication", 1072, 735);
+    }
+
+   /* public void vetvisit() throws IOException {
+        Main m = new Main();
+        m.changeScene("vetvisit.fxml", "Vet Visit", 1072, 735);
+    }
+
+    public void grooming() throws IOException {
+        Main m = new Main();
+        m.changeScene("grooming.fxml", "Grooming", 1072, 735);
+    }
+
+    public void allergies() throws IOException {
+        Main m = new Main();
+        m.changeScene("allergies.fxml", "Allergies", 1072, 735);
+    }*/ // for switching scenes kapag may mga fxml na iba na
    
    
 }
