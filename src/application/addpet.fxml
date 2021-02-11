@@ -132,9 +132,9 @@
             <ToggleGroup fx:id="mf" />
          </toggleGroup></RadioButton>
       <RadioButton fx:id="female" layoutX="302.0" layoutY="373.0" mnemonicParsing="false" text="Female" toggleGroup="$mf" />
-      <Button fx:id="btn_petHealth" layoutX="125.0" layoutY="659.0" mnemonicParsing="false" onAction="#petHealth" prefHeight="47.0" prefWidth="234.0" style="-fx-background-color: #FEFBF4; -fx-border-color: #ff9f82; -fx-border-radius: 7; -fx-border-width: 4; -fx-border-insets: 4;" text="Pet Health Log" textFill="#5b2018">
+      <Button fx:id="btn_petHealth" layoutX="126.0" layoutY="655.0" mnemonicParsing="false" onAction="#petHealth" prefHeight="47.0" prefWidth="234.0" style="-fx-background-color: #FEFBF4; -fx-border-color: #ff9f82; -fx-border-radius: 50; -fx-border-width: 4; -fx-border-insets: 4;" text="Pet Health Log" textFill="#5b2018">
          <font>
-            <Font name="Monospaced Bold" size="20.0" />
+            <Font size="20.0" />
          </font></Button>
    </children>
 </AnchorPane>
