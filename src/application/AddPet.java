@@ -272,6 +272,8 @@ public class AddPet implements Initializable{
 		textField_weight.setText("");
 		textField_age.setText("");
 		textField_color.setText("");
+		male.setSelected(false);
+		female.setSelected(false);
 		textArea_purposeOfVisit.setText("");
 		hrsTime.setValue(null);
 		minsTime.setValue(null);
@@ -305,6 +307,10 @@ public class AddPet implements Initializable{
 		}
 		if (textField_color.getText().isEmpty()) {
 			emptyTextFields[i] = textField_color;
+			i++;
+		}
+		if(mf.getSelectedToggle() == null) {
+			System.out.println("Set sex.");
 			i++;
 		}
 		if(picker_appointmentDate.getValue() != null && (hrsTime.getValue() == null || minsTime.getValue() == null || amOrPm.getSelectedToggle() == null)) {

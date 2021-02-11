@@ -1,19 +1,12 @@
 package application;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Time;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 
-import com.mysql.cj.protocol.Resultset;
-import com.mysql.cj.x.protobuf.MysqlxPrepare.Prepare;
-import com.mysql.cj.xdevapi.Result;
 
 import javafx.application.Platform;
 
@@ -66,7 +59,7 @@ public class Database {
     
     public static void addPet(Pet p, Client selected) throws Exception{
         try{
-            String command= "INSERT INTO `mork_petclinic`.`animal` (`animal_name`, `species`, `breed`, `weight`, `age`, `color`, `purpose`, `animal_owner_id`, `appointmentDate`, `appointmentTime`) VALUES ('" + p.getAnimalName() + "', '" + p.getSpecies() + 
+            String command= "INSERT INTO `mork_petclinic`.`animal` (`animal_name`, `species`, `breed`, `weight`, `age`, `color`, `sex`, `purpose`, `animal_owner_id`, `appointmentDate`, `appointmentTime`) VALUES ('" + p.getAnimalName() + "', '" + p.getSpecies() + 
             		"', '" +p.getBreed() + "', '" + p.getWeight() + "', '" + p.getAge() + "', '" + p.getColor() + "', '" + p.getSex() + "', '" + p.getPurpose()+ "', '" + selected.getID() +"', '"+p.getAppointmentDate()+"', '"+p.getAppointmentTime()+"');";
             if(p.getAppointmentDate() == null || p.getAppointmentTime() == "") {
             	command = "INSERT INTO `mork_petclinic`.`animal` (`animal_name`, `species`, `breed`, `weight`, `age`, `color`, `sex`, `purpose`, `animal_owner_id`, `appointmentDate`, `appointmentTime`) VALUES ('" + p.getAnimalName() + "', '" + p.getSpecies() + 
@@ -132,8 +125,9 @@ public class Database {
     public static void deletePet(Pet selected){
         try {
             
-            String command = "DELETE FROM `mork_petclinic`.`animal` WHERE `mork_petclinic`.`animal`.`animal_id` = " +selected.getID()+ "";
-            deleteAppointment(selected.getID());
+            //String command = "DELETE FROM `mork_petclinic`.`animal` WHERE `mork_petclinic`.`animal`.`animal_id` = " +selected.getID()+ "";
+            String command = "UPDATE `mork_petclinic`.`animal` SET `deleted` = '1' WHERE `animal`.`animal_id` = "+selected.getID()+"";
+        	deleteAppointment(selected.getID());
             PreparedStatement delete = con.prepareStatement(command);
             delete.executeUpdate();
             System.out.println(command);
@@ -151,12 +145,14 @@ public class Database {
             while(rs.next()){
                 int pet_id = rs.getInt("animal_id");
                 deleteAppointment(pet_id);
-                String command_animal = "DELETE FROM `animal` WHERE `animal`.`animal_owner_id` = "+selected.getID()+";";
+                //String command_animal = "DELETE FROM `animal` WHERE `animal`.`animal_owner_id` = "+selected.getID()+";";
+                String command_animal = "UPDATE `mork_petclinic`.`animal` SET `deleted` = '1', `appointmentDate` = NULL, `appointmentTime` = NULL WHERE `animal`.`animal_owner_id` = "+selected.getID()+"";
                 PreparedStatement delete_animal = con.prepareStatement(command_animal);
                 delete_animal.executeUpdate();
                 System.out.println(command_animal);
             }
-            String command = "DELETE FROM `mork_petclinic`.`client` WHERE `mork_petclinic`.`client`.`ID` = " +selected.getID()+ "";
+            //String command = "DELETE FROM `mork_petclinic`.`client` WHERE `mork_petclinic`.`client`.`ID` = " +selected.getID()+ "";
+            String command = "UPDATE `mork_petclinic`.`client` SET `deleted` = '1' WHERE `mork_petclinic`.`client`.`ID` = " +selected.getID()+ "";
             PreparedStatement delete = con.prepareStatement(command);
             delete.executeUpdate();
             System.out.println(command);
