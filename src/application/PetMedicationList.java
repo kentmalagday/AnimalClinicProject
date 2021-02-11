@@ -16,6 +16,7 @@ public class PetMedicationList {
             while(rs.next()){
                 PetMedication petMedication = new PetMedication();
                 petMedication.setID(rs.getInt("id"));
+                petMedication.setDrguName(rs.getString("drugName"));
                 petMedication.setDescription(rs.getString("description"));
                 petMedication.setDosage(rs.getString("dosage"));
                 petMedication.setStatus(rs.getString("status"));

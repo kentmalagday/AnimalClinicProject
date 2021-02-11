@@ -29,7 +29,7 @@ public class Medication implements Initializable{
 	TableView<PetMedication> medicationTable;
 
 	@FXML
-    TableColumn<?, ?> drugname;
+    TableColumn<PetMedication, String> drugName;
 
     @FXML
     TableColumn<PetMedication, String> description;
@@ -61,6 +61,7 @@ public class Medication implements Initializable{
 		comboBox_status.setItems(list);
 		
 		medicationTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+		drugName.setCellValueFactory(new PropertyValueFactory<PetMedication, String>("drugName"));
 		description.setCellValueFactory(new PropertyValueFactory<PetMedication, String>("description"));
 		dosage.setCellValueFactory(new PropertyValueFactory<PetMedication, String>("dosage"));
 		status.setCellValueFactory(new PropertyValueFactory<PetMedication, String>("status"));
@@ -83,6 +84,7 @@ public class Medication implements Initializable{
     		alert.showAndWait();
 		} else {
 			PetMedication petMedication = new PetMedication();
+			petMedication.setDrguName(textField_drugName.getText());
 			petMedication.setDescription(textArea_Description.getText());
 			petMedication.setDosage(textField_dosage.getText());
 			petMedication.setStatus(comboBox_status.getValue());
@@ -101,6 +103,9 @@ public class Medication implements Initializable{
     }
     boolean textFieldsEmpty() {
 		int i = 0;
+		if (textField_drugName.getText().isEmpty()) {
+			i++;
+		}
 		if (textArea_Description.getText().isEmpty()) {
 			i++;
 		}
@@ -120,6 +125,7 @@ public class Medication implements Initializable{
 	}
     
     void clearFields() {
+    	textField_drugName.setText("");
     	textArea_Description.setText("");
     	textField_dosage.setText("");
     	comboBox_status.setValue(null);

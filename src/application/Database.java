@@ -223,8 +223,9 @@ public class Database {
     	add.executeUpdate();
     	System.out.println(command);
     }
+    //Medication
     public static void saveMedication(PetMedication m, Pet p) throws Exception{
-    	String command = "INSERT INTO `mork_petclinic`.`medication` (`description`, `dosage`, `status`, `pet_id`) VALUES ('"+m.getDescription()+"', '"+m.getDosage()+"', '"+m.getStatus()+"', '"+p.getID()+"');";
+    	String command = "INSERT INTO `mork_petclinic`.`medication` (`drugName`, `description`, `dosage`, `status`, `pet_id`) VALUES ('"+m.getDrugName()+"', '"+m.getDescription()+"', '"+m.getDosage()+"', '"+m.getStatus()+"', '"+p.getID()+"');";
     	PreparedStatement add = con.prepareStatement(command);
     	add.executeUpdate();
     	System.out.println(command);

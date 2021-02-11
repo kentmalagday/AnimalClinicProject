@@ -46,7 +46,7 @@
       </Label>
       <TableView fx:id="medicationTable" layoutX="429.0" layoutY="34.0" prefHeight="674.0" prefWidth="624.0" stylesheets="@medication.css">
         <columns>
-            <TableColumn fx:id="drugname" prefWidth="183.0" text="Drug Name" />
+            <TableColumn fx:id="drugName" prefWidth="183.0" text="Drug Name" />
           <TableColumn fx:id="description" prefWidth="184.0" text="Description" />
           <TableColumn fx:id="dosage" prefWidth="127.0" text="Dosage" />
             <TableColumn fx:id="status" prefWidth="129.0" text="Status" />
