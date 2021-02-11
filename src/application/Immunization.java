@@ -19,10 +19,10 @@ public class Immunization implements Initializable{
     Text text_Petname;
 
     @FXML
-    Text text_Date;
+    TextField textField_date;
 
     @FXML
-    Text text_Weight;
+    TextField textField_weight;
 
     @FXML
     Button btn_back;
@@ -35,6 +35,12 @@ public class Immunization implements Initializable{
 
     @FXML
     TextField textField_nextdue;
+
+    @FXML
+    TableColumn<?, ?> date;
+
+    @FXML
+    TableColumn<?, ?> weight;
 
     @FXML
     TableColumn<?, ?> against;

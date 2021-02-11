@@ -55,19 +55,21 @@
          </font>
       </Label>
       <Text fx:id="text_Petname" layoutX="223.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="text_Date" layoutX="223.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text fx:id="text_Weight" layoutX="223.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <ComboBox fx:id="combobox_Against" layoutX="179.0" layoutY="249.0" prefWidth="150.0" />
       <ComboBox fx:id="combobox_Vet" layoutX="179.0" layoutY="298.0" prefWidth="150.0" />
       <TextField fx:id="textField_nextdue" layoutX="180.0" layoutY="356.0" />
-      <TableView layoutX="446.0" layoutY="108.0" prefHeight="601.0" prefWidth="608.0">
+      <TableView layoutX="470.0" layoutY="109.0" prefHeight="601.0" prefWidth="590.0">
         <columns>
-          <TableColumn fx:id="against" prefWidth="215.0" text="Against" />
-          <TableColumn fx:id="veterinarian" minWidth="0.0" prefWidth="181.0" text="Veterinarian" />
-            <TableColumn fx:id="nextdue" minWidth="0.0" prefWidth="211.0" text="Next Due" />
+            <TableColumn fx:id="date" prefWidth="112.0" text="Date" />
+            <TableColumn fx:id="weight" prefWidth="85.0" text="Weight" />
+          <TableColumn fx:id="against" prefWidth="126.0" text="Against" />
+          <TableColumn fx:id="veterinarian" minWidth="0.0" prefWidth="142.0" text="Veterinarian" />
+            <TableColumn fx:id="nextdue" minWidth="0.0" prefWidth="131.0" text="Next Due" />
         </columns>
       </TableView>
       <Button layoutX="261.0" layoutY="409.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" text="Save" />
       <Button fx:id="btn_back" layoutX="179.0" layoutY="409.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="25.0" prefWidth="68.0" text="Back" />
+      <TextField fx:id="textField_date" layoutX="180.0" layoutY="164.0" prefHeight="25.0" prefWidth="150.0" />
+      <TextField fx:id="textField_weight" layoutX="179.0" layoutY="204.0" prefHeight="25.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
