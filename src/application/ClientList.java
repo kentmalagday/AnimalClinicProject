@@ -12,7 +12,7 @@ public class ClientList {
         ObservableList<Client> clients = FXCollections.observableArrayList();
         try{
             Connection con = Database.con;
-            String sql = "SELECT * FROM mork_petclinic.client Order By ID";
+            String sql = "SELECT * FROM mork_petclinic.client WHERE '0' in (deleted) Order By ID";
             ResultSet rs = con.createStatement().executeQuery(sql);
             while(rs.next()){
                 Client client = new Client();

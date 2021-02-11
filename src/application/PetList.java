@@ -14,7 +14,7 @@ public class PetList {
         
         try{
             Connection con = Database.con;
-            String sql = "SELECT * FROM `mork_petclinic`.`animal` WHERE '"+selected.getID()+"' in (animal_owner_id)";
+            String sql = "SELECT * FROM `mork_petclinic`.`animal` WHERE '"+selected.getID()+"' in (animal_owner_id) AND '0' in (deleted)";
             ResultSet rs = con.createStatement().executeQuery(sql);
             while(rs.next()){
                 Pet pet = new Pet();
