@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="1072.0" style="-fx-background-color: #FEFBF4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Medication">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="1072.0" style="-fx-background-color: #FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Medication">
    <children>
       <Label layoutX="49.0" layoutY="50.0" text="MEDICATION" textFill="#5b2018">
          <font>
@@ -29,26 +29,21 @@
             <Image url="@../../resources/LOGO.png" />
          </image>
       </ImageView>
-      <Label layoutX="62.0" layoutY="225.0" text="Description:">
+      <Label layoutX="63.0" layoutY="223.0" text="Description:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="59.0" layoutY="348.0" text="Dosage:">
+      <Label layoutX="58.0" layoutY="314.0" text="Dosage:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="59.0" layoutY="393.0" text="Status:">
+      <Label layoutX="58.0" layoutY="358.0" text="Status:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Text fx:id="petname" layoutX="195.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
       <TableView fx:id="medicationTable" layoutX="429.0" layoutY="110.0" prefHeight="608.0" prefWidth="624.0">
         <columns>
             <TableColumn fx:id="description1" prefWidth="183.0" text="Drug Name" />
@@ -57,11 +52,21 @@
             <TableColumn fx:id="status" prefWidth="129.0" text="Status" />
         </columns>
       </TableView>
-      <TextArea fx:id="textArea_Description" layoutX="189.0" layoutY="192.0" prefHeight="96.0" prefWidth="175.0" />
+      <TextArea fx:id="textArea_Description" layoutX="189.0" layoutY="195.0" prefHeight="96.0" prefWidth="175.0" />
       <TextField fx:id="textField_dosage" layoutX="189.0" layoutY="311.0" prefHeight="25.0" prefWidth="175.0" />
-      <Button fx:id="btn_back" layoutX="208.0" layoutY="414.0" mnemonicParsing="false" onAction="#btn_backClicked" text="Back" />
-      <Button layoutX="286.0" layoutY="414.0" mnemonicParsing="false" text="Save" onAction="#save"/>
+      <Button fx:id="btn_back" layoutX="71.0" layoutY="414.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="25.0" prefWidth="74.0" text="Back" />
+      <Button layoutX="224.0" layoutY="414.0" mnemonicParsing="false" onAction="#save" prefHeight="25.0" prefWidth="74.0" text="Save" />
       <ComboBox fx:id="comboBox_status" layoutX="189.0" layoutY="355.0" prefHeight="25.0" prefWidth="175.0" />
-      <Button layoutX="243.0" layoutY="488.0" mnemonicParsing="false" text="Button" />
+      <TextField fx:id="textField_drugName" layoutX="189.0" layoutY="164.0" prefHeight="25.0" prefWidth="175.0" />
+      <Label layoutX="62.0" layoutY="133.0" text="Pet Name:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="petname" layoutX="189.0" layoutY="133.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

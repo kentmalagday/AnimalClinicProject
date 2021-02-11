@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -23,7 +24,7 @@ import javafx.scene.text.Text;
 public class Medication implements Initializable{
 	
 	@FXML
-	Text petname;
+	Label petname;
 	@FXML
 	TableView<PetMedication> medicationTable;
 
@@ -47,6 +48,9 @@ public class Medication implements Initializable{
     
     @FXML
     Button btn_back;
+
+	@FXML
+	TextField textField_drugName;
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
