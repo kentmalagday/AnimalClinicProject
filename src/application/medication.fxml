@@ -11,58 +11,52 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="1072.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Medication">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="1072.0" style="-fx-background-color: #FEFBF4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Medication">
    <children>
-      <Label layoutX="53.0" layoutY="50.0" text="MEDICATION" textFill="#5b2018">
+      <Label layoutX="49.0" layoutY="50.0" text="MEDICATION" textFill="#5b2018">
          <font>
             <Font name="Monospaced Bold" size="29.0" />
          </font>
       </Label>
-      <Label layoutX="96.0" layoutY="136.0" text="Name:">
+      <Label layoutX="62.0" layoutY="171.0" text="Drug Name:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <ImageView fitHeight="100.0" fitWidth="112.0" layoutX="946.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="100.0" fitWidth="112.0" layoutX="231.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../resources/LOGO.png" />
          </image>
       </ImageView>
-      <Label layoutX="96.0" layoutY="190.0" text="Description:">
+      <Label layoutX="62.0" layoutY="225.0" text="Description:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="93.0" layoutY="313.0" text="Dosage:">
+      <Label layoutX="59.0" layoutY="348.0" text="Dosage:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="93.0" layoutY="358.0" text="Status:">
+      <Label layoutX="59.0" layoutY="393.0" text="Status:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Text layoutX="195.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Text>
-      <TableView layoutX="429.0" layoutY="110.0" prefHeight="608.0" prefWidth="624.0">
+      <TableView layoutX="418.0" layoutY="37.0" prefHeight="655.0" prefWidth="624.0" stylesheets="@medication.css">
         <columns>
-          <TableColumn fx:id="description" prefWidth="282.0" text="Description" />
-          <TableColumn fx:id="dosage" prefWidth="202.0" text="Dosage" />
-            <TableColumn fx:id="status" prefWidth="139.0" text="Status" />
+            <TableColumn fx:id="description1" prefWidth="183.0" text="Drug Name" />
+          <TableColumn fx:id="description" prefWidth="184.0" text="Description" />
+          <TableColumn fx:id="dosage" prefWidth="127.0" text="Dosage" />
+            <TableColumn fx:id="status" prefWidth="129.0" text="Status" />
         </columns>
       </TableView>
-      <TextArea fx:id="textArea_Description" layoutX="189.0" layoutY="192.0" prefHeight="96.0" prefWidth="175.0" />
-      <TextField fx:id="textField_dosage" layoutX="189.0" layoutY="311.0" prefHeight="25.0" prefWidth="175.0" />
-      <Button fx:id="btn_back" layoutX="208.0" layoutY="414.0" mnemonicParsing="false" onAction="#btn_backClicked" text="Back" />
-      <Button layoutX="286.0" layoutY="414.0" mnemonicParsing="false" text="Save" />
-      <ComboBox fx:id="comboBox_status" layoutX="189.0" layoutY="355.0" prefHeight="25.0" prefWidth="175.0" />
-      <Button layoutX="243.0" layoutY="488.0" mnemonicParsing="false" text="Button" />
+      <TextArea fx:id="textArea_Description" layoutX="155.0" layoutY="227.0" prefHeight="96.0" prefWidth="175.0" style="-fx-border-color: #84B0AA; -fx-background-color: #FEFBF4;" />
+      <TextField fx:id="textField_dosage" layoutX="155.0" layoutY="346.0" prefHeight="25.0" prefWidth="175.0" style="-fx-border-radius: 50; -fx-border-color: #84B0AA; -fx-background-radius: 50;" />
+      <Button fx:id="btn_back" layoutX="131.0" layoutY="459.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #ACD2D0; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Back" />
+      <Button layoutX="236.0" layoutY="459.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #ACD2D0; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Save" />
+      <ComboBox fx:id="comboBox_status" layoutX="155.0" layoutY="390.0" prefHeight="25.0" prefWidth="175.0" style="-fx-background-color: #FEFBF4; -fx-border-color: #84B0AA; -fx-border-radius: 50;" />
+      <TextField fx:id="textField_dosage1" layoutX="155.0" layoutY="169.0" prefHeight="25.0" prefWidth="175.0" style="-fx-border-color: #84B0AA; -fx-border-radius: 50; -fx-background-radius: 50;" />
    </children>
 </AnchorPane>
