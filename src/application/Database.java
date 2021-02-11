@@ -191,30 +191,30 @@ public class Database {
     	}
     }
     
-    public static Connection getConnection(String user, String pass) throws Exception{
-        try{
-            String driver = "com.mysql.cj.jdbc.Driver";
-            String url = "jdbc:mysql://mork.heliohost.us:3306/mork_petclinic";
-            String username = "mork_"+user;
-            String password = pass;
-            Class.forName(driver);
-            System.out.println("Connecting! Please Wait.");
-            
-            Connection conn = DriverManager.getConnection(url, username, password);
-            while(conn == null) {
-        		System.out.println(".");
-        	}
-            System.out.println("Connected!");
-            return conn;
-        }
-        catch(Exception e){
-        	System.out.println(e);
-            System.out.println("Please try opening the program again. Check your Internet Connection.");
-            Platform.exit();
-            System.exit(0);
-        }
-        return null;
-    }
+//    public static Connection getConnection(String user, String pass) throws Exception{
+//        try{
+//            String driver = "com.mysql.cj.jdbc.Driver";
+//            String url = "jdbc:mysql://mork.heliohost.us:3306/mork_petclinic";
+//            String username = "mork_"+user;
+//            String password = pass;
+//            Class.forName(driver);
+//            System.out.println("Connecting! Please Wait.");
+//            
+//            Connection conn = DriverManager.getConnection(url, username, password);
+//            while(conn == null) {
+//        		System.out.println(".");
+//        	}
+//            System.out.println("Connected!");
+//            return conn;
+//        }
+//        catch(Exception e){
+//        	System.out.println(e);
+//            System.out.println("Please try opening the program again. Check your Internet Connection.");
+//            Platform.exit();
+//            System.exit(0);
+//        }
+//        return null;
+//    }
     
     //Immunization Stuff
     public static void saveImmunization(PetImmunization i, Pet p) throws Exception{
