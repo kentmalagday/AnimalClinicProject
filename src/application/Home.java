@@ -23,6 +23,8 @@ public class Home {
     @FXML
     private Button btn_logout;
 
+    @FXML
+    private Button btn_signup;
     
     public void btn_clientsClicked() throws IOException {
         Main m = new Main();
@@ -41,6 +43,10 @@ public class Home {
     public void btn_logoutClicked() throws IOException {
         Main m = new Main();
         m.changeScene("sample.fxml", "Login", 600, 400);
+    }
+    public void btn_signup_clicked() throws IOException {
+        Main m = new Main();
+        m.changeScene("signup.fxml", "Signup", 400, 400);
     }
 
 }

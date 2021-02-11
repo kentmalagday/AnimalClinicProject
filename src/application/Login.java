@@ -25,16 +25,9 @@ public class Login {
     private TextField textField_username;
     @FXML
     private PasswordField passField_password;
-    @FXML
-    private Button btn_signup;
 
     public void btn_loginClicked(ActionEvent event) throws Exception {
         checkLogin();
-    }
-
-    public void btn_signup_clicked() throws IOException {
-        Main m = new Main();
-        m.changeScene("signup.fxml", "Signup", 400, 400);
     }
 
     private void checkLogin() throws Exception {

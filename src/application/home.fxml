@@ -38,5 +38,10 @@
             <Font name="Yu Gothic UI Semibold" size="18.0" />
          </font>
       </Button>
+      <Button fx:id="btn_signup" layoutX="900.0" layoutY="617.0" mnemonicParsing="false" onAction="#btn_signup_clicked" text="Create new user">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
 </Pane>
