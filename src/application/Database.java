@@ -230,5 +230,17 @@ public class Database {
     	add.executeUpdate();
     	System.out.println(command);
     }
+    //Pet History
+    public static void saveHistory(PetHistory h, Pet p) throws Exception{
+    	LocalDate date = null;
+    	if(h.getDate() != null) {
+    		date = h.getDate();
+    	}
+    	String command = "INSERT INTO `mork_petclinic`.`history` (`breederName`, `formerVetClinic`, `formerVet`, `date`, `neutered`, `pet_id`) VALUES ('"+h.getBreederName()+"', '"+h.getFormerVetClinic()+"', '"+h.getFormerVet()+"', '"+date+"', '"+h.getNeutered()+"', '"+p.getID()+"');";
+    	
+    	PreparedStatement add =con.prepareStatement(command);
+    	add.executeUpdate();
+    	System.out.println(command);
+    }
 }
     

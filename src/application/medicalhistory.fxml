@@ -13,6 +13,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ToggleGroup?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="608.0" prefWidth="1295.0" style="-fx-background-color: #FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Medicalhistory"> 
    <children>
@@ -38,7 +39,7 @@
       </Label>
       <TextField fx:id="textfield_formerVetclinic" layoutX="211.0" layoutY="203.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
       <Button fx:id="btn_back" layoutX="97.0" layoutY="476.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #FF9F82; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Back" />
-      <Button layoutX="228.0" layoutY="476.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="95.0" style="-fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3; -fx-background-color: #FF9F82;" text="Save" />
+      <Button layoutX="228.0" layoutY="476.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="95.0" style="-fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3; -fx-background-color: #FF9F82;" text="Save" onAction="#save"/>
       <Label layoutX="60.0" layoutY="244.0" prefHeight="20.0" prefWidth="133.0" text="Former Veterinarian:">
          <font>
             <Font size="14.0" />
@@ -61,12 +62,15 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <RadioButton fx:id="radiobutton_snYes" layoutX="252.0" layoutY="391.0" mnemonicParsing="false" text="Yes">
+      <fx:define>
+      	<ToggleGroup fx:id="yesOrNo" />
+      </fx:define>
+      <RadioButton fx:id="radiobutton_snYes" layoutX="252.0" layoutY="391.0" mnemonicParsing="false" text="Yes" toggleGroup="$yesOrNo">
          <font>
             <Font size="14.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="radiobutton_snNo" layoutX="337.0" layoutY="391.0" mnemonicParsing="false" text="No">
+      <RadioButton fx:id="radiobutton_snNo" layoutX="337.0" layoutY="391.0" mnemonicParsing="false" text="No" toggleGroup="$yesOrNo">
          <font>
             <Font size="14.0" />
          </font>
@@ -144,7 +148,32 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Text layoutX="154.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+      <Text layoutX="154.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" fx:id="petNameText">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="209" layoutY="372" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" fx:id="neuterDateText">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="211" layoutY="219" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" fx:id="formerVetClinicText">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="211" layoutY="257" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" fx:id="formerVetText">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="211" layoutY="187" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" fx:id="breederNameText">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="252" layoutY="405" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" fx:id="neuterText">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
