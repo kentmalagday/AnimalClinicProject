@@ -16,4 +16,5 @@
 	<classpathentry kind="lib" path="C:/JavaFx/javafx-sdk-15/lib/javafx-swt.jar"/>
 	<classpathentry kind="lib" path="C:/MySQL/mysql-connector-java-8.0.23/mysql-connector-java-8.0.23.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaEffects"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>
