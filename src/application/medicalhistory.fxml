@@ -37,7 +37,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="textfield_formerVetclinic" layoutX="211.0" layoutY="203.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
+      <TextField fx:id="textfield_formerVetclinic" layoutX="211.0" layoutY="203.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82; -fx-background-color: #FEFBF4;" />
       <Button fx:id="btn_back" layoutX="97.0" layoutY="476.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #FF9F82; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Back" />
       <Button layoutX="228.0" layoutY="476.0" mnemonicParsing="false" onAction="#save" prefHeight="33.0" prefWidth="95.0" style="-fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3; -fx-background-color: #FF9F82;" text="Save" />
       <Label layoutX="60.0" layoutY="244.0" prefHeight="20.0" prefWidth="133.0" text="Former Veterinarian:">
@@ -45,7 +45,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="textfield_formerVeterinarian" layoutX="211.0" layoutY="240.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
+      <TextField fx:id="textfield_formerVeterinarian" layoutX="211.0" layoutY="240.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82; -fx-background-color: #FEFBF4;" />
       <Label layoutX="60.0" layoutY="172.0" prefHeight="20.0" prefWidth="122.0" text="Breeder Name:">
          <font>
             <Font size="14.0" />
@@ -56,7 +56,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="textFiled_breedersName" layoutX="211.0" layoutY="169.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
+      <TextField fx:id="textFiled_breedersName" layoutX="211.0" layoutY="169.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82; -fx-background-color: #FEFBF4;" />
       <Label layoutX="60.0" layoutY="358.0" prefHeight="20.0" prefWidth="149.0" text="Spay or Neuter Date:">
          <font>
             <Font size="14.0" />
@@ -88,19 +88,19 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <TextField fx:id="textArea_pastSurgical" layoutX="1072.0" layoutY="238.0" prefHeight="66.0" prefWidth="174.0" style="-fx-border-color: #FF9F82;" />
+      <TextField fx:id="textArea_pastSurgical" layoutX="1072.0" layoutY="238.0" prefHeight="66.0" prefWidth="174.0" style="-fx-border-color: #FF9F82; -fx-background-color: #FEFBF4;" />
       <Label layoutX="909.0" layoutY="167.0" prefHeight="20.0" prefWidth="104.0" text="Date:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <DatePicker fx:id="picker_surgicalDate" layoutX="1070.0" layoutY="164.0" style="-fx-border-color: #FF9F82;" />
+      <DatePicker fx:id="picker_surgicalDate" layoutX="1070.0" layoutY="164.0" style="-fx-border-color: #FF9F82; -fx-background-color: #FEFBF4;" />
       <Label layoutX="909.0" layoutY="200.0" prefHeight="20.0" prefWidth="133.0" text="Surgical Procedure:">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="textfield_surgicalProcedure" layoutX="1070.0" layoutY="197.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
+      <TextField fx:id="textfield_surgicalProcedure" layoutX="1070.0" layoutY="197.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82; -fx-background-color: #FEFBF4;" />
       <Label layoutX="904.0" layoutY="240.0" prefHeight="20.0" prefWidth="149.0" text="Additional Information:">
          <font>
             <Font size="14.0" />
@@ -126,9 +126,9 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="textfield_diagnosis" layoutX="643.0" layoutY="157.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
-      <TextField fx:id="textfield_treatment" layoutX="643.0" layoutY="196.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
-      <TextField fx:id="textArea_illness" layoutX="651.0" layoutY="245.0" prefHeight="66.0" prefWidth="174.0" style="-fx-border-color: #FF9F82;" />
+      <TextField fx:id="textfield_diagnosis" layoutX="643.0" layoutY="157.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82; -fx-background-color: #FEFBF4;" />
+      <TextField fx:id="textfield_treatment" layoutX="643.0" layoutY="196.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82; -fx-background-color: #FEFBF4;" />
+      <TextField fx:id="textArea_illness" layoutX="651.0" layoutY="245.0" prefHeight="66.0" prefWidth="174.0" style="-fx-border-color: #FF9F82; -fx-background-color: #FEFBF4;" />
       <TableView fx:id="surgicalTable" layoutX="904.0" layoutY="334.0" prefHeight="233.0" prefWidth="359.0" stylesheets="@medicalhistory.css">
          <columns>
             <TableColumn fx:id="date" prefWidth="98.0" text="Date" />

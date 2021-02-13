@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1522.0" style="-fx-background-color: FEFBF4; -fx-border-radius: 25; -fx-border-width: 3; -fx-border-insets: 4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddPet">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1522.0" style="-fx-background-color: FEFBF4; -fx-border-radius: 25; -fx-border-width: 3; -fx-border-insets: 4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.AddPet">
    <children>
       <Label layoutX="26.0" layoutY="17.0" prefHeight="100.0" prefWidth="267.0" text="PET INFORMATION" textFill="#5b2018" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="17.0">
          <font>
@@ -111,8 +111,8 @@
             <TableColumn fx:id="appointmentTime" prefWidth="155.0" text="Time" />
         </columns>
       </TableView>
-      <ComboBox fx:id="hrsTime" layoutX="120.0" layoutY="613.0" prefHeight="25.0" prefWidth="77.0" promptText="Hours" style="-fx-background-radius: 50; -fx-background-color: #FEFBF4;" />
-      <ComboBox fx:id="minsTime" layoutX="210.0" layoutY="613.0" prefHeight="25.0" prefWidth="87.0" promptText="Minutes" style="-fx-background-radius: 50; -fx-background-color: #FEFBF4;" />
+      <ComboBox fx:id="hrsTime" layoutX="120.0" layoutY="613.0" prefHeight="25.0" prefWidth="77.0" promptText="Hours" style="-fx-background-radius: 50; -fx-background-color: #ffe782;" />
+      <ComboBox fx:id="minsTime" layoutX="210.0" layoutY="613.0" prefHeight="25.0" prefWidth="87.0" promptText="Minutes" style="-fx-background-radius: 50; -fx-background-color: #ffe782;" />
       <fx:define>
       	<ToggleGroup fx:id="amOrPm" />
       	<ToggleGroup fx:id="mf" />

@@ -72,7 +72,7 @@ public class Pethealth implements Initializable{
 
     public void vetvisit() throws IOException {
         Main m = new Main();
-        m.changeScene("grooming.fxml", "Vet Visit", 1072, 735);
+        m.changeScene("vetvisit.fxml", "Vet Visit", 1072, 735);
     }
    
     public void medicalhistory() throws IOException {
