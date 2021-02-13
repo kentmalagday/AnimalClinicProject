@@ -98,9 +98,10 @@ public class Database {
     				updateAppointment(p, selected);
     			}
     		}else {
-        		if(p.getAppointmentDate() != LocalDate.now() && p.getAppointmentTime() != "") {
+        		if(p.getAppointmentDate() != null && p.getAppointmentTime() != "") {
         			addAppointment(c, selected, new Appointment(0, 0, p.getAppointmentDate(), p.getAppointmentTime(), "", ""));
         		}
+        		command = "UPDATE `mork_petclinic`.`animal` SET `animal_name` = '" +p.getAnimalName() + "', `species` = '" +p.getSpecies() + "', `breed` = '" +p.getBreed() + "', `weight` = '" +p.getWeight() + "', `age` = '" +p.getAge() + "', `color` = '" +p.getColor()+ "', `sex` = '" +p.getSex() +"', `purpose` = '" +p.getPurpose() +"' WHERE `mork_petclinic`.`animal`.`animal_id` = " +selected.getID()+ "";
     		}
     		PreparedStatement update = con.prepareStatement(command);
     		update.executeUpdate();
@@ -256,6 +257,23 @@ public class Database {
     	PreparedStatement add = con.prepareStatement(command);
     	add.executeUpdate();
     	System.out.println(command);
+    }
+    
+    //Grooming
+    public static void saveGrooming(PetGrooming g, Pet p) throws Exception{
+    	String groom = "";
+    	if(g.getGroom() == "None") {
+    		groom = "NULL";
+    	}
+    	else {
+    		groom = "'"+g.getGroom()+"'";
+    	}
+    	String command = "INSERT INTO `mork_petclinic`.`grooming` (`date`, `groom`, `treatments`, `groomer`, `pet_id`) VALUES ('"+g.getDate()+"', "+groom+", "+g.getTreatments()+", '"+g.getGroomer()+"', '"+p.getID()+"');";
+    	System.out.println(command);
+    	PreparedStatement add = con.prepareStatement(command);
+    	
+    	add.executeUpdate();
+    	
     }
 }
     

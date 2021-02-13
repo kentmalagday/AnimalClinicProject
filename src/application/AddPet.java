@@ -253,6 +253,12 @@ public class AddPet implements Initializable{
 			textField_age.setText((selectedPet.getAge()));
 			textField_color.setText(selectedPet.getColor());
 			textArea_purposeOfVisit.setText(selectedPet.getPurpose());
+			if(selectedPet.getSex().equals("Male")) {
+				mf.selectToggle(male);
+			}else {
+				mf.selectToggle(female);
+			}
+			
 		}
 		while (source != null && !(source instanceof TableRow)) {
 			source = source.getParent();
@@ -344,7 +350,7 @@ public class AddPet implements Initializable{
     }
     public void btn_backClicked() throws IOException {
         Main m = new Main();
-        m.changeScene("home.fxml", "Home", 1056, 668);
+        m.changeScene("clientforms.fxml", "Client", 1056, 668);
     }
 
 	public void petHealth() throws IOException {

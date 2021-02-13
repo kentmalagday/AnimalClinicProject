@@ -99,17 +99,22 @@
       </Text>
       <DatePicker fx:id="picker_date" layoutX="198.0" layoutY="199.0" />
       <ComboBox fx:id="combobox_typeOfgroom" layoutX="196.0" layoutY="248.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-color: #FEFBF4; -fx-border-radius: 50; -fx-border-color: #ffb469;" />
-      <ComboBox fx:id="combobox_sizeOfpet" layoutX="197.0" layoutY="462.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-color: #FEFBF4; -fx-border-radius: 50; -fx-border-color: #ffb469;" />
+      <!--  <ComboBox fx:id="combobox_sizeOfpet" layoutX="197.0" layoutY="462.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-color: #FEFBF4; -fx-border-radius: 50; -fx-border-color: #ffb469;" /> -->      
+      <Text fx:id="text_size" layoutX="198.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="185.95703125">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
       <TextField fx:id="textField_groomer" layoutX="198.0" layoutY="500.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-color: #ffb469; -fx-border-radius: 50; -fx-background-color: #FEFBF4;" />
       <ScrollPane layoutX="418.0" layoutY="28.0" prefHeight="692.0" prefWidth="638.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="692.0" prefWidth="808.0">
                <children>
-                  <TableView prefHeight="669.0" prefWidth="822.0" stylesheets="@grooming.css">
+                  <TableView prefHeight="669.0" prefWidth="822.0" stylesheets="@grooming.css" fx:id="groomingTable">
                      <columns>
                         <TableColumn fx:id="date" prefWidth="133.0" text="Date" />
-                        <TableColumn fx:id="typeofgroom" prefWidth="177.0" text="Type of Groom" />
-                        <TableColumn fx:id="sizeofpet" prefWidth="191.0" text="Size of Pet" />
+                        <TableColumn fx:id="groom" prefWidth="177.0" text="Type of Groom" />
+                       <!--  <TableColumn fx:id="sizeofpet" prefWidth="191.0" text="Size of Pet" /> --> 
                         <TableColumn fx:id="treatments" minWidth="0.0" prefWidth="157.0" text="Treatments" />
                         <TableColumn fx:id="groomer" prefWidth="133.0" text="Groomer" />
                      </columns>
@@ -119,6 +124,6 @@
         </content>
       </ScrollPane>
       <Button fx:id="btn_back" layoutX="181.0" layoutY="561.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #ffb469; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Back" />
-      <Button layoutX="289.0" layoutY="560.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="95.0" style="-fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3; -fx-background-color: #ffb469;" text="Save" />
+      <Button layoutX="289.0" layoutY="560.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="95.0" style="-fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3; -fx-background-color: #ffb469;" text="Save" onAction="#save"/>
    </children>
 </AnchorPane>
