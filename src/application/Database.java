@@ -232,13 +232,20 @@ public class Database {
     }
     //Pet History
     public static void saveHistory(PetHistory h, Pet p) throws Exception{
-    	LocalDate date = null;
+    	String command = "";
     	if(h.getDate() != null) {
-    		date = h.getDate();
+    		command = "INSERT INTO `mork_petclinic`.`history` (`breederName`, `formerVetClinic`, `formerVet`, `date`, `neutered`, `pet_id`) VALUES ('"+h.getBreederName()+"', '"+h.getFormerVetClinic()+"', '"+h.getFormerVet()+"', '"+h.getDate()+"', '"+h.getNeutered()+"', '"+p.getID()+"');";
+    	}else {
+    		command = "INSERT INTO `mork_petclinic`.`history` (`breederName`, `formerVetClinic`, `formerVet`, `date`, `neutered`, `pet_id`) VALUES ('"+h.getBreederName()+"', '"+h.getFormerVetClinic()+"', '"+h.getFormerVet()+"', NULL, '"+h.getNeutered()+"', '"+p.getID()+"');";
     	}
-    	String command = "INSERT INTO `mork_petclinic`.`history` (`breederName`, `formerVetClinic`, `formerVet`, `date`, `neutered`, `pet_id`) VALUES ('"+h.getBreederName()+"', '"+h.getFormerVetClinic()+"', '"+h.getFormerVet()+"', '"+date+"', '"+h.getNeutered()+"', '"+p.getID()+"');";
-    	
     	PreparedStatement add =con.prepareStatement(command);
+    	add.executeUpdate();
+    	System.out.println(command);
+    }
+    //Pet Illness
+    public static void saveIllness(PetIllness i, Pet p) throws Exception{
+    	String command = "INSERT INTO `mork_petclinic`.`illness` (`diagnosis`, `treatment`, `information`, `pet_id`) VALUES ('"+i.getDiagnosis()+"', '"+i.getTreatment()+"', '"+i.getInformation()+"', '"+p.getID()+"');";
+    	PreparedStatement add = con.prepareStatement(command);
     	add.executeUpdate();
     	System.out.println(command);
     }

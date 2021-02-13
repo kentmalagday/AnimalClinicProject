@@ -133,11 +133,11 @@
             <TableColumn fx:id="psAddinfo" minWidth="8.0" prefWidth="98.0" text="Add. Info." />
          </columns>
       </TableView>
-      <TableView layoutX="472.0" layoutY="339.0" prefHeight="233.0" prefWidth="359.0" stylesheets="@../../../../../Desktop/pethealthcontentfinal/medicalhistory.css">
+      <TableView layoutX="472.0" layoutY="339.0" prefHeight="233.0" prefWidth="359.0" stylesheets="@../../../../../Desktop/pethealthcontentfinal/medicalhistory.css" fx:id="illnessTable">
          <columns>
-            <TableColumn fx:id="iaDiagnosis" prefWidth="98.0" text="Diagnosis" />
-            <TableColumn fx:id="iaTreatment" prefWidth="144.0" text="Treatment" />
-            <TableColumn fx:id="iaAddinfo" minWidth="8.0" prefWidth="109.0" text="Add. Info." />
+            <TableColumn fx:id="diagnosis" prefWidth="98.0" text="Diagnosis" />
+            <TableColumn fx:id="treatment" prefWidth="144.0" text="Treatment" />
+            <TableColumn fx:id="information" minWidth="8.0" prefWidth="109.0" text="Add. Info." />
          </columns>
       </TableView>
       <Line endX="-100.0" endY="489.0" layoutX="968.0" layoutY="69.0" startX="-100.0" stroke="#ff9f82" />

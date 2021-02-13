@@ -2,6 +2,7 @@ package application;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -11,10 +12,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.text.Text;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class Medicalhistory implements Initializable{
 	@FXML
@@ -73,13 +76,16 @@ public class Medicalhistory implements Initializable{
     private TableColumn<?, ?> psAddinfo;
 
     @FXML
-    private TableColumn<?, ?> iaDiagnosis;
+    private TableColumn<PetIllness, String> diagnosis;
 
     @FXML
-    private TableColumn<?, ?> iaTreatment;
+    private TableColumn<PetIllness, String> treatment;
 
     @FXML
-    private TableColumn<?, ?> iaAddinfo;
+    private TableColumn<PetIllness, String> information;
+    
+    @FXML
+    private TableView<PetIllness> illnessTable;
 
     @FXML
     private DatePicker picker_spayOrneuter;
@@ -93,8 +99,10 @@ public class Medicalhistory implements Initializable{
 	public void initialize(URL arg0, ResourceBundle arg1) {
     	petNameText.setText(Pethealth.selectedPet.getAnimalName());
 		try {
+			System.out.println("Getting history");
 			ph = PetHistory.getPetHistory(Pethealth.selectedPet);
 		}catch(Exception e) {
+			System.out.println(e);
 			ph = null;
 		}
 		
@@ -105,6 +113,18 @@ public class Medicalhistory implements Initializable{
 			System.out.println("No History Yet!");
 			invisibleText();
 		}
+		//IllnessTabale
+		illnessTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+		diagnosis.setCellValueFactory(new PropertyValueFactory<PetIllness, String>("diagnosis"));
+		treatment.setCellValueFactory(new PropertyValueFactory<PetIllness, String>("treatment"));
+		information.setCellValueFactory(new PropertyValueFactory<PetIllness, String>("information"));
+		
+		try {
+			illnessTable.setItems(PetIllness.getPetIllnessList(Pethealth.selectedPet));
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
 		
 	}
     
@@ -132,35 +152,63 @@ public class Medicalhistory implements Initializable{
     			setHistory(ph);
     			clearFields();
     		}
+    	}else {
+    		if (textFieldsEmpty()) {
+    			Alert alert = new Alert(AlertType.INFORMATION);
+    			alert.setTitle("Pet");
+    			alert.setHeaderText("Please fill up all fields!");
+    			alert.showAndWait();
+    		}else {
+    			PetIllness petIllness = new PetIllness();
+    			petIllness.setDiagnosis(textfield_diagnosis.getText());
+    			petIllness.setTreatment(textfield_treatment.getText());
+    			petIllness.setInformation(textArea_illness.getText());
+    			Database.saveIllness(petIllness, Pethealth.selectedPet);
+    			Alert alert = new Alert(AlertType.INFORMATION);
+    			alert.setTitle("Immunization");
+    			alert.setHeaderText("Pet Immunization Record is added succesfully!");
+    			alert.showAndWait();
+    			illnessTable.setItems(PetIllness.getPetIllnessList(Pethealth.selectedPet));
+    			clearFields();
+		}
     	}
 			
     }
     
     boolean textFieldsEmpty() {
 		int i = 0;
-		if (textFiled_breedersName.getText().isEmpty()) {
-			i++;
-		}
-		if (textfield_formerVetclinic.getText().isEmpty()) {
-			i++;
-		}
-		if (textfield_formerVeterinarian.getText().isEmpty()) {
-			i++;
-		}
-		if (picker_spayOrneuter.getValue() == null) {
-			i++;
-		}
-		if (yesOrNo.getSelectedToggle() == null) {
-			i++;
+		if(ph == null) { //Check only if ph is null
+			if (textFiled_breedersName.getText().isEmpty()) {
+				i++;
+			}
+			if (textfield_formerVetclinic.getText().isEmpty()) {
+				i++;
+			}
+			if (textfield_formerVeterinarian.getText().isEmpty()) {
+				i++;
+			}
+			
+			if (yesOrNo.getSelectedToggle() == null) {
+				i++;
+			}
+			
+			if(picker_spayOrneuter.getValue() == null && radiobutton_snYes.isSelected()) {
+				i++;
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("Spay or Neuter");
+				alert.setHeaderText("Please set date!");
+				alert.showAndWait();
+			}
+		}else {
+			if(textfield_diagnosis.getText().isEmpty()) {
+				i++;
+			}
+			if(textfield_treatment.getText().isEmpty()) {
+				i++;
+			}
+			
 		}
 		
-		if(picker_spayOrneuter.getValue() == null && radiobutton_snYes.isSelected()) {
-			i++;
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Spay or Neuter");
-			alert.setHeaderText("Please set date!");
-			alert.showAndWait();
-		}
 		if (i > 0) {
 			System.out.println("There are empty textfields");
 			return true;
@@ -176,6 +224,11 @@ public class Medicalhistory implements Initializable{
     	textfield_formerVeterinarian.setText("");
     	picker_spayOrneuter.setValue(null);
     	yesOrNo.selectToggle(null);
+    	
+    	//Illness
+    	textfield_diagnosis.setText("");
+    	textfield_treatment.setText("");
+    	textArea_illness.setText("");
     }
     
     void setHistory(PetHistory h) {
@@ -191,8 +244,13 @@ public class Medicalhistory implements Initializable{
     	breederNameText.setText(h.getBreederName());
 		formerVetClinicText.setText(h.getFormerVetClinic());
 		formerVetText.setText(h.getFormerVet());
-		neuterDateText.setText(h.getDate().toString());
+		
 		neuterText.setText(h.getNeutered());
+		if(neuterText.getText() == "Yes") {
+			neuterDateText.setText(h.getDate().toString());
+		}else {
+			neuterDateText.setText("");
+		}
 		
     	breederNameText.setVisible(true);
 		formerVetClinicText.setVisible(true);
@@ -208,6 +266,7 @@ public class Medicalhistory implements Initializable{
 		formerVetClinicText.setVisible(false);
 		formerVetText.setVisible(false);
 		neuterDateText.setVisible(false);
+		neuterText.setVisible(false);
     }
     public void btn_backClicked() throws IOException {
         Main m = new Main();

@@ -1,6 +1,7 @@
 package application;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.time.LocalDate;
 
@@ -103,7 +104,10 @@ public class PetHistory {
                     petHistory.setBreederName(rs.getString("breederName"));
                     petHistory.setFormerVetClinic(rs.getString("formerVetClinic"));
                     petHistory.setFormerVet(rs.getString("formerVet"));
-                    petHistory.setDate(rs.getDate("date").toLocalDate());
+                    Date date = rs.getDate("date");
+                    if(date != null) {
+                    	petHistory.setDate(date.toLocalDate());
+                    }else petHistory.setDate(null);
                     petHistory.setNeutered(rs.getString("neutered"));
                     petHistory.setPetID(rs.getInt("pet_id"));   
                 }
@@ -114,6 +118,7 @@ public class PetHistory {
                 System.out.println(check);
                 return petHistory;
             }catch(Exception error) {
+            	System.out.println(error);
             	return null;
             }
     }
