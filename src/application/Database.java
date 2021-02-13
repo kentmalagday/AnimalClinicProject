@@ -249,5 +249,13 @@ public class Database {
     	add.executeUpdate();
     	System.out.println(command);
     }
+    
+    //Past Procedures
+    public static void saveProcedure(PetProcedure s, Pet p) throws Exception{
+    	String command = "INSERT INTO `mork_petclinic`.`surgical` (`date`, `procedure`, `additional`, `pet_id`) VALUES ('"+s.getDate()+"', '"+s.getProcedure()+"', '"+s.getAdditional()+"', '"+p.getID()+"');";
+    	PreparedStatement add = con.prepareStatement(command);
+    	add.executeUpdate();
+    	System.out.println(command);
+    }
 }
     

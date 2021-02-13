@@ -91,7 +91,7 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <DatePicker layoutX="1070.0" layoutY="164.0" style="-fx-border-color: #FF9F82;" />
+      <DatePicker fx:id="picker_surgicalDate" layoutX="1070.0" layoutY="164.0" style="-fx-border-color: #FF9F82;" />
       <Label layoutX="909.0" layoutY="200.0" prefHeight="20.0" prefWidth="133.0" text="Surgical Procedure:">
          <font>
             <Font size="14.0" />
@@ -126,11 +126,11 @@
       <TextField fx:id="textfield_diagnosis" layoutX="643.0" layoutY="157.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
       <TextField fx:id="textfield_treatment" layoutX="643.0" layoutY="196.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-radius: 50; -fx-background-radius: 50; -fx-border-color: #FF9F82;" />
       <TextField fx:id="textArea_illness" layoutX="651.0" layoutY="245.0" prefHeight="66.0" prefWidth="174.0" style="-fx-border-color: #FF9F82;" />
-      <TableView layoutX="904.0" layoutY="334.0" prefHeight="233.0" prefWidth="359.0" stylesheets="@../../../../../Desktop/pethealthcontentfinal/medicalhistory.css">
+      <TableView layoutX="904.0" layoutY="334.0" prefHeight="233.0" prefWidth="359.0" stylesheets="@../../../../../Desktop/pethealthcontentfinal/medicalhistory.css" fx:id="surgicalTable">
          <columns>
-            <TableColumn fx:id="psDAte" prefWidth="98.0" text="Date" />
-            <TableColumn fx:id="psSurgicalprocedure" prefWidth="155.0" text="Surgical Procedure" />
-            <TableColumn fx:id="psAddinfo" minWidth="8.0" prefWidth="98.0" text="Add. Info." />
+            <TableColumn fx:id="date" prefWidth="98.0" text="Date" />
+            <TableColumn fx:id="procedure" prefWidth="155.0" text="Surgical Procedure" />
+            <TableColumn fx:id="additional" minWidth="8.0" prefWidth="98.0" text="Add. Info." />
          </columns>
       </TableView>
       <TableView layoutX="472.0" layoutY="339.0" prefHeight="233.0" prefWidth="359.0" stylesheets="@../../../../../Desktop/pethealthcontentfinal/medicalhistory.css" fx:id="illnessTable">

@@ -67,13 +67,13 @@ public class Medicalhistory implements Initializable{
     private TextField textArea_illness;
 
     @FXML
-    private TableColumn<?, ?> psDAte;
+    private TableColumn<PetProcedure, String> date;
 
     @FXML
-    private TableColumn<?, ?> psSurgicalprocedure;
+    private TableColumn<PetProcedure, String> procedure;
 
     @FXML
-    private TableColumn<?, ?> psAddinfo;
+    private TableColumn<PetProcedure, String> additional;
 
     @FXML
     private TableColumn<PetIllness, String> diagnosis;
@@ -86,9 +86,13 @@ public class Medicalhistory implements Initializable{
     
     @FXML
     private TableView<PetIllness> illnessTable;
+    @FXML 
+    private TableView<PetProcedure> surgicalTable;
 
     @FXML
     private DatePicker picker_spayOrneuter;
+    @FXML
+    private DatePicker picker_surgicalDate;
     
     @FXML
     private ToggleGroup yesOrNo;
@@ -119,8 +123,15 @@ public class Medicalhistory implements Initializable{
 		treatment.setCellValueFactory(new PropertyValueFactory<PetIllness, String>("treatment"));
 		information.setCellValueFactory(new PropertyValueFactory<PetIllness, String>("information"));
 		
+		//SurgicalTable
+		surgicalTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+		date.setCellValueFactory(new PropertyValueFactory<PetProcedure, String>("date"));
+		procedure.setCellValueFactory(new PropertyValueFactory<PetProcedure, String>("procedure"));
+		additional.setCellValueFactory(new PropertyValueFactory<PetProcedure, String>("additional"));
+		
 		try {
 			illnessTable.setItems(PetIllness.getPetIllnessList(Pethealth.selectedPet));
+			surgicalTable.setItems(PetProcedure.getPetProcedureList(Pethealth.selectedPet));
 		} catch (Exception e) {
 			System.out.println(e);
 		}
@@ -159,18 +170,44 @@ public class Medicalhistory implements Initializable{
     			alert.setHeaderText("Please fill up all fields!");
     			alert.showAndWait();
     		}else {
-    			PetIllness petIllness = new PetIllness();
-    			petIllness.setDiagnosis(textfield_diagnosis.getText());
-    			petIllness.setTreatment(textfield_treatment.getText());
-    			petIllness.setInformation(textArea_illness.getText());
-    			Database.saveIllness(petIllness, Pethealth.selectedPet);
-    			Alert alert = new Alert(AlertType.INFORMATION);
-    			alert.setTitle("Immunization");
-    			alert.setHeaderText("Pet Immunization Record is added succesfully!");
-    			alert.showAndWait();
-    			illnessTable.setItems(PetIllness.getPetIllnessList(Pethealth.selectedPet));
+    			int flag = 0;
+    			if(!textfield_diagnosis.getText().isEmpty() || !textfield_treatment.getText().isEmpty() || !textArea_illness.getText().isEmpty()) {
+    				PetIllness petIllness = new PetIllness();
+        			petIllness.setDiagnosis(textfield_diagnosis.getText());
+        			petIllness.setTreatment(textfield_treatment.getText());
+        			petIllness.setInformation(textArea_illness.getText());
+        			Database.saveIllness(petIllness, Pethealth.selectedPet);
+        			Alert alert = new Alert(AlertType.INFORMATION);
+        			alert.setTitle("Immunization");
+        			alert.setHeaderText("Pet Illness Record is added succesfully!");
+        			alert.showAndWait();
+        			illnessTable.setItems(PetIllness.getPetIllnessList(Pethealth.selectedPet));
+        			flag++;
+    			}else System.out.println("No new illness to be saved");
+    			
+    			if(picker_surgicalDate.getValue() != null || !textfield_surgicalProcedure.getText().isEmpty() || !textArea_pastSurgical.getText().isEmpty()) {
+    				PetProcedure petProcedure = new PetProcedure();
+    				petProcedure.setDate(picker_surgicalDate.getValue());
+    				petProcedure.setProcedure(textfield_surgicalProcedure.getText());
+    				petProcedure.setAdditional(textArea_pastSurgical.getText());
+    				Database.saveProcedure(petProcedure, Pethealth.selectedPet);
+    				Alert alert = new Alert(AlertType.INFORMATION);
+        			alert.setTitle("Immunization");
+        			alert.setHeaderText("Pet Surgical Record is added succesfully!");
+        			alert.showAndWait();
+    				surgicalTable.setItems(PetProcedure.getPetProcedureList(Pethealth.selectedPet));
+    				flag++;
+    			}else System.out.println("No new surgical procedure to be saved");
+    			
+    			System.out.println(flag);
+    			if(flag == 0) {
+    				Alert alert = new Alert(AlertType.INFORMATION);
+        			alert.setTitle("Pet");
+        			alert.setHeaderText("No new information to be saved!");
+        			alert.showAndWait();
+    			}
     			clearFields();
-		}
+    		}
     	}
 			
     }
@@ -200,11 +237,22 @@ public class Medicalhistory implements Initializable{
 				alert.showAndWait();
 			}
 		}else {
-			if(textfield_diagnosis.getText().isEmpty()) {
-				i++;
+			if(!textfield_diagnosis.getText().isEmpty() || !textfield_treatment.getText().isEmpty() || !textArea_illness.getText().isEmpty()) {
+				if(textfield_diagnosis.getText().isEmpty()) {
+					i++;
+				}
+				if(textfield_treatment.getText().isEmpty()) {
+					i++;
+				}
 			}
-			if(textfield_treatment.getText().isEmpty()) {
-				i++;
+			if(picker_surgicalDate.getValue() != null || !textfield_surgicalProcedure.getText().isEmpty() || !textArea_pastSurgical.getText().isEmpty()) {
+				if(picker_surgicalDate.getValue() == null) {
+					i++;
+				}
+				if(textfield_surgicalProcedure.getText().isEmpty()) {
+					i++;
+				}
+				
 			}
 			
 		}
@@ -229,6 +277,10 @@ public class Medicalhistory implements Initializable{
     	textfield_diagnosis.setText("");
     	textfield_treatment.setText("");
     	textArea_illness.setText("");
+    	
+    	picker_surgicalDate.setValue(null);
+    	textfield_surgicalProcedure.setText("");
+    	textArea_pastSurgical.setText("");
     }
     
     void setHistory(PetHistory h) {
