@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Login">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Login">
    <left>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
@@ -28,24 +28,24 @@
    <right>
       <AnchorPane prefHeight="415.0" prefWidth="400.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="57.0" layoutY="182.0" text="Username" textFill="#5b2018">
+            <Label layoutX="59.0" layoutY="206.0" text="Username" textFill="#5b2018">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <Label layoutX="60.0" layoutY="241.0" text="Password" textFill="#5b2018">
+            <Label layoutX="62.0" layoutY="265.0" text="Password" textFill="#5b2018">
                <font>
                   <Font name="System Bold" size="23.0" />
                </font>
             </Label>
-            <TextField fx:id="textField_username" layoutX="194.0" layoutY="186.0" promptText="Username" />
-            <PasswordField fx:id="passField_password" layoutX="195.0" layoutY="246.0" promptText="Password" />
-            <Button fx:id="btn_login" layoutX="81.0" layoutY="324.0" mnemonicParsing="false" onAction="#btn_loginClicked" prefHeight="34.0" prefWidth="82.0" style="-fx-background-color: #5B2018;" text="Login" textFill="#fffefe">
+            <TextField fx:id="textField_username" layoutX="196.0" layoutY="210.0" promptText="Username" />
+            <PasswordField fx:id="passField_password" layoutX="197.0" layoutY="270.0" promptText="Password" />
+            <Button fx:id="btn_login" layoutX="135.0" layoutY="335.0" mnemonicParsing="false" onAction="#btn_loginClicked" prefHeight="34.0" prefWidth="132.0" style="-fx-background-color: #5B2018; -fx-background-radius: 50;" text="Login" textFill="#fffefe">
                <font>
-                  <Font name="System Bold" size="15.0" />
+                  <Font name="System Bold" size="18.0" />
                </font></Button>
             <Label fx:id="wrongLogIn" layoutX="190.0" layoutY="290.0" textFill="RED" />
-            <ImageView fitHeight="183.0" fitWidth="237.0" layoutX="95.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="183.0" fitWidth="237.0" layoutX="97.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/LOGO.png" />
                </image>
