@@ -36,7 +36,7 @@
       </ImageView>
       <Pane layoutX="141.0" layoutY="106.0" prefHeight="532.0" prefWidth="790.0">
          <children>
-            <TableView fx:id="appointmentTable" layoutX="14.0" layoutY="14.0" prefHeight="507.0" prefWidth="773.0" stylesheets="@appointmentcss.css">
+            <TableView fx:id="appointmentTable" layoutX="14.0" layoutY="14.0" prefHeight="507.0" prefWidth="773.0" stylesheets="@appointmentcss.css" onMouseClicked="#getSelection">
               <columns>
                   <TableColumn fx:id="id" prefWidth="83.0" resizable="false" text="ID" />
                   <TableColumn fx:id="clientName" prefWidth="253.0" resizable="false" text="Client Name" />
@@ -47,7 +47,7 @@
             </TableView>
          </children>
       </Pane>
-      <Button layoutX="181.0" layoutY="667.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" style="-fx-background-color: #ffe782; -fx-background-radius: 25;" text="Done" textFill="#5b2018">
+      <Button onAction="#delete" layoutX="181.0" layoutY="667.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" style="-fx-background-color: #ffe782; -fx-background-radius: 25;" text="Done" textFill="#5b2018">
          <font>
             <Font name="Monospaced Bold" size="17.0" />
          </font>

@@ -171,6 +171,12 @@ public class Database {
     		System.out.println(error);
     	}
     }
+    public static void deletePetAppointment(int petID) throws Exception{
+    	String command = "UPDATE `mork_petclinic`.`animal` SET `appointmentDate` = NULL, `appointmentTime` = NULL WHERE `animal`.`animal_id` = "+petID+"";
+    	PreparedStatement delete = con.prepareStatement(command);
+    	delete.executeUpdate();
+    	System.out.println(command);
+    }
     
     public static void addAppointment(Client c, Pet p, Appointment a) throws Exception{
     	try {
