@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -11,7 +12,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="658.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <left>
-      <AnchorPane prefHeight="407.0" prefWidth="141.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="391.0" prefWidth="99.0" BorderPane.alignment="CENTER">
          <children>
             <Label layoutX="7.0" layoutY="14.0" prefHeight="100.0" prefWidth="172.0" text="PAYMENTS" textFill="#5b2018" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
                <font>
@@ -22,45 +23,89 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="407.0" prefWidth="524.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="391.0" prefWidth="494.0" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="100.0" fitWidth="123.0" layoutX="356.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <image>
                   <Image url="@../../resources/LOGO.png" />
                </image>
             </ImageView>
-            <Label layoutX="103.0" layoutY="132.0" text="Total Charges:">
+            <Label layoutX="14.0" layoutY="245.0" text="Total Charges:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="103.0" layoutY="178.0" text="Payment:">
+            <Label layoutX="16.0" layoutY="276.0" text="Payment:">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="103.0" layoutY="223.0" text="Change:">
+            <TextField fx:id="textField_payment" layoutX="133.0" layoutY="274.0" />
+            <Label fx:id="label_change" layoutX="192.0" layoutY="308.0" prefHeight="21.0" prefWidth="89.0" text="0.00" textAlignment="RIGHT">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField layoutX="228.0" layoutY="130.0" />
-            <TextField layoutX="228.0" layoutY="176.0" />
-            <Label layoutX="260.0" layoutY="223.0" prefHeight="21.0" prefWidth="30.0" text="dw">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <Button layoutX="190.0" layoutY="275.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #acd2d0; -fx-background-radius: 25;" text="Back">
+            <Button layoutX="15.0" layoutY="339.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #acd2d0; -fx-background-radius: 25;" text="Back">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Button layoutX="290.0" layoutY="275.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffb469; -fx-background-radius: 25;" text="Pay">
+            <Button layoutX="164.0" layoutY="339.0" mnemonicParsing="false" onAction="#btn_payClicked" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #ffb469; -fx-background-radius: 25;" text="Pay">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
+            <Label layoutX="14.0" layoutY="308.0" text="Change:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="checkbox_nailClip" layoutX="16.0" layoutY="106.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="123.0" text="Nail Clipping">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="checkbox_earClean" layoutX="16.0" layoutY="135.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="123.0" text="Ear Cleaning">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="checkbox_pawPadClean" layoutX="16.0" layoutY="165.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="140.0" text="Paw Pad Cleaning">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="checkbox_teethBrush" layoutX="158.0" layoutY="106.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="123.0" text="Teeth Brushing">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="checkbox_dematt" layoutX="158.0" layoutY="135.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="171.0" text="De-matting Treatment">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <CheckBox fx:id="checkbox_detick" layoutX="158.0" layoutY="165.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="164.0" text="De-ticking Treatment">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="15.0" layoutY="209.0" prefHeight="20.0" prefWidth="81.0" text="Size of Pet:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_total" layoutX="192.0" layoutY="245.0" prefHeight="21.0" prefWidth="89.0" text="0.00" textAlignment="RIGHT">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_size" layoutX="190.0" layoutY="209.0" prefHeight="20.0" prefWidth="93.0" text="label_size" textAlignment="RIGHT">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>
