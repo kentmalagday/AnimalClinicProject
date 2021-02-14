@@ -13,12 +13,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="400.0" minWidth="770.0" prefHeight="749.0" prefWidth="1096.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Appointments">
    <children>
-      <ImageView fitHeight="686.0" fitWidth="1098.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="691.0" fitWidth="1098.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../resources/appointmentbg.png" />
          </image>
       </ImageView>
-      <Button layoutX="48.0" layoutY="648.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="115.0" style="-fx-background-color: #acd2d0; -fx-background-radius: 25;" text=" Back " textFill="#5b2018" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="48.0">
+      <Button layoutX="69.0" layoutY="667.0" mnemonicParsing="false" onAction="#back" prefHeight="40.0" prefWidth="98.0" style="-fx-background-color: #acd2d0; -fx-border-insets: 5; -fx-background-radius: 25;" text=" Back " textFill="#5b2018" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="69.0">
          <font>
             <Font name="Monospaced Bold" size="17.0" />
          </font>
@@ -34,18 +34,23 @@
             <Image url="@../../resources/LOGO.png" />
          </image>
       </ImageView>
-      <Pane layoutX="141.0" layoutY="118.0" prefHeight="542.0" prefWidth="807.0">
+      <Pane layoutX="141.0" layoutY="106.0" prefHeight="532.0" prefWidth="790.0">
          <children>
-            <TableView fx:id="appointmentTable" layoutY="1.0" prefHeight="540.0" prefWidth="807.0" stylesheets="@appointmentcss.css">
+            <TableView fx:id="appointmentTable" layoutX="14.0" layoutY="14.0" prefHeight="507.0" prefWidth="773.0" stylesheets="@appointmentcss.css">
               <columns>
                   <TableColumn fx:id="id" prefWidth="83.0" resizable="false" text="ID" />
-                  <TableColumn fx:id="clientName" prefWidth="268.0" resizable="false" text="Client Name" />
-                  <TableColumn fx:id="petName" prefWidth="200.0" resizable="false" text="Pet Name" />
-                <TableColumn fx:id="date" minWidth="0.0" prefWidth="146.0" resizable="false" text="Appointment Date" />
-                  <TableColumn fx:id="time" minWidth="0.0" prefWidth="107.0" resizable="false" text="Time" />
+                  <TableColumn fx:id="clientName" prefWidth="253.0" resizable="false" text="Client Name" />
+                  <TableColumn fx:id="petName" prefWidth="197.0" resizable="false" text="Pet Name" />
+                <TableColumn fx:id="date" minWidth="0.0" prefWidth="151.0" resizable="false" text="Appointment Date" />
+                  <TableColumn fx:id="time" minWidth="0.0" prefWidth="82.0" resizable="false" text="Time" />
               </columns>
             </TableView>
          </children>
       </Pane>
+      <Button layoutX="181.0" layoutY="667.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="98.0" style="-fx-background-color: #ffe782; -fx-background-radius: 25;" text="Done" textFill="#5b2018">
+         <font>
+            <Font name="Monospaced Bold" size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

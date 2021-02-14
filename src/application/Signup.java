@@ -25,7 +25,7 @@ public class Signup {
 
     public void btn_backClicked() throws IOException {
         Main m = new Main();
-        m.changeScene("home.fxml", "Home", 600, 400);
+        m.changeScene("home.fxml", "Home", 1056, 668);
     }
     public void btn_saveUserClicked() throws Exception {
         if(textFieldsEmpty()){
