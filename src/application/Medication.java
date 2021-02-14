@@ -56,7 +56,7 @@ public class Medication implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources){
-        ObservableList<String> list = FXCollections.observableArrayList("Taken", "Not Taken"); 
+        ObservableList<String> list = FXCollections.observableArrayList("Done", "Ongoing"); 
 		comboBox_status.setItems(list);
 		
 		medicationTable.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
