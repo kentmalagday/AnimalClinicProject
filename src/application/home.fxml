@@ -10,7 +10,7 @@
    <children>
       <ImageView fitHeight="705.0" fitWidth="1056.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/hp3.png" />
+            <Image url="@Images/hp3.png" />
          </image>
       </ImageView>
       <Button fx:id="btn_appointments" layoutX="346.0" layoutY="29.0" mnemonicParsing="false" onAction="#btn_appointmentsClicked" prefHeight="39.0" prefWidth="198.0" style="-fx-background-color: #ffc593; -fx-background-radius: 50px;" text="Appointments" textFill="#5b2018">

@@ -87,7 +87,7 @@
       </Text>
       <ImageView fitHeight="100.0" fitWidth="112.0" layoutX="316.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="644.0" AnchorPane.topAnchor="12.0">
          <image>
-            <Image url="@../../resources/LOGO.png" />
+            <Image url="@Images/LOGO.png" />
          </image>
       </ImageView>
       <ScrollPane layoutX="449.0" layoutY="41.0" prefHeight="658.0" prefWidth="600.0">

@@ -31,7 +31,7 @@
       </Label>
       <ImageView fitHeight="125.0" fitWidth="142.0" layoutX="958.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-6.0">
          <image>
-            <Image url="@../../resources/LOGO.png" />
+            <Image url="@Images/LOGO.png" />
          </image>
       </ImageView>
       <Pane layoutX="141.0" layoutY="106.0" prefHeight="532.0" prefWidth="790.0">

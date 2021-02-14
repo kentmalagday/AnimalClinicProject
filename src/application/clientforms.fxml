@@ -80,7 +80,7 @@
       </Button>
       <ImageView fitHeight="100.0" fitWidth="123.0" layoutX="1231.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="44.00835418701172" AnchorPane.topAnchor="14.0">
          <image>
-            <Image url="@../../resources/LOGO.png" />
+            <Image url="@Images/LOGO.png" />
          </image>
       </ImageView>
       <TableView fx:id="clientTable" layoutX="508.0" layoutY="112.0" onMouseClicked="#getSelection" prefHeight="629.0" prefWidth="840.0" stylesheets="@client_table.css">
