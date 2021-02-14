@@ -163,7 +163,7 @@ public class Database {
 
     public static void deleteAppointment(int petID) {
     	try {
-    		String command = "DELETE FROM `appointment` WHERE `appointment`.`pet_id` = "+petID+";";
+    		String command = "UPDATE `appointment` SET `deleted` = '1' WHERE `appointment`.`pet_id` = "+petID+";";
     		PreparedStatement delete = con.prepareStatement(command);
     		delete.executeUpdate();
     		System.out.println(command);
