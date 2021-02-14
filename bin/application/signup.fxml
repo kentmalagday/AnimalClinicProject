@@ -19,7 +19,7 @@
             <PasswordField fx:id="passField_password" layoutX="209.0" layoutY="251.0" prefHeight="34.0" prefWidth="174.0" promptText="Password" />
             <ImageView fitHeight="158.0" fitWidth="186.0" layoutX="106.0" layoutY="53.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/LOGO.png" />
+                  <Image url="@Images/LOGO.png" />
                </image>
             </ImageView>
             <Label layoutX="26.0" layoutY="214.0" text="Enter Username" textFill="#86b091">

@@ -17,7 +17,7 @@
          <children>
             <ImageView fitHeight="412.0" fitWidth="217.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/bg3.png" />
+                  <Image url="@Images/bg3.png" />
                </image></ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5b2018" height="10.0" layoutX="-107.0" layoutY="-1.0" stroke="#5b2018" strokeType="INSIDE" width="397.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5b2018" height="7.0" layoutX="-111.0" layoutY="402.0" stroke="#5b2018" strokeType="INSIDE" width="397.0" />
@@ -47,7 +47,7 @@
             <Label fx:id="wrongLogIn" layoutX="190.0" layoutY="290.0" textFill="RED" />
             <ImageView fitHeight="183.0" fitWidth="237.0" layoutX="95.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../resources/LOGO.png" />
+                  <Image url="@Images/LOGO.png" />
                </image>
             </ImageView>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5b2018" height="408.0" layoutX="1.0" stroke="#5b2018" strokeType="INSIDE" width="9.0" />

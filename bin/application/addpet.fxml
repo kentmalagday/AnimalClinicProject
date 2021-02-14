@@ -76,7 +76,7 @@
       <TextArea fx:id="textArea_purposeOfVisit" layoutX="188.0" layoutY="420.0" prefHeight="113.0" prefWidth="218.0" AnchorPane.leftAnchor="188.0" AnchorPane.topAnchor="420.0" />
       <ImageView fitHeight="100.0" fitWidth="112.0" layoutX="1197.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../../resources/LOGO.png" />
+            <Image url="@Images/LOGO.png" />
          </image>
       </ImageView>
       <Button fx:id="btn_back" layoutX="81.0" layoutY="733.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="38.0" prefWidth="87.0" style="-fx-background-color: #acd2d0; -fx-background-radius: 25;" text="Back" textFill="#5b2018" AnchorPane.bottomAnchor="68.0">

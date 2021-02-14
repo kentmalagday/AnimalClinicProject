@@ -26,7 +26,7 @@
       </Label>
       <ImageView fitHeight="100.0" fitWidth="112.0" layoutX="240.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../resources/LOGO.png" />
+            <Image url="@Images/LOGO.png" />
          </image>
       </ImageView>
       <Label layoutX="62.0" layoutY="258.0" text="Description:">
