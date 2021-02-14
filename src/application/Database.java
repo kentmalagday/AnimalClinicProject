@@ -275,5 +275,20 @@ public class Database {
     	add.executeUpdate();
     	
     }
+
+	public static void saveAllergy(PetAllergy a, Pet p) throws Exception {
+		String command = "INSERT INTO `mork_petclinic`.`allergy` (`allergy_name`,`description`, `pet_id`) VALUES ('"+a.getAllergyName()+"', '"+a.getDescription()+"', '"+p.getID()+"');";
+		PreparedStatement add = con.prepareStatement(command);
+		add.executeUpdate();
+		System.out.println(command);
+
+	}
+
+	public static void saveVetVisit(PetVetVisit v, Pet p) throws SQLException {
+		String command = "INSERT INTO `mork_petclinic`.`vetvisit` (`date`, `description`, `veterinarian`, `diagnosis`, `test_performed`, `test_results`, `pres_actions`, `pres_meds`, `add_notes`, `pet_id`) VALUES ('"+v.getDate()+"', '"+v.getDescription()+"', '"+v.getVeterinarian()+"', '"+v.getDiagnosis()+"', '"+v.getTestPerformed()+"', '"+v.getTestResults()+"', '"+v.getPrescribedActions()+"', '"+v.getPrescribedMeds()+"', '"+v.getAdditionalNotes()+"', '"+p.getID()+"');";
+		PreparedStatement add = con.prepareStatement(command);
+		add.executeUpdate();
+		System.out.println(command);
+	}
 }
     

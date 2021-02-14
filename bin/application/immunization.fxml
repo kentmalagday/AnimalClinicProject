@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="1072.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Immunization">
+   <children>
+      <Text fill="#5b2018" layoutX="30.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="IMMUNIZATION">
+         <font>
+            <Font name="Monospaced Bold" size="29.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="101.0" fitWidth="118.0" layoutX="232.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/LOGO.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="66.0" layoutY="166.0" text="Pet Name: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="208.0" text="Date:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="248.0" text="Weight:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="63.0" layoutY="293.0" text="Against:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="342.0" text="Veterinarian:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="61.0" layoutY="400.0" text="Next Due:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Text fx:id="text_Petname" layoutX="180.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="139.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Text>
+      <ComboBox fx:id="combobox_Against" layoutX="175.0" layoutY="291.0" prefWidth="150.0" style="-fx-background-color: #FEFBF4; -fx-border-radius: 50; -fx-border-color: #ffe782;" />
+      <ComboBox fx:id="combobox_Vet" layoutX="175.0" layoutY="340.0" prefWidth="150.0" style="-fx-border-radius: 50; -fx-border-color: #ffe782; -fx-background-color: #FEFBF4;" />
+      <TableView fx:id="immunizationTable" layoutX="432.0" layoutY="47.0" prefHeight="641.0" prefWidth="590.0" stylesheets="@immunization.css">
+        <columns>
+            <TableColumn fx:id="date" prefWidth="112.0" text="Date" />
+            <TableColumn fx:id="weight" prefWidth="85.0" text="Weight" />
+          <TableColumn fx:id="against" prefWidth="126.0" text="Against" />
+          <TableColumn fx:id="veterinarian" minWidth="0.0" prefWidth="142.0" text="Veterinarian" />
+            <TableColumn fx:id="nextDue" minWidth="0.0" prefWidth="131.0" text="Next Due" />
+        </columns>
+      </TableView>
+      <TextField fx:id="textField_weight" layoutX="175.0" layoutY="246.0" prefHeight="25.0" prefWidth="150.0" style="-fx-border-radius: 50; -fx-border-color: #ffe782; -fx-background-color: #FEFBF4;" />
+      <DatePicker fx:id="picker_Date" layoutX="181.0" layoutY="206.0" prefHeight="25.0" prefWidth="139.0" />
+      <DatePicker fx:id="picker_nextDue" layoutX="181.0" layoutY="398.0" prefHeight="25.0" prefWidth="139.0" />
+      <Button fx:id="btn_back" layoutX="146.0" layoutY="465.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #ffe782; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Back" />
+      <Button layoutX="257.0" layoutY="465.0" mnemonicParsing="false" onAction="#save" prefHeight="27.0" prefWidth="95.0" style="-fx-background-color: #ffe782; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Save" />
+      
+   </children>
+</AnchorPane>

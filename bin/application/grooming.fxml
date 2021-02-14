@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="1072.0" style="-fx-background-color: #FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Grooming">
+   <children>
+      <Text fill="#5b2018" layoutX="57.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grooming" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="45.0">
+         <font>
+            <Font name="Monospaced Bold" size="29.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="107.0" fitWidth="122.0" layoutX="228.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/LOGO.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="64.0" layoutY="158.0" prefHeight="20.0" prefWidth="68.0" text="Pet Name:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="200.0" prefHeight="20.0" prefWidth="68.0" text="Date: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="62.0" layoutY="249.0" prefHeight="20.0" prefWidth="113.0" text="Type of Groom:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="464.0" prefHeight="20.0" prefWidth="104.0" text="Size of Pet">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="377.0" prefHeight="20.0" prefWidth="122.0" text="Other Treatments:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="59.0" layoutY="502.0" prefHeight="20.0" prefWidth="104.0" text="Groomer:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="63.0" layoutY="293.0" prefHeight="20.0" prefWidth="122.0" text="Single Treatments:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="checkbox_teethBrushing" layoutX="201.0" layoutY="376.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="133.0" text="Teeth Brushing">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="checkbox_deMattingtreatment" layoutX="201.0" layoutY="401.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="174.0" text="De-matting treatment">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="checkbox_deTickingtreatment" layoutX="201.0" layoutY="426.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="167.0" text="De-ticking treatment">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="checkbox_nailCLipping" layoutX="201.0" layoutY="293.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="122.0" text="Nail Clipping">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="checkbox_earClipping" layoutX="201.0" layoutY="318.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="149.0" text="Ear Cleaning">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="checkbox_pawPadCleaning" layoutX="201.0" layoutY="343.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="149.0" text="Paw pad Cleaning">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <Text fx:id="text_Petname" layoutX="198.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="185.95703125">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="picker_date" layoutX="198.0" layoutY="199.0" />
+      <ComboBox fx:id="combobox_typeOfgroom" layoutX="196.0" layoutY="248.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-color: #FEFBF4; -fx-border-radius: 50; -fx-border-color: #ffb469;" />
+      <!--  <ComboBox fx:id="combobox_sizeOfpet" layoutX="197.0" layoutY="462.0" prefHeight="25.0" prefWidth="174.0" style="-fx-background-color: #FEFBF4; -fx-border-radius: 50; -fx-border-color: #ffb469;" /> -->      
+      <Text fx:id="text_size" layoutX="198.0" layoutY="476.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="185.95703125">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="textField_groomer" layoutX="198.0" layoutY="500.0" prefHeight="25.0" prefWidth="174.0" style="-fx-border-color: #ffb469; -fx-border-radius: 50; -fx-background-color: #FEFBF4;" />
+      <ScrollPane layoutX="418.0" layoutY="28.0" prefHeight="692.0" prefWidth="638.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="692.0" prefWidth="808.0">
+               <children>
+                  <TableView prefHeight="669.0" prefWidth="822.0" stylesheets="@grooming.css" fx:id="groomingTable">
+                     <columns>
+                        <TableColumn fx:id="date" prefWidth="133.0" text="Date" />
+                        <TableColumn fx:id="groom" prefWidth="177.0" text="Type of Groom" />
+                       <!--  <TableColumn fx:id="sizeofpet" prefWidth="191.0" text="Size of Pet" /> --> 
+                        <TableColumn fx:id="treatments" minWidth="0.0" prefWidth="157.0" text="Treatments" />
+                        <TableColumn fx:id="groomer" prefWidth="133.0" text="Groomer" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <Button fx:id="btn_back" layoutX="181.0" layoutY="561.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: #ffb469; -fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3;" text="Back" />
+      <Button layoutX="289.0" layoutY="560.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="95.0" style="-fx-border-color: #ffffff; -fx-background-radius: 50; -fx-border-radius: 50; -fx-border-insets: 3; -fx-background-color: #ffb469;" text="Save" onAction="#save"/>
+   </children>
+</AnchorPane>

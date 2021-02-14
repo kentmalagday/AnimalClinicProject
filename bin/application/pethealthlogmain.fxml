@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1522.0" style="-fx-background-color: FEFBF4;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Pethealth">
+   <children>
+      <ImageView fitHeight="299.0" fitWidth="283.0" layoutX="56.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/LOGO.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="24.0" layoutY="22.0" prefHeight="100.0" prefWidth="348.0" text="PET HEALTH LOG" textFill="#5b2018">
+         <font>
+            <Font name="Monospaced Bold" size="40.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="purpose" layoutX="60.0" layoutY="386.0" prefHeight="318.0" prefWidth="273.0" />
+      <Label layoutX="78.0" layoutY="334.0" prefHeight="52.0" prefWidth="238.0" text="Purpose of Visit:" textFill="#5b2018">
+         <font>
+            <Font name="Monospaced Bold" size="23.0" />
+         </font>
+      </Label>
+      <Button layoutX="212.0" layoutY="745.0" mnemonicParsing="false" onAction="#save" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #5B2018;" text="Save" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="277.0" fitWidth="290.0" layoutX="429.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/medical%20history%20nb.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="281.0" fitWidth="290.0" layoutX="429.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/medication%20nb.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="271.0" fitWidth="300.0" layoutX="811.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/immunization%20nb.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="297.0" fitWidth="300.0" layoutX="804.0" layoutY="424.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/grooming%20nb.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="289.0" fitWidth="300.0" layoutX="1152.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/vet%20visit%20nb.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="289.0" fitWidth="316.0" layoutX="1162.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/allergies%20nb.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btn_medical" layoutX="494.0" layoutY="367.0" mnemonicParsing="false" onAction="#medicalhistory" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #FF9F82;" text="View" textFill="#5b2018">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_immunization" layoutX="872.0" layoutY="367.0" mnemonicParsing="false" onAction="#immunization" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #ffe782;" text="View" textFill="#5b2018">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_vetvisit" layoutX="1228.0" layoutY="367.0" mnemonicParsing="false" onAction="#vetvisit" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #ACD2D0;" text="View" textFill="#5b2018">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_medication" layoutX="494.0" layoutY="738.0" mnemonicParsing="false" onAction="#medication" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #84B0AA;" text="View" textFill="#5b2018">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_grooming" layoutX="872.0" layoutY="738.0" mnemonicParsing="false" onAction="#grooming" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #ffb469;" text="View" textFill="#5b2018">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_allergies" layoutX="1230.0" layoutY="738.0" mnemonicParsing="false" onAction="#allergies" prefHeight="38.0" prefWidth="160.0" style="-fx-background-color: #FFEDA3;" text="View" textFill="#5b2018">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button layoutX="78.0" layoutY="745.0" mnemonicParsing="false" onAction="#btn_backClicked" prefHeight="39.0" prefWidth="110.0" style="-fx-background-color: #5B2018;" text="Back" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
