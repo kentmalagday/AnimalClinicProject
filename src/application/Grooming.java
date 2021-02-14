@@ -157,8 +157,8 @@ public class Grooming implements Initializable {
 			Database.saveGrooming(petGrooming, Pethealth.selectedPet);
 			System.out.println(treatments);
 			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("Immunization");
-			alert.setHeaderText("Pet Immunization Record is added succesfully!");
+			alert.setTitle("Grooming");
+			alert.setHeaderText("Pet Grooming Record is added succesfully!");
 			alert.showAndWait();
 			groomingTable.setItems(PetGrooming.getPetGroomingList(Pethealth.selectedPet));
 			clearFields();

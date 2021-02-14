@@ -90,9 +90,9 @@
             <Image url="@../../resources/LOGO.png" />
          </image>
       </ImageView>
-      <ScrollPane layoutX="449.0" layoutY="41.0" prefHeight="658.0" prefWidth="581.0">
+      <ScrollPane layoutX="449.0" layoutY="41.0" prefHeight="658.0" prefWidth="600.0">
         <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="581.0" prefWidth="996.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="655.0" prefWidth="1108.0">
                <children>
                   <TableView fx:id="vetvisitTable" layoutX="-2.0" prefHeight="640.0" prefWidth="1106.0" stylesheets="@vetvisit.css">
                     <columns>

@@ -157,8 +157,8 @@ public class Medicalhistory implements Initializable{
     			ph.setNeutered(selected.getText());
     			Database.saveHistory(ph, Pethealth.selectedPet);
     			Alert alert = new Alert(AlertType.INFORMATION);
-    			alert.setTitle("Immunization");
-    			alert.setHeaderText("Pet Immunization Record is added succesfully!");
+    			alert.setTitle("Medical History");
+    			alert.setHeaderText("Pet Medical History Record is added succesfully!");
     			alert.showAndWait();
     			setHistory(ph);
     			clearFields();
