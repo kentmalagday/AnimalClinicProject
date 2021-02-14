@@ -18,14 +18,14 @@ public class Main extends Application {
 	 
     @Override
     public void start(Stage primaryStage) throws Exception{
-    	Database.con = ConDatabase.getConnection();
+    	Database.con = GetConnection.getConnection();
     	stg = primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root, 600, 400));
         primaryStage.setResizable(false);
         primaryStage.show();
-        stg.isAlwaysOnTop();
+        stg.centerOnScreen();
         
         stg.setOnCloseRequest(new EventHandler<WindowEvent>() {
         	public void handle(WindowEvent e) {
@@ -47,6 +47,7 @@ public class Main extends Application {
         stg.setTitle(title);
         stg.setScene(scene);
         stg.setResizable(false);
+        stg.centerOnScreen();
       
     }
 
