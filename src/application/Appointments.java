@@ -100,11 +100,12 @@ public class Appointments implements Initializable{
 				Database.deleteAppointment(selectedAppointment.getID());
 				Database.deletePetAppointment(selectedAppointment.getPetID());
 				try {
+					appointmentTable.setItems(AppointmentList.getAppointmentList());
 					Alert alert = new Alert(AlertType.INFORMATION);
 					alert.setTitle("Appointment");
 					alert.setHeaderText("Appointment Done!");
 					alert.showAndWait();
-					appointmentTable.setItems(AppointmentList.getAppointmentList());
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
