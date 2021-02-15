@@ -97,7 +97,7 @@ public class Appointments implements Initializable{
 			check.setContentText("Are you sure that this appointment is done?");
 			Optional<ButtonType> result = check.showAndWait();
 			if (result.get() == ButtonType.OK) {
-				Database.deleteAppointment(selectedAppointment.getID());
+				Database.deleteAppointment(selectedAppointment.getPetID());
 				Database.deletePetAppointment(selectedAppointment.getPetID());
 				try {
 					appointmentTable.setItems(AppointmentList.getAppointmentList());
