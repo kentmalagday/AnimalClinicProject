@@ -80,7 +80,7 @@ public class Appointments implements Initializable{
     
     public void back() throws IOException{
     	Main m = new Main();
-        m.changeScene("Home.fxml", "Home", 1056, 668);
+        m.changeScene("home.fxml", "Home", 1056, 668);
     }
     
     public void delete() throws Exception{
