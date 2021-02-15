@@ -5,8 +5,6 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.time.LocalDate;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 
 public class PetHistory {
 	private int ID;
