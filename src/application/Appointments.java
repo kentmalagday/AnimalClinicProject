@@ -92,7 +92,7 @@ public class Appointments implements Initializable{
 			alert.showAndWait();
 		} else {
 			Alert check = new Alert(AlertType.CONFIRMATION);
-			check.setTitle("Appointment Done");
+			check.setTitle("Appointment");
 			check.setHeaderText(null);
 			check.setContentText("Are you sure that this appointment is done?");
 			Optional<ButtonType> result = check.showAndWait();
@@ -105,7 +105,6 @@ public class Appointments implements Initializable{
 					alert.setTitle("Appointment");
 					alert.setHeaderText("Appointment Done!");
 					alert.showAndWait();
-					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
